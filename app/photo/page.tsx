@@ -6,8 +6,6 @@ import { getAlbums } from '@/lib/contentful';
 import Link from 'next/link';
 import React from 'react';
 
-export const revalidate = 0;
-
 const PhotosPage = async ({ modal }: any) => {
   const albums = await getAlbums();
   return (

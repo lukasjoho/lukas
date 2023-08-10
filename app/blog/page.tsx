@@ -6,8 +6,6 @@ import React from 'react';
 import BlogPostItem from './BlogPostItem';
 import { BlogPost } from '@/lib/types';
 
-export const revalidate = 0;
-
 const BlogPage = async () => {
   const res = await getBlogposts();
   let blogPosts = [];
