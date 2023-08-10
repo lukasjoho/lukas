@@ -40,5 +40,10 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/react-responsive-masonry": "^2.1.0",
     "@types/react-syntax-highlighter": "^15.5.7"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "yarn": "please-use-npm",
+    "npm": ">=9.6.7"
   }
 }
