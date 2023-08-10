@@ -46,10 +46,5 @@
     "@types/react-syntax-highlighter": "^15.5.7",
     "husky": "^8.0.3",
     "prettier": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=18.17.0",
-    "yarn": "please-use-npm",
-    "npm": ">=9.6.7"
   }
 }
