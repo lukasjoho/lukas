@@ -1,6 +1,6 @@
-import { BlogPost } from "@/lib/types";
-import Link from "next/link";
-import React, { FC } from "react";
+import { BlogPost } from '@/lib/types';
+import Link from 'next/link';
+import React, { FC } from 'react';
 
 interface BlogPostItemProps {
   blogpost: BlogPost;

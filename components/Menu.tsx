@@ -1,13 +1,13 @@
-"use client";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import React, { FC, useContext, useEffect, useRef, useState } from "react";
-import animationDataWhite from "../public/assets/animation_round_ffffff.json";
-import animationDataDark from "../public/assets/animation_round_1e1e1e.json";
-import { MenuContext } from "./Header";
-import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+'use client';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import React, { FC, useContext, useEffect, useRef, useState } from 'react';
+import animationDataWhite from '../public/assets/animation_round_ffffff.json';
+import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
+import { MenuContext } from './Header';
+import { usePathname, useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 
 const Menu = () => {
   const menuRef1 = useRef<LottieRefCurrentProps>(null);
@@ -59,8 +59,8 @@ const Menu = () => {
           loop={false}
           autoplay={false}
           style={{
-            transform: "scale(1.5)",
-            position: "absolute",
+            transform: 'scale(1.5)',
+            position: 'absolute',
             opacity: isOpen ? 0 : 1,
           }}
         />
@@ -70,8 +70,8 @@ const Menu = () => {
           loop={false}
           autoplay={false}
           style={{
-            transform: "scale(1.5)",
-            position: "absolute",
+            transform: 'scale(1.5)',
+            position: 'absolute',
             opacity: isOpen ? 1 : 0,
           }}
         />
@@ -137,8 +137,8 @@ const NavItem: FC<NavItemProps> = ({ children, href }) => {
       <Link
         href={href}
         className={cn(
-          "text-4xl grow grid items-center text-white/30 transition duration-150 hover:text-white cursor-pointer",
-          isActive && "text-white"
+          'text-4xl grow grid items-center text-white/30 transition duration-150 hover:text-white cursor-pointer',
+          isActive && 'text-white'
         )}
       >
         {children}

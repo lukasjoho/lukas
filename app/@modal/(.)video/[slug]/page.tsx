@@ -1,7 +1,7 @@
-import InterceptionModal from "@/components/InterceptionModal";
-import VideoPlayer from "@/components/VideoPlayer";
-import { getVideo } from "@/lib/contentful";
-import React, { useRef } from "react";
+import InterceptionModal from '@/components/InterceptionModal';
+import VideoPlayer from '@/components/VideoPlayer';
+import { getVideo } from '@/lib/contentful';
+import React, { useRef } from 'react';
 
 const VideoModal = async ({ params }: { params: { slug: string } }) => {
   const res = await getVideo(params.slug);

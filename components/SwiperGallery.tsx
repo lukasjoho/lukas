@@ -1,9 +1,9 @@
-"use client";
+'use client';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
+import 'swiper/css';
 
 const SwiperGallery = ({ images }: any) => {
   return (

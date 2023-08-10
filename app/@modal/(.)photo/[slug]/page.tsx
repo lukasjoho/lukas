@@ -1,10 +1,10 @@
-import CloudImage from "@/components/CloudinaryImage";
-import Container from "@/components/Container";
-import InterceptionModal from "@/components/InterceptionModal";
-import { getAlbum, getAlbums } from "@/lib/contentful";
-import React from "react";
-import ModalHeadline from "@/components/ModalHeadline";
-import ModalImages from "@/components/ModalImages";
+import CloudImage from '@/components/CloudinaryImage';
+import Container from '@/components/Container';
+import InterceptionModal from '@/components/InterceptionModal';
+import { getAlbum, getAlbums } from '@/lib/contentful';
+import React from 'react';
+import ModalHeadline from '@/components/ModalHeadline';
+import ModalImages from '@/components/ModalImages';
 
 export async function generateStaticParams() {
   const res = await getAlbums();

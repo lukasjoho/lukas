@@ -1,10 +1,10 @@
-import CloudImage from "@/components/CloudinaryImage";
-import Container from "@/components/Container";
-import MasonryLayout from "@/components/Masonry";
-import PortfolioLayout from "@/components/PortfolioLayout";
-import { getAlbums } from "@/lib/contentful";
-import Link from "next/link";
-import React from "react";
+import CloudImage from '@/components/CloudinaryImage';
+import Container from '@/components/Container';
+import MasonryLayout from '@/components/Masonry';
+import PortfolioLayout from '@/components/PortfolioLayout';
+import { getAlbums } from '@/lib/contentful';
+import Link from 'next/link';
+import React from 'react';
 
 export const revalidate = 0;
 

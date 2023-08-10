@@ -1,7 +1,7 @@
-import CloudImage from "@/components/CloudinaryImage";
-import { Video } from "@/lib/types";
-import Link from "next/link";
-import React, { FC } from "react";
+import CloudImage from '@/components/CloudinaryImage';
+import { Video } from '@/lib/types';
+import Link from 'next/link';
+import React, { FC } from 'react';
 
 interface VideoItemProps {
   video: Video;

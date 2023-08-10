@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
@@ -39,7 +40,8 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "@types/react-responsive-masonry": "^2.1.0",
-    "@types/react-syntax-highlighter": "^15.5.7"
+    "@types/react-syntax-highlighter": "^15.5.7",
+    "prettier": "^3.0.1"
   },
   "engines": {
     "node": ">=18.17.0",

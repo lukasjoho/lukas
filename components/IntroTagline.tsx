@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 interface IntroTaglineProps {
   children: React.ReactNode;

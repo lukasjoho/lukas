@@ -1,6 +1,6 @@
-"use client";
-import { AnimatePresence } from "framer-motion";
-import React, { FC } from "react";
+'use client';
+import { AnimatePresence } from 'framer-motion';
+import React, { FC } from 'react';
 
 interface ModalContainerProps {
   children: React.ReactNode;

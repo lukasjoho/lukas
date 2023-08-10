@@ -1,5 +1,5 @@
-import { getAlbums, getBlogpost } from "@/lib/contentful";
-import React from "react";
+import { getAlbums, getBlogpost } from '@/lib/contentful';
+import React from 'react';
 
 export async function generateStaticParams() {
   const res = await getAlbums();

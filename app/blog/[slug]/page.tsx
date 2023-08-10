@@ -1,12 +1,12 @@
-import Container from "@/components/Container";
-import { getBlogpost, getBlogposts } from "@/lib/contentful";
-import React from "react";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import CloudImage from "@/components/CloudinaryImage";
+import Container from '@/components/Container';
+import { getBlogpost, getBlogposts } from '@/lib/contentful';
+import React from 'react';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
+import CloudImage from '@/components/CloudinaryImage';
 
-import CodeHighlighter from "@/components/CodeHighlighter";
-import { formatDate } from "@/lib/helper";
+import CodeHighlighter from '@/components/CodeHighlighter';
+import { formatDate } from '@/lib/helper';
 
 export async function generateStaticParams() {
   const res = await getBlogposts();

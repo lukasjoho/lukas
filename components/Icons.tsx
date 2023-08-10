@@ -1,17 +1,17 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react';
 
 interface LogoProps {
   className?: string;
-  color?: "dark" | "white";
+  color?: 'dark' | 'white';
 }
 
 export const Icons = {
-  logo: ({ color = "dark", ...props }: LogoProps) => {
+  logo: ({ color = 'dark', ...props }: LogoProps) => {
     let fill;
-    if (color == "dark") {
-      fill = "#1e1e1e";
+    if (color == 'dark') {
+      fill = '#1e1e1e';
     } else {
-      fill = "#ffffff";
+      fill = '#ffffff';
     }
     return (
       <svg

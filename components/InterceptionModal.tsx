@@ -1,13 +1,13 @@
-"use client";
-import { useRouter } from "next/navigation";
+'use client';
+import { useRouter } from 'next/navigation';
 import React, {
   FC,
   MouseEventHandler,
   useCallback,
   useEffect,
   useRef,
-} from "react";
-import { motion } from "framer-motion";
+} from 'react';
+import { motion } from 'framer-motion';
 
 interface InterceptionModalProps {
   children: React.ReactNode;
@@ -38,7 +38,7 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onDismiss();
       }
     },
@@ -46,8 +46,8 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
   );
 
   useEffect(() => {
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, []);
   return (
     <motion.div
@@ -58,7 +58,7 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.1, ease: "easeInOut" }}
+      transition={{ duration: 0.1, ease: 'easeInOut' }}
     >
       <div
         ref={x}

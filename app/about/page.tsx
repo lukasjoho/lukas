@@ -1,9 +1,9 @@
-"use client";
-import CloudImage from "@/components/CloudinaryImage";
-import Container from "@/components/Container";
-import { getCloudinaryImage } from "@/lib/cloudinary";
-import { AdvancedImage, responsive } from "@cloudinary/react";
-import React from "react";
+'use client';
+import CloudImage from '@/components/CloudinaryImage';
+import Container from '@/components/Container';
+import { getCloudinaryImage } from '@/lib/cloudinary';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import React from 'react';
 
 const AboutPage = () => {
   return (

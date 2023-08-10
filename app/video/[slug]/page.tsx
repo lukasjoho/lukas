@@ -1,5 +1,5 @@
-import { getVideos } from "@/lib/contentful";
-import React from "react";
+import { getVideos } from '@/lib/contentful';
+import React from 'react';
 
 export async function generateStaticParams() {
   const res = await getVideos();

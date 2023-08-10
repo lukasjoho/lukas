@@ -1,6 +1,6 @@
-"use client";
-import React, { FC } from "react";
-import { motion } from "framer-motion";
+'use client';
+import React, { FC } from 'react';
+import { motion } from 'framer-motion';
 
 interface ModalHeadlineProps {
   children: React.ReactNode;

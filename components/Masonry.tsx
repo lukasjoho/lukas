@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import Masonry from "react-masonry-css";
+import React from 'react';
+import Masonry from 'react-masonry-css';
 
 const breakpointColumnsObj = {
   default: 4,
