@@ -14,7 +14,7 @@ const AboutPage = () => {
         </div>
         <h1>Hey, it is Lukas.</h1>
         <h2>I like to build.</h2>
-        <p>When I say "build"</p>
+        <p>When I say build</p>
       </Container>
     </div>
   );

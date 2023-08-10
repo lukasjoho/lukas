@@ -8,7 +8,7 @@ interface PanelProps {
   image: string;
 }
 
-const Panel: FC<PanelProps> = ({ title, emoji, href, image }) => {
+const Panel: FC<PanelProps> = ({ title, href, image }) => {
   return (
     <Link href={href}>
       <div className="bg-lightgrey transition duration-150 hover:bg-lightgreydark rounded-2xl min-h-[300px] pt-16 relative h-full overflow-hidden flex flex-col items-center">

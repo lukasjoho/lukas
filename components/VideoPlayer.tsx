@@ -1,6 +1,5 @@
 'use client';
 import React, { FC, useEffect, useRef } from 'react';
-import ReactPlayer from 'react-player';
 
 interface VideoPlayerProps {
   src: string;

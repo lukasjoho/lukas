@@ -1,5 +1,3 @@
-import { SVGProps } from 'react';
-
 interface LogoProps {
   className?: string;
   color?: 'dark' | 'white';

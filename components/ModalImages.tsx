@@ -1,7 +1,6 @@
 'use client';
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
-import CloudImage from './CloudinaryImage';
 
 interface ModalImagesProps {
   children: React.ReactNode;

@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import React, { FC } from 'react';
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: JSX.Element[] | JSX.Element;
+  children: React.ReactNode;
   variant?: 'small' | 'medium' | 'normal' | 'large';
 }
 

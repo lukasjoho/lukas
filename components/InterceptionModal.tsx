@@ -48,7 +48,7 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, []);
+  }, [onKeyDown]);
   return (
     <motion.div
       ref={overlay}

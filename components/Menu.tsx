@@ -1,6 +1,6 @@
 'use client';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
-import React, { FC, useContext, useEffect, useRef, useState } from 'react';
+import React, { FC, useContext, useEffect, useRef } from 'react';
 import animationDataWhite from '../public/assets/animation_round_ffffff.json';
 import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
 import { MenuContext } from './Header';
@@ -119,9 +119,8 @@ interface NavItemProps {
 
 const NavItem: FC<NavItemProps> = ({ children, href }) => {
   const pathname = usePathname();
-  const router = useRouter();
   const isActive = pathname == href;
-  const { isOpen, setIsOpen }: any = useContext(MenuContext);
+  const { setIsOpen }: any = useContext(MenuContext);
 
   const handleClose = () => {
     setIsOpen(false);

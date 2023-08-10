@@ -17,8 +17,8 @@ const PhotosPage = async ({ modal }: any) => {
     >
       <Container variant="large">
         <MasonryLayout>
-          {albums.data.galleryCollection.items.map((item: any) => (
-            <div>
+          {albums.data.galleryCollection.items.map((item: any, idx: number) => (
+            <div key={idx}>
               <Link href={`/photo/${item.slug}`}>
                 {/* <img src={item.cover.url} alt="" /> */}
                 <CloudImage src={item.cover.url} steps={[400, 500, 600]} />

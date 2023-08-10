@@ -30,8 +30,8 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
               src={album.cover.url}
               steps={[400, 500, 600, 800, 1000]}
             />
-            {album.imagesCollection.items.map((image: any) => (
-              <CloudImage src={image.url} steps={[400, 500, 600]} />
+            {album.imagesCollection.items.map((image: any, idx: number) => (
+              <CloudImage src={image.url} key={idx} steps={[400, 500, 600]} />
             ))}
           </div>
         </ModalImages>
