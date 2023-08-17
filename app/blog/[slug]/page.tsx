@@ -1,6 +1,7 @@
 import { getBlogpost, getBlogposts } from '@/lib/contentful';
 
 import ArticleLayout from '@/components/ArticleLayout';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const res = await getBlogposts();
@@ -13,6 +14,9 @@ export async function generateStaticParams() {
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const res = await getBlogpost(params.slug);
   const blogpost = res.data.blogPostCollection.items[0];
+  if (!blogpost) {
+    notFound();
+  }
   const { title, tagline, date, content } = blogpost;
   return (
     <ArticleLayout
