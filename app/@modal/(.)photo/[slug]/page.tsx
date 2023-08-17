@@ -42,8 +42,8 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
             </div>
 
             {album.imagesCollection.items.map((image: any, idx: number) => (
-              <div>
-                <CloudImage src={image.url} key={idx} steps={[400, 500, 600]} />
+              <div key={idx}>
+                <CloudImage src={image.url} steps={[400, 500, 600]} />
               </div>
             ))}
           </MasonryLayout>
