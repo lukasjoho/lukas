@@ -1,7 +1,7 @@
 'use client';
 import { getCloudinaryImage } from '@/lib/cloudinary';
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface CloudinaryImageProps {
   src: string;

@@ -1,10 +1,8 @@
 import Container from '@/components/Container';
-import IntroTagline from '@/components/IntroTagline';
 import PortfolioLayout from '@/components/PortfolioLayout';
 import { getBlogposts } from '@/lib/contentful';
-import React from 'react';
-import BlogPostItem from './BlogPostItem';
 import { BlogPost } from '@/lib/types';
+import BlogPostItem from './BlogPostItem';
 
 const BlogPage = async () => {
   const res = await getBlogposts();

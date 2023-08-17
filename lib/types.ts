@@ -2,6 +2,7 @@ export type Project = {
   title: string;
   tagline: string;
   cover: Cover;
+  slug: string;
   hasDarkBackground: boolean;
 };
 

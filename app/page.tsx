@@ -1,37 +1,37 @@
-import Panel from '@/components/Panel';
+import Avatar from '@/components/Avatar';
+import Container from '@/components/Container';
+import {
+  BlogItems,
+  CodeItems,
+  PhotoItems,
+  VideoItems,
+} from '@/components/landing/Items';
+import Panel from '@/components/landing/Panel';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-2 gap-2 md:gap-4 w-full grow p-4 pt-0 relative">
-      <Panel
-        title="code"
-        emoji="👨‍💻"
-        href="/code"
-        image="assets/image-code.png"
-      />
-      <Panel
-        title="photo"
-        emoji="📸"
-        href="/photo"
-        image="assets/image-photos.png"
-      />
-      <Panel
-        title="video"
-        emoji="📺"
-        href="/video"
-        image="assets/image-video.png"
-      />
-      <Panel
-        title="blog"
-        emoji="👋"
-        href="/blog"
-        image="assets/image-articles.png"
-      />
-      <img
-        src="assets/lukas.jpg"
-        alt=""
-        className="w-[120px] md:w-[200px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-8 md:border-[16px] border-white"
-      />
-    </div>
+    <Container variant="static" className="grow justify-center">
+      <div className="grid grid-cols-2 gap-2 md:gap-4 w-full grow relative pb-4 max-h-[1400px]">
+        <Panel title="code" href="/code">
+          <CodeItems idx={1} />
+        </Panel>
+        <Panel title="photo" href="/photo">
+          <PhotoItems idx={2} />
+        </Panel>
+        <Panel title="video" href="/video">
+          <VideoItems idx={3} />
+        </Panel>
+        <Panel title="blog" href="/blog">
+          <BlogItems idx={4} />
+        </Panel>
+        <Link
+          href="/about"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 "
+        >
+          <Avatar />
+        </Link>
+      </div>
+    </Container>
   );
 }

@@ -1,11 +1,8 @@
+import Container from '@/components/Container';
 import PortfolioLayout from '@/components/PortfolioLayout';
 import { getVideos } from '@/lib/contentful';
-import React from 'react';
-import VideoItem from './VideoItem';
 import { Video } from '@/lib/types';
-import Container from '@/components/Container';
-
-export const revalidate = 0;
+import VideoItem from './VideoItem';
 
 const VideoPage = async () => {
   const res = await getVideos();

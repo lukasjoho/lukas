@@ -9,14 +9,16 @@ module.exports = {
     screens: {
       sm: '640px',
       md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
+      lg: '1280px',
+      xl: '2000px',
     },
     extend: {
+      fontSize: {
+        xxs: '10px',
+      },
       colors: {
         lightgrey: '#f9f9f9',
-        lightgreydark: '#f3f3f3',
+        lightgreydark: '#f5f5f5',
         muted: '#666666',
         dark: '#1e1e1e',
       },

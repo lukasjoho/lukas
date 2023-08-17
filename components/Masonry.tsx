@@ -1,16 +1,18 @@
 'use client';
 
-import React from 'react';
+import { BREAKPOINTS } from '@/lib/breakpoints';
 import Masonry from 'react-masonry-css';
 
 const breakpointColumnsObj = {
   default: 4,
+  [BREAKPOINTS.LG]: 3,
+  [BREAKPOINTS.MD]: 2,
 };
 
-const MasonryLayout = ({ children }: any) => {
+const MasonryLayout = ({ children, breakpoints }: any) => {
   return (
     <Masonry
-      breakpointCols={breakpointColumnsObj}
+      breakpointCols={breakpoints || breakpointColumnsObj}
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column"
     >

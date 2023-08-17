@@ -1,13 +1,13 @@
 'use client';
-import Lottie, { LottieRefCurrentProps } from 'lottie-react';
-import React, { FC, useContext, useEffect, useRef } from 'react';
-import animationDataWhite from '../public/assets/animation_round_ffffff.json';
-import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
-import { MenuContext } from './Header';
-import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { FC, useContext, useEffect, useRef } from 'react';
+import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
+import animationDataWhite from '../public/assets/animation_round_ffffff.json';
+import { MenuContext } from './Header';
 
 const Menu = () => {
   const menuRef1 = useRef<LottieRefCurrentProps>(null);

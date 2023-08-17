@@ -1,4 +1,6 @@
 'use client';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import React, {
   FC,
@@ -7,13 +9,16 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-import { motion } from 'framer-motion';
 
 interface InterceptionModalProps {
   children: React.ReactNode;
+  isCenterModal?: boolean;
 }
 
-const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
+const InterceptionModal: FC<InterceptionModalProps> = ({
+  children,
+  isCenterModal = true,
+}) => {
   const router = useRouter();
   const overlay = useRef(null);
   const dialog = useRef(null);
@@ -49,11 +54,15 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [onKeyDown]);
+
   return (
     <motion.div
       ref={overlay}
       key="overlay"
-      className="fixed w-screen h-screen top-0 left-0 bg-dark/95 backdrop-blur-sm flex items-center justify-center overflow-scroll z-50"
+      className={cn(
+        'fixed w-screen h-screen top-0 left-0 bg-dark/95 backdrop-blur-sm flex items-center justify-center overflow-scroll z-50',
+        !isCenterModal && 'items-start'
+      )}
       onClick={handleClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -93,7 +102,9 @@ const InterceptionModal: FC<InterceptionModalProps> = ({ children }) => {
           />
         </svg>
       </div>
-      <div ref={dialog}>{children}</div>
+      <div ref={dialog} className={cn('relative')}>
+        {children}
+      </div>
     </motion.div>
   );
 };

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import IntroTagline from './IntroTagline';
 import Container from './Container';
+import IntroTagline from './IntroTagline';
 
 interface PortfolioLayoutProps {
   tagline: string;
   children: React.ReactNode;
-  variant?: 'small' | 'medium' | 'normal' | 'large';
+  variant?: 'small' | 'medium' | 'normal' | 'large' | 'fluid';
 }
 
 const PortfolioLayout: FC<PortfolioLayoutProps> = ({

@@ -1,12 +1,8 @@
 import Container from '@/components/Container';
-import { getCodeProjects } from '@/lib/contentful';
-import React from 'react';
-import ProjectItem from './ProjectItem';
-import { Project } from '@/lib/types';
-import IntroTagline from '@/components/IntroTagline';
 import PortfolioLayout from '@/components/PortfolioLayout';
-
-export const revalidate = 1;
+import { getCodeProjects } from '@/lib/contentful';
+import { Project } from '@/lib/types';
+import ProjectItem from './ProjectItem';
 
 const CodePage = async () => {
   const res = await getCodeProjects();

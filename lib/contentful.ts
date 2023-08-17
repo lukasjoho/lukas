@@ -62,7 +62,46 @@ export const getCodeProjects = async () => {
                 }
                 title
                 tagline
+                slug
                 hasDarkBackground
+            }
+        }
+    }`;
+  return fetchContentfulData(query);
+};
+
+export const getCodeProject = async (slug: string) => {
+  let query = `{
+        projectCollection(where: { slug: "${slug}" }, limit: 1){
+            items{
+                cover{
+                    url
+                }
+                hero{
+                  url
+                }
+                url
+                slug
+                title
+                tagline
+                hasDarkBackground
+                content{
+                  json
+                  links{
+                    assets {
+                      block {
+                        sys {
+                          id
+                        }
+                        url
+                        title
+                        width
+                        height
+                        description
+                      }
+                    }
+                  }
+                }
             }
         }
     }`;
@@ -138,6 +177,7 @@ export const getBlogpost = async (slug: string) => {
         blogPostCollection(where: { slug: "${slug}" }, limit: 1){
             items{
                 title
+                tagline
                 slug
                 date
                 content{
