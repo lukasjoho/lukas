@@ -42,7 +42,7 @@ function renderOptions(links: any) {
         <p className="mb-2 md:mb-4 [&>pre]:mt-0">{children}</p>
       ),
       [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <h2 className="mt-4 md:mt-8 mb-2 md:mb-4 text-3xl font-meche font-medium">
+        <h2 className="mt-8 md:mt-8 mb-2 md:mb-4 text-3xl font-meche font-medium">
           {children}
         </h2>
       ),

@@ -30,7 +30,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       />
       <Container variant="small">
         {content && (
-          <div className="relative">
+          <div className="relative w-full overflow-hidden">
             <RichTextRenderer json={content.json} links={content.links} />
           </div>
         )}

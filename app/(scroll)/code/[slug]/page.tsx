@@ -7,8 +7,6 @@ import RichTextRenderer from '@/components/RichTextRenderer';
 import { ArrowUpRight } from 'lucide-react';
 import React, { FC } from 'react';
 
-export const revalidate = 0;
-
 export async function generateStaticParams() {
   const res = await getCodeProjects();
   const codeProjects = res.data.projectCollection.items;

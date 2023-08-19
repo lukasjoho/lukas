@@ -15,7 +15,7 @@ const VideoPage = async () => {
         backlink={{ href: '/', label: 'Back to home' }}
       />
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
           {videos.map((video: Video, idx: number) => (
             <VideoItem video={video} key={idx} />
           ))}

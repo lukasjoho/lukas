@@ -4,8 +4,6 @@ import { getBlogposts } from '@/lib/contentful';
 import { BlogPost } from '@/lib/types';
 import BlogPostItem from './BlogPostItem';
 
-export const revalidate = 0;
-
 const BlogPage = async () => {
   const res = await getBlogposts();
   let blogPosts = [];
