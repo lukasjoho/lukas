@@ -9,8 +9,16 @@ interface RichTextRendererProps extends React.HTMLProps<HTMLDivElement> {
   links?: string;
 }
 
-const RichTextRenderer: FC<RichTextRendererProps> = ({ json, links }) => {
-  return <div>{documentToReactComponents(json, renderOptions(links))}</div>;
+const RichTextRenderer: FC<RichTextRendererProps> = ({
+  json,
+  links,
+  ...props
+}) => {
+  return (
+    <div className={props.className}>
+      {documentToReactComponents(json, renderOptions(links))}
+    </div>
+  );
 };
 
 export default RichTextRenderer;

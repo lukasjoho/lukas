@@ -1,6 +1,8 @@
 import { getBlogpost, getBlogposts } from '@/lib/contentful';
 
-import ArticleLayout from '@/components/ArticleLayout';
+import Container from '@/components/Container';
+import PageHeader from '@/components/PageHeader';
+import RichTextRenderer from '@/components/RichTextRenderer';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -19,13 +21,21 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   }
   const { title, tagline, date, content } = blogpost;
   return (
-    <ArticleLayout
-      title={title}
-      tagline={tagline}
-      date={date}
-      backlink="/blog"
-      content={content}
-    />
+    <div>
+      <PageHeader
+        title={title}
+        subtitle={tagline}
+        backlink={{ href: '/blog', label: 'Back to all' }}
+        containerVariant="small"
+      />
+      <Container variant="small">
+        {content && (
+          <div className="relative">
+            <RichTextRenderer json={content.json} links={content.links} />
+          </div>
+        )}
+      </Container>
+    </div>
   );
 };
 

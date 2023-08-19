@@ -6,7 +6,7 @@ interface BlogNoteProps extends React.HTMLProps<HTMLDivElement> {
 
 export const BlogNote: FC<BlogNoteProps> = ({ title }: any) => {
   return (
-    <div className=" bg-[#F3F3F3] px-4 3xl:px-8 text-center py-6 md:py-8 lg:py-14 relative overflow-hidden grid items-center shadow-md">
+    <div className=" bg-[#F3F3F3] px-4 3xl:px-8 text-center py-6 md:py-8 lg:py-14 xl:py-20 relative overflow-hidden grid items-center shadow-md">
       <div className="space-y-4 md:space-y-7 absolute left-0 top-0 w-full">
         <div>
           <div className="w-full flex justify-end px-2 py-1">

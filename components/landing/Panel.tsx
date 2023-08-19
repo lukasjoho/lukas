@@ -10,7 +10,7 @@ interface PanelProps {
 const Panel: FC<PanelProps> = ({ children, title, href }) => {
   return (
     <Link href={href} className="cursor">
-      <div className="group cursor bg-lightgrey transition duration-150 hover:bg-lightgreydark rounded-2xl min-h-[240px] md:min-h-[360px] 3xl:min-h-[480px] pt-12 md:pt-16 3xl:pt-20 relative h-full overflow-hidden flex flex-col justify-between items-center">
+      <div className="group cursor bg-lightgrey transition duration-150 hover:bg-lightgreydark rounded-2xl min-h-[240px] md:min-h-[300px] lg:min-h-[360px] xl:min-h-[480px] pt-12 md:pt-16 3xl:pt-20 relative h-full overflow-hidden flex flex-col justify-between items-center">
         <h1 className="font-meche text-2xl md:text-4xl xl:text-5xl text-center">
           {title}
         </h1>

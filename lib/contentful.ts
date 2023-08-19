@@ -151,6 +151,7 @@ export const getVideo = async (slug: string) => {
                   url
                 }
                 slug
+                aspectRatio
             }
         }
     }`;

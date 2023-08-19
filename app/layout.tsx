@@ -1,10 +1,8 @@
 import Header from '@/components/Header';
-import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Finger_Paint } from 'next/font/google';
+import { Finger_Paint, Inter } from 'next/font/google';
 import localFont from 'next/font/local';
-import { AnimatePresence } from 'framer-motion';
-import ModalProvider from '@/components/ModalProvider';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 const fingerpaint = Finger_Paint({
@@ -44,10 +42,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -55,13 +51,12 @@ export default function RootLayout({
         className={`${inter.className} ${mechepro.variable} ${fingerpaint.variable} text-dark`}
       >
         <main
-          className="flex flex-col items-stretch justify-start "
+          className="flex flex-col items-stretch justify-start"
           style={{ height: '100dvh' }}
         >
           <div className="relative z-40">
             <Header />
           </div>
-          <ModalProvider>{modal}</ModalProvider>
           {children}
         </main>
       </body>

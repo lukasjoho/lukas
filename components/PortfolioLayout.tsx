@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import BackLink from './BackLink';
 import Container from './Container';
-import IntroTagline from './IntroTagline';
+import IntroTagline from './PageTitle';
 
 interface PortfolioLayoutProps {
   tagline: string;
@@ -14,10 +15,12 @@ const PortfolioLayout: FC<PortfolioLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="space-y-12 pt-8 pb-64">
-      <Container variant={variant}>
+    <div className="space-y-8 md:space-y-16 pt-4 md:pt-8 ">
+      <Container variant={variant} className="gap-4 md:gap-8">
+        <BackLink href="/" label="Back to home" />
         <IntroTagline>{tagline}</IntroTagline>
       </Container>
+
       {children}
     </div>
   );

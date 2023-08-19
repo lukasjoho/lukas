@@ -2,8 +2,6 @@ import CloudImage from '@/components/CloudinaryImage';
 import Container from '@/components/Container';
 import InterceptionModal from '@/components/InterceptionModal';
 import MasonryLayout from '@/components/Masonry';
-import ModalHeadline from '@/components/ModalHeadline';
-import ModalImages from '@/components/ModalImages';
 import { BREAKPOINTS } from '@/lib/breakpoints';
 import { getAlbum, getAlbums } from '@/lib/contentful';
 
@@ -27,12 +25,12 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   };
 
   return (
-    <InterceptionModal>
+    <InterceptionModal isCenterModal={false}>
       <Container variant="normal">
-        <div className="pb-8 text-white w-full">
-          <ModalHeadline>{album.title}</ModalHeadline>
+        <div className="pb-4 md:pb-8 text-white w-full">
+          <h1 className="font-meche text-3xl md:text-5xl">{album.title}</h1>
         </div>
-        <ModalImages>
+        <div className="bg-white overflow-hidden w-full">
           <MasonryLayout breakpoints={breakpoints}>
             <div>
               <CloudImage
@@ -47,7 +45,7 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
               </div>
             ))}
           </MasonryLayout>
-        </ModalImages>
+        </div>
       </Container>
     </InterceptionModal>
   );

@@ -1,7 +1,8 @@
 import InterceptionModal from '@/components/InterceptionModal';
 import VideoPlayer from '@/components/VideoPlayer';
+import { getCloudinaryImage } from '@/lib/cloudinary';
 import { getVideo } from '@/lib/contentful';
-import React, { useRef } from 'react';
+import { formatRatio } from '@/lib/formatRatio';
 
 const VideoModal = async ({ params }: { params: { slug: string } }) => {
   const res = await getVideo(params.slug);
@@ -9,7 +10,12 @@ const VideoModal = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <InterceptionModal>
-      <VideoPlayer src={video.file.url} />
+      <VideoPlayer
+        src={video.file.url}
+        poster={getCloudinaryImage(video.cover.url)
+          .addTransformation(`ar_${formatRatio(video.aspectRatio)},c_crop`)
+          .toURL()}
+      />
     </InterceptionModal>
   );
 };
