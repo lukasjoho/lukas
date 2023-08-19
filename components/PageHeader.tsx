@@ -3,7 +3,7 @@ import BackLink from './BackLink';
 import Container from './Container';
 import PageTitle from './PageTitle';
 
-interface BackLink {
+interface BackLinkProps {
   href: string;
   label: string;
 }
@@ -11,7 +11,7 @@ interface BackLink {
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
-  backlink: BackLink;
+  backlink: BackLinkProps;
   containerVariant?:
     | 'small'
     | 'medium'
