@@ -4,6 +4,8 @@ import { getVideos } from '@/lib/contentful';
 import { Video } from '@/lib/types';
 import VideoItem from './VideoItem';
 
+export const revalidate = 0;
+
 const VideoPage = async () => {
   const res = await getVideos();
   let videos = [];

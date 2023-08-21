@@ -42,6 +42,7 @@ const fetchContentfulData = async (query: string) => {
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
+      cache: 'no-store',
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
         'Content-Type': 'application/json',

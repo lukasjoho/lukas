@@ -136,7 +136,7 @@ const NavItem: FC<NavItemProps> = ({ children, href }) => {
       <Link
         href={href}
         className={cn(
-          'text-4xl grow grid items-center text-white/30 transition duration-150 hover:text-white cursor-pointer',
+          'text-4xl grow grid items-center text-muted transition duration-150 hover:text-white cursor-pointer',
           isActive && 'text-white'
         )}
       >

@@ -16,7 +16,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ src, poster }) => {
       src={src}
       controls={true}
       poster={poster}
-      className="md:max-h-[400px] lg:max-h-[600px] xl:max-h-[800px]"
+      className="max-h-[500px] lg:max-h-[600px] xl:max-h-[800px]"
       ref={ref}
     />
   );

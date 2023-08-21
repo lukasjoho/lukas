@@ -9,13 +9,15 @@ const VideoModal = async ({ params }: { params: { slug: string } }) => {
   const video = res.data.videoCollection.items[0];
 
   return (
-    <InterceptionModal>
-      <VideoPlayer
-        src={video.file.url}
-        poster={getCloudinaryImage(video.cover.url)
-          .addTransformation(`ar_${formatRatio(video.aspectRatio)},c_crop`)
-          .toURL()}
-      />
+    <InterceptionModal isCenter={true} title={video.title}>
+      <div className="w-full flex justify-center py-16">
+        <VideoPlayer
+          src={video.file.url}
+          poster={getCloudinaryImage(video.cover.url)
+            .addTransformation(`ar_${formatRatio(video.aspectRatio)},c_crop`)
+            .toURL()}
+        />
+      </div>
     </InterceptionModal>
   );
 };

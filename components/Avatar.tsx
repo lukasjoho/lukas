@@ -13,9 +13,16 @@ const Avatar = () => {
     },
   };
   // const [shouldAnimate, setShouldAnimate] = useState<null | string>();
-  const isLoaded = isServer() ? true : sessionStorage.getItem('isLoaded');
+  const isLoaded = isServer() ? false : sessionStorage.getItem('isLoaded');
   if (isLoaded === 'true') {
-    avatarVariants = {};
+    avatarVariants = {
+      hidden: {
+        transform: 'scale(1)',
+      },
+      visible: {
+        transform: 'scale(1)',
+      },
+    };
   }
   return (
     <motion.div

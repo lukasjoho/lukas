@@ -15,7 +15,7 @@ const PhotoMasonry = async () => {
             <div className="relative">
               <OptimizedImage
                 src={item.cover.url}
-                steps={[200, 300, 400, 500, 600]}
+                steps={[200, 300, 400, 500]}
               />
               <ItemOverlay title={item.title} />
             </div>

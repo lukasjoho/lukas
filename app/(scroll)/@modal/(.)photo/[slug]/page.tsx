@@ -1,4 +1,3 @@
-import Container from '@/components/Container';
 import InterceptionModal from '@/components/InterceptionModal';
 import MasonryLayout from '@/components/Masonry';
 import OptimizedImage from '@/components/OptimizedImage';
@@ -23,28 +22,26 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   };
 
   return (
-    <InterceptionModal isCenterModal={false} title={album.title}>
-      <Container variant="normal">
-        <div className="hidden md:block pb-4 md:pb-8 text-white w-full">
-          <h1 className="font-meche text-3xl md:text-5xl">{album.title}</h1>
-        </div>
-        <div className="bg-white overflow-hidden w-full">
-          <MasonryLayout breakpoints={breakpoints}>
-            <div>
-              <OptimizedImage
-                src={album.cover.url}
-                steps={[400, 500, 600, 800, 1000]}
-              />
-            </div>
+    <InterceptionModal isCenter={false} title={album.title}>
+      <div className="hidden md:block pb-4 md:pb-8 text-white w-full">
+        <h1 className="font-meche text-3xl md:text-5xl">{album.title}</h1>
+      </div>
+      <div className="bg-white overflow-hidden w-full md:rounded-xl">
+        <MasonryLayout breakpoints={breakpoints}>
+          <div>
+            <OptimizedImage
+              src={album.cover.url}
+              steps={[400, 500, 600, 800, 1000]}
+            />
+          </div>
 
-            {album.imagesCollection.items.map((image: any, idx: number) => (
-              <div key={idx}>
-                <OptimizedImage src={image.url} steps={[400, 500, 600]} />
-              </div>
-            ))}
-          </MasonryLayout>
-        </div>
-      </Container>
+          {album.imagesCollection.items.map((image: any, idx: number) => (
+            <div key={idx}>
+              <OptimizedImage src={image.url} steps={[400, 500, 600]} />
+            </div>
+          ))}
+        </MasonryLayout>
+      </div>
     </InterceptionModal>
   );
 };

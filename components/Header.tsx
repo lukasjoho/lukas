@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Container from './Container';
 import { Icons } from './Icons';
 import Menu from './Menu';
+import { SocialIcons } from './general/SocialIcons';
 
 export const MenuContext = createContext({
   isOpen: false,
@@ -20,7 +21,10 @@ const Header = () => {
           <Link href="/">
             <Icons.logo color={isOpen ? 'white' : 'dark'} className="h-8 w-8" />
           </Link>
-          <Menu />
+          <div className="flex gap-8">
+            <SocialIcons />
+            <Menu />
+          </div>
         </div>
       </Container>
     </MenuContext.Provider>

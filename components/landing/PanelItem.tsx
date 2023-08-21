@@ -17,15 +17,18 @@ export const PanelItem: FC<PanelItemProps> = ({ children, className, idx }) => {
       transform: 'translateY(0%)',
     },
   };
-  // const [shouldAnimate, setShouldAnimate] = useState<null | string>();
   const isLoaded = isServer() ? true : sessionStorage.getItem('isLoaded');
   if (isLoaded === 'true') {
-    panelItemVariants = {};
+    panelItemVariants = {
+      hidden: {
+        transform: 'translateY(0%)',
+      },
+      visible: {
+        transform: 'translateY(0%)',
+      },
+    };
   }
-  // useEffect(() => {
-  //   let isLoaded = sessionStorage.getItem('isLoaded');
-  //   setShouldAnimate(isLoaded);
-  // });
+
   return (
     <div className={cn('absolute bottom-0 transition duration-300', className)}>
       <motion.div
