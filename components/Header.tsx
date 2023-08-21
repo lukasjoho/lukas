@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <MenuContext.Provider value={{ isOpen, setIsOpen }}>
       <Container variant="fluid">
-        <div className="w-full h-16 flex items-center justify-between relative">
+        <div className="w-full h-14 flex items-center justify-between relative">
           <Link href="/">
             <Icons.logo color={isOpen ? 'white' : 'dark'} className="h-8 w-8" />
           </Link>

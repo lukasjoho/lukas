@@ -32,7 +32,7 @@ const Avatar = () => {
       transition={{
         type: 'spring',
       }}
-      className="bg-lightgrey w-[120px] md:w-[200px] rounded-full border-8 md:border-[16px] border-white aspect-square overflow-hidden group"
+      className="bg-lightgrey w-[120px] md:w-[200px] rounded-full border-[8px] md:border-[16px] border-white aspect-square overflow-hidden group"
     >
       <div className="transition duration-300 hover:scale-110">
         <div className="group-hover:hidden">

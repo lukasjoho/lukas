@@ -20,7 +20,7 @@ const Container: FC<ContainerProps> = ({
         variant === 'normal' && 'max-w-[1200px]',
         variant === 'large' && 'max-w-[1400px]',
         variant === 'fluid' && 'px-3 md:px-6 max-w-[2200px]',
-        variant === 'static' && 'px-4 md:px-4',
+        variant === 'static' && 'px-3 md:px-6',
         props.className
       )}
     >
