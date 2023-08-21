@@ -96,7 +96,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
       >
         <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-laptop-1_aip0nw.png"
-          steps={[300, 400]}
+          steps={[180, 250, 300, 450]}
         />
       </PanelItem>
       <PanelItem
@@ -105,7 +105,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
       >
         <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-laptop-2_ln921f.png"
-          steps={[300, 400]}
+          steps={[180, 250, 300, 450]}
         />
       </PanelItem>
       <PanelItem
@@ -114,7 +114,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
       >
         <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-iphone_rmlypq.png"
-          steps={[150, 200]}
+          steps={[180, 250, 300, 450]}
         />
       </PanelItem>
     </>

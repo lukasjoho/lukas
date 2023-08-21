@@ -132,7 +132,7 @@ const NavItem: FC<NavItemProps> = ({ children, href }) => {
   };
 
   return (
-    <motion.li onClick={handleClose} variants={menuitem}>
+    <motion.li onClick={handleClose} variants={menuitem} key={href}>
       <Link
         href={href}
         className={cn(

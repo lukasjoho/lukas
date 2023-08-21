@@ -7,13 +7,14 @@ const client = createClient({
 
 export const getAlbums = async () => {
   let query = `{
-        galleryCollection{
+        galleryCollection(order: order_DESC){
             items{
                 cover{
                     url
                 }
                 title
                 slug
+                order
             }
         }
     }`;

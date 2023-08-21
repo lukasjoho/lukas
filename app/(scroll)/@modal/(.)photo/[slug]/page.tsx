@@ -12,6 +12,8 @@ export async function generateStaticParams() {
   }));
 }
 
+export const revalidate = 3600;
+
 const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   const res = await getAlbum(params.slug);
   const album = res.data.galleryCollection.items[0];
