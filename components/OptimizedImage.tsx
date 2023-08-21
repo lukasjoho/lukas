@@ -3,12 +3,12 @@ import { getCloudinaryImage } from '@/lib/cloudinary';
 import { AdvancedImage, responsive } from '@cloudinary/react';
 import { FC } from 'react';
 
-interface CloudinaryImageProps {
+interface OptimizedImageProps {
   src: string;
   steps?: number[];
 }
 
-const CloudImage: FC<CloudinaryImageProps> = ({ src, steps }) => {
+const OptimizedImage: FC<OptimizedImageProps> = ({ src, steps }) => {
   return (
     <AdvancedImage
       height="100% !important"
@@ -16,8 +16,9 @@ const CloudImage: FC<CloudinaryImageProps> = ({ src, steps }) => {
       style={{ objectFit: 'cover', height: '100%' }}
       cldImg={getCloudinaryImage(src)}
       plugins={[responsive({ steps })]}
+      loading="lazy"
     />
   );
 };
 
-export default CloudImage;
+export default OptimizedImage;

@@ -1,11 +1,10 @@
 import { getCodeProject, getCodeProjects } from '@/lib/contentful';
 
-import CloudImage from '@/components/CloudinaryImage';
 import Container from '@/components/Container';
-import PageHeader from '@/components/PageHeader';
+import OptimizedImage from '@/components/OptimizedImage';
+import PageLayout from '@/components/PageLayout';
 import RichTextRenderer from '@/components/RichTextRenderer';
 import { ArrowUpRight } from 'lucide-react';
-import React, { FC } from 'react';
 
 export async function generateStaticParams() {
   const res = await getCodeProjects();
@@ -20,45 +19,37 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
   const codeProject = res.data.projectCollection.items[0];
   const { title, tagline, cover, content, url } = codeProject;
   return (
-    <div>
-      <PageHeader
-        title={title}
-        subtitle={tagline}
-        backlink={{ href: '/code', label: 'Back to all' }}
-        containerVariant="small"
-      />
+    <PageLayout
+      title={title}
+      subtitle={tagline}
+      backlink={{ href: '/code', label: 'Back to all' }}
+      containerVariant="small"
+    >
       <Container variant="small">
-        <div className="aspect-[3/2] relative overflow-hidden w-full">
-          <div className="absolute bottom-0">
-            <CloudImage src={cover.url} steps={[400, 650]} />
+        <div className="space-y-6 md:space-y-12">
+          <div className="flex flex-col gap-4">
+            <div className="aspect-[3/2] relative overflow-hidden w-full">
+              <div className="absolute bottom-0">
+                <OptimizedImage src={cover.url} steps={[400, 650]} />
+              </div>
+            </div>
+
+            {url && (
+              <a href={url} target="_blank" className="cursor-pointer w-full">
+                <button className="flex gap-1.5 w-full bg-dark text-white justify-center py-4">
+                  <ArrowUpRight />
+                  Visit
+                </button>
+              </a>
+            )}
           </div>
+          {content && (
+            <RichTextRenderer json={content.json} links={content.links} />
+          )}
         </div>
-        {url && (
-          <a href={url} target="_blank" className="cursor-pointer w-full">
-            <button className="flex gap-1.5 w-full bg-dark text-white justify-center py-4 mt-4">
-              <ArrowUpRight />
-              Visit
-            </button>
-          </a>
-        )}
-        {content && (
-          <RichTextRenderer
-            className="mt-16"
-            json={content.json}
-            links={content.links}
-          />
-        )}
       </Container>
-    </div>
+    </PageLayout>
   );
 };
 
 export default CodeProjectPage;
-
-interface ArticleLayoutProps {
-  children: React.ReactNode;
-}
-
-const ArticleLayout: FC<ArticleLayoutProps> = ({ children }) => {
-  return <div></div>;
-};

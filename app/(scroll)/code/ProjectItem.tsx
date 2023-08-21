@@ -1,4 +1,4 @@
-import CloudImage from '@/components/CloudinaryImage';
+import OptimizedImage from '@/components/OptimizedImage';
 import { Project } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ const ProjectItem: FC<ProjectItemProps> = ({ project }) => {
     <Link href={`/code/${slug}`}>
       <div className="relative aspect-[9/8] w-full pt-6 md:pt-8 pl-5 md:pl-6 rounded-xl overflow-hidden">
         <div className="w-full h-full absolute left-0 top-0">
-          <CloudImage src={cover.url} steps={[400, 500, 600, 700, 800]} />
+          <OptimizedImage src={cover.url} steps={[400, 500, 600, 700, 800]} />
         </div>
 
         <div className="relative z-10 font-meche">

@@ -1,8 +1,8 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { FC } from 'react';
-import CloudImage from './CloudinaryImage';
 import CodeHighlighter from './CodeHighlighter';
+import OptimizedImage from './OptimizedImage';
 
 interface RichTextRendererProps extends React.HTMLProps<HTMLDivElement> {
   json: any;
@@ -72,17 +72,27 @@ function renderOptions(links: any) {
         </a>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
-        <ul className="list-disc ml-4 mb-2 md:mb-4">{children}</ul>
+        <ul
+          className="list-disc ml-4 mb-2 md:mb-4 
+        list-inside p-0"
+        >
+          {children}
+        </ul>
       ),
       [BLOCKS.OL_LIST]: (node: any, children: any) => (
-        <ol className="list-decimal ml-4 mb-2 md:mb-4">{children}</ol>
+        <ol
+          className="list-decimal mb-2 md:mb-4 ml-6 md:ml-5
+        "
+        >
+          {children}
+        </ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: any) => <li>{children}</li>,
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         const asset = assetMap.get(node.data.target.sys.id);
         return (
           <div className="mb-2 md:mb-4">
-            <CloudImage
+            <OptimizedImage
               src={asset.url}
               steps={[400, 600, 700, 800, 900, 1000]}
             />

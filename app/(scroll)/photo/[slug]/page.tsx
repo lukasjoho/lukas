@@ -1,7 +1,7 @@
-import CloudImage from '@/components/CloudinaryImage';
 import Container from '@/components/Container';
 import MasonryLayout from '@/components/Masonry';
-import PageHeader from '@/components/PageHeader';
+import { default as OptimizedImage } from '@/components/OptimizedImage';
+import PageLayout from '@/components/PageLayout';
 import { BREAKPOINTS } from '@/lib/breakpoints';
 import { getAlbum, getAlbums } from '@/lib/contentful';
 
@@ -13,8 +13,6 @@ export async function generateStaticParams() {
   }));
 }
 
-export const revalidate = 0;
-
 const AlbumPage = async ({ params }: { params: { slug: string } }) => {
   const res = await getAlbum(params.slug);
   const album = res.data.galleryCollection.items[0];
@@ -25,15 +23,14 @@ const AlbumPage = async ({ params }: { params: { slug: string } }) => {
   };
 
   return (
-    <>
-      <PageHeader
-        title={album.title}
-        backlink={{ href: '/photo', label: 'Back to all' }}
-      />
+    <PageLayout
+      title={album.title}
+      backlink={{ href: '/photo', label: 'Back to all' }}
+    >
       <Container variant="normal">
         <MasonryLayout breakpoints={breakpoints}>
           <div>
-            <CloudImage
+            <OptimizedImage
               src={album.cover.url}
               steps={[400, 500, 600, 800, 1000]}
             />
@@ -41,12 +38,12 @@ const AlbumPage = async ({ params }: { params: { slug: string } }) => {
 
           {album.imagesCollection.items.map((image: any, idx: number) => (
             <div key={idx}>
-              <CloudImage src={image.url} steps={[400, 500, 600]} />
+              <OptimizedImage src={image.url} steps={[400, 500, 600]} />
             </div>
           ))}
         </MasonryLayout>
       </Container>
-    </>
+    </PageLayout>
   );
 };
 

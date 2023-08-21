@@ -1,6 +1,7 @@
+import { formatDate } from '@/lib/helper';
 import { BlogPost } from '@/lib/types';
 import Link from 'next/link';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 interface BlogPostItemProps {
   blogpost: BlogPost;
@@ -8,7 +9,7 @@ interface BlogPostItemProps {
 }
 
 const BlogPostItem: FC<BlogPostItemProps> = ({ blogpost, rotation }) => {
-  const { title, slug } = blogpost;
+  const { title, slug, date } = blogpost;
   return (
     <Link href={`/blog/${slug}`}>
       <div
@@ -19,7 +20,9 @@ const BlogPostItem: FC<BlogPostItemProps> = ({ blogpost, rotation }) => {
           <div>
             <div className="w-full flex justify-end px-2 py-1">
               <span className="text-[#999999] text-xs mr-1">Date</span>
-              <span className="font-fingerpaint text-xs">09/23</span>
+              <span className="font-fingerpaint text-xs">
+                {formatDate(date)}
+              </span>
             </div>
             <Line />
           </div>

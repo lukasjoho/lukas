@@ -1,7 +1,7 @@
 import { getBlogpost, getBlogposts } from '@/lib/contentful';
 
 import Container from '@/components/Container';
-import PageHeader from '@/components/PageHeader';
+import PageLayout from '@/components/PageLayout';
 import RichTextRenderer from '@/components/RichTextRenderer';
 import { notFound } from 'next/navigation';
 
@@ -21,13 +21,12 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   }
   const { title, tagline, date, content } = blogpost;
   return (
-    <div>
-      <PageHeader
-        title={title}
-        subtitle={tagline}
-        backlink={{ href: '/blog', label: 'Back to all' }}
-        containerVariant="small"
-      />
+    <PageLayout
+      title={title}
+      backlink={{ href: '/blog', label: 'Back to all' }}
+      subtitle={tagline}
+      containerVariant="small"
+    >
       <Container variant="small">
         {content && (
           <div className="relative w-full overflow-hidden">
@@ -35,7 +34,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
           </div>
         )}
       </Container>
-    </div>
+    </PageLayout>
   );
 };
 

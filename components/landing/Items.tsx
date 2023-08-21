@@ -1,4 +1,5 @@
-import CloudImage from '../CloudinaryImage';
+import { getBlogposts } from '@/lib/contentful';
+import OptimizedImage from '../OptimizedImage';
 import { BlogNote } from './BlogNote';
 import { PanelItem } from './PanelItem';
 import { Polaroid } from './Polaroid';
@@ -54,26 +55,29 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
   );
 };
 
-export const BlogItems = ({ idx }: PanelItemsProps) => {
+export const BlogItems = async ({ idx }: PanelItemsProps) => {
+  const res = await getBlogposts();
+  let blogPosts = [];
+  blogPosts = res.data?.blogPostCollection.items;
   return (
     <>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] translate-x-[45%] -rotate-[5deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:translate-x-[55%] group-hover:rotate-[-10deg]"
       >
-        <BlogNote title="Product Analytics 101" />
+        <BlogNote title={blogPosts[0].title || 'Product Analytics 101'} />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] translate-x-[0%] -rotate-[3deg] -translate-y-[30%] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg]"
       >
-        <BlogNote title="The Experimentation Pyramid" />
+        <BlogNote title={blogPosts[1].title || 'The Experimentation Pyramid'} />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] -translate-x-[45%] rotate-[10deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:-translate-x-[55%] group-hover:rotate-[20deg]"
       >
-        <BlogNote title="Product Engineering" />
+        <BlogNote title={blogPosts[2].title || 'Product Engineering'} />
       </PanelItem>
     </>
   );
@@ -90,7 +94,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
         className="w-1/2 translate-x-1/3 rotate-[10deg] translate-y-[15%] group-hover:translate-y-[0%] group-hover:translate-x-[45%] group-hover:rotate-[20deg]"
         idx={idx}
       >
-        <CloudImage
+        <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-laptop-1_aip0nw.png"
           steps={[300, 400]}
         />
@@ -99,7 +103,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
         className="w-1/2 -translate-x-1/3 -rotate-[7deg] translate-y-[20%] group-hover:translate-y-[0%] group-hover:rotate-[-14deg] group-hover:translate-x-[-45%]"
         idx={idx}
       >
-        <CloudImage
+        <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-laptop-2_ln921f.png"
           steps={[300, 400]}
         />
@@ -108,7 +112,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
         className="w-1/6 -rotate-[4deg] translate-y-[10%] group-hover:translate-y-[-10%] group-hover:rotate-[-8deg]"
         idx={idx}
       >
-        <CloudImage
+        <OptimizedImage
           src="https://res.cloudinary.com/dum2lqmke/image/upload/v1691792149/landing-code-iphone_rmlypq.png"
           steps={[150, 200]}
         />

@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { cn, isServer } from '@/lib/utils';
+import { Variants, motion } from 'framer-motion';
 import { FC } from 'react';
 
 interface PanelItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -9,16 +9,32 @@ interface PanelItemProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const PanelItem: FC<PanelItemProps> = ({ children, className, idx }) => {
+  let panelItemVariants: Variants = {
+    hidden: {
+      transform: 'translateY(100%)',
+    },
+    visible: {
+      transform: 'translateY(0%)',
+    },
+  };
+  // const [shouldAnimate, setShouldAnimate] = useState<null | string>();
+  const isLoaded = isServer() ? true : sessionStorage.getItem('isLoaded');
+  if (isLoaded === 'true') {
+    panelItemVariants = {};
+  }
+  // useEffect(() => {
+  //   let isLoaded = sessionStorage.getItem('isLoaded');
+  //   setShouldAnimate(isLoaded);
+  // });
   return (
     <div className={cn('absolute bottom-0 transition duration-300', className)}>
       <motion.div
-        initial={{ transform: 'translateY(100%)' }}
-        animate={{ transform: 'translateY(0%)' }}
+        variants={panelItemVariants}
+        initial="hidden"
+        animate="visible"
         transition={{
           delay: 0.0 + 0.1 * idx,
           type: 'spring',
-          // stiffness: 20,
-          // damping: 15,
         }}
         whileHover="hover"
       >

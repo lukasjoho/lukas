@@ -8,7 +8,7 @@ interface BackLinkProps {
   label: string;
 }
 
-interface PageHeaderProps {
+export interface PageHeaderProps {
   title: string;
   subtitle?: string;
   backlink: BackLinkProps;
@@ -29,14 +29,11 @@ const PageHeader: FC<PageHeaderProps> = ({
   containerVariant,
 }) => {
   return (
-    <Container
-      className="space-y-2 md:space-y-4 mb-8 md:mb-16"
-      variant={containerVariant}
-    >
+    <Container className="space-y-2 md:space-y-4" variant={containerVariant}>
       <BackLink href={backlink.href} label={backlink.label} />
-      <div className="space-y-1 md:space-y-2">
+      <div className="md:space-y-1">
         <PageTitle>{title}</PageTitle>
-        {subtitle && <h2 className="text-muted text-xl">{subtitle}</h2>}
+        {subtitle && <h2 className="text-muted text-base">{subtitle}</h2>}
       </div>
     </Container>
   );

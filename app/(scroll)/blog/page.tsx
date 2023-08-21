@@ -1,5 +1,5 @@
 import Container from '@/components/Container';
-import PageHeader from '@/components/PageHeader';
+import PageLayout from '@/components/PageLayout';
 import { getBlogposts } from '@/lib/contentful';
 import { BlogPost } from '@/lib/types';
 import BlogPostItem from './BlogPostItem';
@@ -9,12 +9,11 @@ const BlogPage = async () => {
   let blogPosts = [];
   blogPosts = res.data?.blogPostCollection.items;
   return (
-    <div>
-      <PageHeader
-        title="I prefer building over writing. The rare occurences of writing however
+    <PageLayout
+      title="I prefer building over writing. The rare occurences of writing however
         are to be found here."
-        backlink={{ href: '/', label: 'Back to home' }}
-      />
+      backlink={{ href: '/', label: 'Back to home' }}
+    >
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           {blogPosts.map((blogpost: BlogPost, idx: number) => {
@@ -29,7 +28,7 @@ const BlogPage = async () => {
           })}
         </div>
       </Container>
-    </div>
+    </PageLayout>
   );
 };
 

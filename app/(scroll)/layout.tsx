@@ -10,8 +10,9 @@ const ScrollLayout = ({
 }) => {
   return (
     <>
-      <div className="grow pb-32 md:pb-64">{children}</div>
+      <div className="grow pb-16 md:pb-32">{children}</div>
       <ModalProvider>{modal}</ModalProvider>
+
       <Footer />
     </>
   );

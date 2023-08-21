@@ -14,12 +14,12 @@ const Container: FC<ContainerProps> = ({
   return (
     <div
       className={cn(
-        'w-full flex flex-col items-start mx-auto px-4 md:px-8 max-w-[2200px]',
+        'w-full flex flex-col mx-auto px-3 md:px-6 max-w-[2200px]',
         variant === 'small' && 'max-w-[720px]',
         variant === 'medium' && 'max-w-[900px]',
         variant === 'normal' && 'max-w-[1200px]',
         variant === 'large' && 'max-w-[1400px]',
-        variant === 'fluid' && 'px-4 md:px-4 max-w-[2200px]',
+        variant === 'fluid' && 'px-3 md:px-6 max-w-[2200px]',
         variant === 'static' && 'px-4 md:px-4',
         props.className
       )}

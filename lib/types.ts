@@ -24,4 +24,5 @@ export type Video = {
 export type BlogPost = {
   title: string;
   slug: string;
+  date: string;
 };

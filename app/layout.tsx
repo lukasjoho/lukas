@@ -1,3 +1,4 @@
+import AfterHydrationHandler from '@/components/AfterHydrationHandler';
 import Header from '@/components/Header';
 import type { Metadata } from 'next';
 import { Finger_Paint, Inter } from 'next/font/google';
@@ -54,6 +55,7 @@ export default function RootLayout({
           className="flex flex-col items-stretch justify-start"
           style={{ height: '100dvh' }}
         >
+          <AfterHydrationHandler />
           <div className="relative z-40">
             <Header />
           </div>

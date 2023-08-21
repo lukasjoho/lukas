@@ -53,6 +53,34 @@ const fetchContentfulData = async (query: string) => {
   return data;
 };
 
+export const getAboutText = async () => {
+  let query = `{
+        aboutTextCollection(limit: 1){
+            items{
+              title
+              content{
+                json
+                links{
+                  assets {
+                    block {
+                      sys {
+                        id
+                      }
+                      url
+                      title
+                      width
+                      height
+                      description
+                    }
+                  }
+                }
+              }
+            }
+        }
+    }`;
+  return fetchContentfulData(query);
+};
+
 export const getCodeProjects = async () => {
   let query = `{
         projectCollection{
