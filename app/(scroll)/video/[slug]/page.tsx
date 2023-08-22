@@ -1,5 +1,5 @@
 import Container from '@/components/Container';
-import PageHeader from '@/components/PageHeader';
+import PageLayout from '@/components/PageLayout';
 import VideoPlayer from '@/components/VideoPlayer';
 import { getCloudinaryImage } from '@/lib/cloudinary';
 import { getVideo, getVideos } from '@/lib/contentful';
@@ -18,22 +18,23 @@ const VideoPage = async ({ params }: { params: { slug: string } }) => {
   const video = res.data.videoCollection.items[0];
 
   return (
-    <div>
-      <PageHeader
-        title={video.title}
-        backlink={{ href: '/video', label: 'Back to all' }}
-        containerVariant="medium"
-      />
+    <PageLayout
+      title={video.title}
+      backlink={{ href: '/video', label: 'Back to all' }}
+      containerVariant="medium"
+    >
       <Container variant="medium" className="items-center">
         <VideoPlayer
-          src={video.file?.url}
+          ar={video.aspectRatio}
           videoId={video.videoId}
+          src={video.file?.url}
+          video={video}
           poster={getCloudinaryImage(video.cover.url)
             .addTransformation(`ar_${formatRatio(video.aspectRatio)},c_crop`)
             .toURL()}
         />
       </Container>
-    </div>
+    </PageLayout>
   );
 };
 
