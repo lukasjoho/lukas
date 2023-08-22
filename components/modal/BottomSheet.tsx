@@ -45,7 +45,9 @@ export const BottomSheet: FC<BottomSheetProps> = ({
           className="group cursor-pointer z-10"
         />
       </div>
-      <div className="overflow-scroll grow">{children}</div>
+      <div className="overflow-scroll grow flex flex-col items-center py-16">
+        {children}
+      </div>
     </motion.div>
   );
 };

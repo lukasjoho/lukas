@@ -26,7 +26,8 @@ const VideoPage = async ({ params }: { params: { slug: string } }) => {
       />
       <Container variant="medium" className="items-center">
         <VideoPlayer
-          src={video.file.url}
+          src={video.file?.url}
+          videoId={video.videoId}
           poster={getCloudinaryImage(video.cover.url)
             .addTransformation(`ar_${formatRatio(video.aspectRatio)},c_crop`)
             .toURL()}

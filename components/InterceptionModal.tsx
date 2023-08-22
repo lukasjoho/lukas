@@ -1,4 +1,5 @@
 'use client';
+import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import React, {
@@ -78,7 +79,12 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
     <>
       <AnimatePresence>
         {show && (
-          <div className="fixed top-0 left-0 w-screen h-screen z-50 overflow-scroll">
+          <div
+            className={cn(
+              'fixed top-0 left-0 w-screen h-screen z-50 overflow-scroll flex items-start py-16',
+              isCenter && 'py-0 items-center'
+            )}
+          >
             <motion.div
               ref={overlay}
               className="fixed w-full h-full top-0 left-0 bg-dark/95 backdrop-blur-sm"
@@ -94,17 +100,15 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
                 {children}
               </BottomSheet>
             </div>
-            <div className="hidden md:block">
-              <CenterModal
-                title={title}
-                x={x}
-                handleClick={handleClick}
-                dialogRef={dialog}
-                isCenter={isCenter}
-              >
-                {children}
-              </CenterModal>
-            </div>
+            <CenterModal
+              title={title}
+              x={x}
+              handleClick={handleClick}
+              dialogRef={dialog}
+              isCenter={isCenter}
+            >
+              {children}
+            </CenterModal>
           </div>
         )}
       </AnimatePresence>

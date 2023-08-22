@@ -4,7 +4,7 @@ import { AnimatePresence, Variants, motion } from 'framer-motion';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React, { FC, useContext, useEffect, useRef } from 'react';
+import React, { FC, useCallback, useContext, useEffect, useRef } from 'react';
 import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
 import animationDataWhite from '../public/assets/animation_round_ffffff.json';
 import { MenuContext } from './Header';
@@ -19,6 +19,35 @@ const Menu = () => {
       setIsOpen(false);
     }
   };
+
+  const onDismiss = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onDismiss();
+      }
+    },
+    [onDismiss]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onKeyDown]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const firstUpdate = useRef(true);
   useEffect(() => {

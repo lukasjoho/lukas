@@ -1,24 +1,53 @@
 'use client';
+import { formatRatio } from '@/lib/formatRatio';
+import { cn } from '@/lib/utils';
 import React, { FC, useEffect, useRef } from 'react';
+import OptimizedImage from './OptimizedImage';
 
 interface VideoPlayerProps {
-  src: string;
+  src?: string;
+  videoId?: string;
   poster?: string;
+  ar?: string;
+  video: any;
 }
 
-const VideoPlayer: FC<VideoPlayerProps> = ({ src, poster }) => {
+const VideoPlayer: FC<VideoPlayerProps> = ({
+  src,
+  videoId,
+  poster,
+  ar,
+  video,
+}) => {
   const ref: React.RefObject<HTMLVideoElement> = useRef(null);
+  const arDiv = formatRatio(ar);
   useEffect(() => {
     // ref.current?.play();
   }, []);
   return (
-    <video
-      src={src}
-      controls={true}
-      poster={poster}
-      className="max-h-[500px] lg:max-h-[600px] xl:max-h-[800px]"
-      ref={ref}
-    />
+    <>
+      {src && (
+        <video
+          src={src}
+          controls={true}
+          poster={poster}
+          className={cn(``, arDiv > 1 ? 'w-full' : 'h-[400px] md:h-[600px]')}
+          style={{
+            objectFit: 'cover',
+          }}
+          ref={ref}
+        />
+      )}
+      {videoId && (
+        <div className={cn(`relative aspect-[16/9] w-full overflow-hidden`)}>
+          <OptimizedImage src={video.cover.url} />
+          <iframe
+            className="absolute w-full h-full left-0 top-0"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

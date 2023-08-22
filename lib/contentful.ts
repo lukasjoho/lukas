@@ -180,6 +180,7 @@ export const getVideo = async (slug: string) => {
                 file{
                   url
                 }
+                videoId
                 slug
                 aspectRatio
             }

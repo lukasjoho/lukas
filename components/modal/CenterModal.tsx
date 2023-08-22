@@ -29,7 +29,7 @@ const CenterModal: FC<CenterModalProps> = ({
     },
   };
   return (
-    <Container variant="normal">
+    <Container variant="normal" className="hidden md:block">
       <motion.div
         ref={dialogRef}
         variants={variants}
@@ -38,7 +38,7 @@ const CenterModal: FC<CenterModalProps> = ({
         exit="hidden"
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         key={'hellokey'}
-        className="relative z-10 pt-16 pb-16 cursor-default"
+        className="relative z-10 cursor-default w-full flex justify-center"
       >
         {children}
       </motion.div>
