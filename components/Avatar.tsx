@@ -34,15 +34,15 @@ const Avatar = () => {
       }}
       className="bg-lightgrey w-[120px] md:w-[200px] rounded-full border-[8px] md:border-[16px] border-white aspect-square overflow-hidden group"
     >
-      <div className="transition duration-300 hover:scale-110">
-        <div className="group-hover:hidden">
+      <div className="transition duration-300 hover:scale-110 relative w-full h-full">
+        <div className="absolute left-0 top-0 w-full h-full opacity-100 group-hover:opacity-0">
           <OptimizedImage
             src={
               'https://res.cloudinary.com/dum2lqmke/image/upload/v1691759882/landing-photo-lukas_ka01ye.jpg'
             }
           />
         </div>
-        <div className="hidden group-hover:block">
+        <div className="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-100">
           <OptimizedImage
             src={
               'https://res.cloudinary.com/dum2lqmke/image/upload/v1692289993/landing-photo-lukas-dark_xaqgzy.jpg'

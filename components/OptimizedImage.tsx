@@ -1,6 +1,11 @@
 'use client';
 import { getCloudinaryImage } from '@/lib/cloudinary';
-import { AdvancedImage, responsive } from '@cloudinary/react';
+import {
+  AdvancedImage,
+  lazyload,
+  placeholder,
+  responsive,
+} from '@cloudinary/react';
 import { FC } from 'react';
 
 interface OptimizedImageProps {
@@ -11,12 +16,11 @@ interface OptimizedImageProps {
 const OptimizedImage: FC<OptimizedImageProps> = ({ src, steps }) => {
   return (
     <AdvancedImage
-      height="100% !important"
       width="100%"
-      style={{ objectFit: 'cover', height: '100%' }}
+      height="100%"
+      style={{ objectFit: 'cover' }}
       cldImg={getCloudinaryImage(src)}
-      plugins={[responsive({ steps })]}
-      loading="lazy"
+      plugins={[lazyload(), responsive({ steps }), placeholder()]}
     />
   );
 };
