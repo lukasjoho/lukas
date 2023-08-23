@@ -1,8 +1,8 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { FC, useContext } from 'react';
-import { MenuContext } from '../Header';
-import { Icons } from '../Icons';
+import { MenuContext } from '../layout/Header';
+import { Icons } from './Icons';
 
 export const SocialIcons = () => {
   return (

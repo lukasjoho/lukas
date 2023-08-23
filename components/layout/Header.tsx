@@ -2,10 +2,10 @@
 import { createContext, useState } from 'react';
 
 import Link from 'next/link';
+import { Icons } from '../shared/Icons';
+import { SocialIcons } from '../shared/SocialIcons';
 import Container from './Container';
-import { Icons } from './Icons';
 import Menu from './Menu';
-import { SocialIcons } from './general/SocialIcons';
 
 export const MenuContext = createContext({
   isOpen: false,

@@ -1,9 +1,9 @@
 import { getCodeProject, getCodeProjects } from '@/lib/contentful';
 
-import Container from '@/components/Container';
-import OptimizedImage from '@/components/OptimizedImage';
-import PageLayout from '@/components/PageLayout';
-import RichTextRenderer from '@/components/RichTextRenderer';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
+import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { ArrowUpRight } from 'lucide-react';
 
 export async function generateStaticParams() {

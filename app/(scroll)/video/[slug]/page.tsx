@@ -1,6 +1,6 @@
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
-import VideoPlayer from '@/components/VideoPlayer';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
+import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
 import { getCloudinaryImage } from '@/lib/cloudinary';
 import { getVideo, getVideos } from '@/lib/contentful';
 import { formatRatio } from '@/lib/formatRatio';

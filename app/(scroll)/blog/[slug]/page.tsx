@@ -1,8 +1,8 @@
 import { getBlogpost, getBlogposts } from '@/lib/contentful';
 
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
-import RichTextRenderer from '@/components/RichTextRenderer';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
+import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {

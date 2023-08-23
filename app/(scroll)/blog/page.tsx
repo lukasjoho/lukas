@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
 import { getBlogposts } from '@/lib/contentful';
 import { BlogPost } from '@/lib/types';
 import BlogPostItem from './BlogPostItem';

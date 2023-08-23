@@ -1,5 +1,5 @@
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { getBlogposts } from '@/lib/contentful';
-import OptimizedImage from '../OptimizedImage';
 import { BlogNote } from './BlogNote';
 import { PanelItem } from './PanelItem';
 import { Polaroid } from './Polaroid';

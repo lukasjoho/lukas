@@ -1,7 +1,7 @@
 'use client';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { isServer } from '@/lib/utils';
 import { Variants, motion } from 'framer-motion';
-import OptimizedImage from './OptimizedImage';
 
 const Avatar = () => {
   let avatarVariants: Variants = {

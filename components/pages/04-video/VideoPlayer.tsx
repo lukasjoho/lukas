@@ -1,8 +1,7 @@
-'use client';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { formatRatio } from '@/lib/formatRatio';
 import { cn } from '@/lib/utils';
-import React, { FC, useEffect, useRef } from 'react';
-import OptimizedImage from './OptimizedImage';
+import { FC } from 'react';
 
 interface VideoPlayerProps {
   src?: string;
@@ -19,11 +18,11 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   ar,
   video,
 }) => {
-  const ref: React.RefObject<HTMLVideoElement> = useRef(null);
+  // const ref: React.RefObject<HTMLVideoElement> = useRef(null);
   const arDiv = formatRatio(ar);
-  useEffect(() => {
-    // ref.current?.play();
-  }, []);
+  // useEffect(() => {
+  //   // ref.current?.play();
+  // }, []);
   return (
     <>
       {src && (
@@ -31,15 +30,22 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
           src={src}
           controls={true}
           poster={poster}
-          className={cn(``, arDiv > 1 ? 'w-full' : 'h-[400px] md:h-[600px]')}
+          className={cn(
+            `pointer-events-auto`,
+            arDiv > 1 ? 'w-full' : 'h-[400px] md:h-[600px]'
+          )}
           style={{
             objectFit: 'cover',
           }}
-          ref={ref}
+          // ref={ref}
         />
       )}
       {videoId && (
-        <div className={cn(`relative aspect-[16/9] w-full overflow-hidden`)}>
+        <div
+          className={cn(
+            `pointer-events-auto relative aspect-[16/9] w-full overflow-hidden`
+          )}
+        >
           <OptimizedImage src={video.cover.url} />
           <iframe
             className="absolute w-full h-full left-0 top-0"

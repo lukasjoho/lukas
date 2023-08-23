@@ -10,8 +10,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { BottomSheet } from './modal/BottomSheet';
-import CenterModal from './modal/CenterModal';
+import { BottomSheet } from './BottomSheet';
+import CenterModal from './CenterModal';
 
 interface InterceptionModalProps {
   children: React.ReactNode;

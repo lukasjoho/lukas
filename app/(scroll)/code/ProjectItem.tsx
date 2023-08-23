@@ -1,4 +1,4 @@
-import OptimizedImage from '@/components/OptimizedImage';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { Project } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';

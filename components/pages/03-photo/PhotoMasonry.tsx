@@ -1,8 +1,8 @@
+import ItemOverlay from '@/components/shared/ItemOverlay';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { getAlbums } from '@/lib/contentful';
 import Link from 'next/link';
-import ItemOverlay from './ItemOverlay';
 import MasonryLayout from './Masonry';
-import OptimizedImage from './OptimizedImage';
 
 const PhotoMasonry = async () => {
   const albums = await getAlbums();

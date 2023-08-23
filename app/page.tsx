@@ -1,12 +1,12 @@
-import Avatar from '@/components/Avatar';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
+import Avatar from '@/components/pages/01-landing/Avatar';
 import {
   BlogItems,
   CodeItems,
   PhotoItems,
   VideoItems,
-} from '@/components/landing/Items';
-import Panel from '@/components/landing/Panel';
+} from '@/components/pages/01-landing/Items';
+import Panel from '@/components/pages/01-landing/Panel';
 import Link from 'next/link';
 
 export default function Home() {

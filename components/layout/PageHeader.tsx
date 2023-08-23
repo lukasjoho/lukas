@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import BackLink from './BackLink';
 import Container from './Container';
-import PageTitle from './PageTitle';
 
 interface BackLinkProps {
   href: string;
@@ -32,7 +31,9 @@ const PageHeader: FC<PageHeaderProps> = ({
     <Container className="space-y-2 md:space-y-4" variant={containerVariant}>
       <BackLink href={backlink.href} label={backlink.label} />
       <div className="md:space-y-1">
-        <PageTitle>{title}</PageTitle>
+        <h1 className="text-dark text-3xl md:text-4xl xl:max-w-[70%] font-meche">
+          {title}
+        </h1>
         {subtitle && <h2 className="text-muted text-base">{subtitle}</h2>}
       </div>
     </Container>

@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer';
-import ModalProvider from '@/components/ModalProvider';
+import Footer from '@/components/layout/Footer';
+import ModalProvider from '@/components/modal/ModalProvider';
 
 const ScrollLayout = ({
   children,
@@ -12,7 +12,6 @@ const ScrollLayout = ({
     <>
       <div className="grow pb-16 md:pb-32">{children}</div>
       <ModalProvider>{modal}</ModalProvider>
-
       <Footer />
     </>
   );

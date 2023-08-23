@@ -1,5 +1,5 @@
-import ItemOverlay from '@/components/ItemOverlay';
-import OptimizedImage from '@/components/OptimizedImage';
+import ItemOverlay from '@/components/shared/ItemOverlay';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { Video } from '@/lib/types';
 import Link from 'next/link';
 import { FC } from 'react';

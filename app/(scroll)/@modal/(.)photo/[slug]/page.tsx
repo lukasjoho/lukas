@@ -1,6 +1,6 @@
-import InterceptionModal from '@/components/InterceptionModal';
-import MasonryLayout from '@/components/Masonry';
-import OptimizedImage from '@/components/OptimizedImage';
+import InterceptionModal from '@/components/modal/InterceptionModal';
+import MasonryLayout from '@/components/pages/03-photo/Masonry';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import { BREAKPOINTS } from '@/lib/breakpoints';
 import { getAlbum, getAlbums } from '@/lib/contentful';
 

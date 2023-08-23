@@ -1,6 +1,6 @@
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
-import PhotoMasonry from '@/components/PhotoMasonry';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
+import PhotoMasonry from '@/components/pages/03-photo/PhotoMasonry';
 
 const PhotosPage = () => {
   return (

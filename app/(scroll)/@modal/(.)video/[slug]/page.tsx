@@ -1,5 +1,5 @@
-import InterceptionModal from '@/components/InterceptionModal';
-import VideoPlayer from '@/components/VideoPlayer';
+import InterceptionModal from '@/components/modal/InterceptionModal';
+import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
 import { getCloudinaryImage } from '@/lib/cloudinary';
 import { getVideo } from '@/lib/contentful';
 import { formatRatio } from '@/lib/formatRatio';

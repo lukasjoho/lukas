@@ -1,5 +1,5 @@
-import AfterHydrationHandler from '@/components/AfterHydrationHandler';
-import Header from '@/components/Header';
+import Header from '@/components/layout/Header';
+import AfterHydrationHandler from '@/components/shared/AfterHydrationHandler';
 import type { Metadata } from 'next';
 import { Finger_Paint, Inter } from 'next/font/google';
 import localFont from 'next/font/local';

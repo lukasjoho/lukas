@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
 import { getVideos } from '@/lib/contentful';
 import { Video } from '@/lib/types';
 import VideoItem from './VideoItem';

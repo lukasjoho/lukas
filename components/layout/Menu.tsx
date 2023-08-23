@@ -5,8 +5,8 @@ import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { FC, useCallback, useContext, useEffect, useRef } from 'react';
-import animationDataDark from '../public/assets/animation_round_1e1e1e.json';
-import animationDataWhite from '../public/assets/animation_round_ffffff.json';
+import animationDataDark from '../../public/assets/animation_round_1e1e1e.json';
+import animationDataWhite from '../../public/assets/animation_round_ffffff.json';
 import { MenuContext } from './Header';
 
 const Menu = () => {

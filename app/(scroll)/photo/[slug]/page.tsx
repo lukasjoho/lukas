@@ -1,7 +1,7 @@
-import Container from '@/components/Container';
-import MasonryLayout from '@/components/Masonry';
-import { default as OptimizedImage } from '@/components/OptimizedImage';
-import PageLayout from '@/components/PageLayout';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
+import MasonryLayout from '@/components/pages/03-photo/Masonry';
+import { default as OptimizedImage } from '@/components/shared/OptimizedImage';
 import { BREAKPOINTS } from '@/lib/breakpoints';
 import { getAlbum, getAlbums } from '@/lib/contentful';
 

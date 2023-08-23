@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
-import Container from '../Container';
+import Container from '../layout/Container';
 
 interface CenterModalProps {
   title: string | undefined;
@@ -38,7 +38,7 @@ const CenterModal: FC<CenterModalProps> = ({
         exit="hidden"
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         key={'hellokey'}
-        className="relative z-10 cursor-default w-full flex justify-center"
+        className="relative z-10 cursor-default w-full flex justify-center pointer-events-none"
       >
         {children}
       </motion.div>

@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import PageLayout from '@/components/PageLayout';
+import Container from '@/components/layout/Container';
+import PageLayout from '@/components/layout/PageLayout';
 import { getCodeProjects } from '@/lib/contentful';
 import { Project } from '@/lib/types';
 import ProjectItem from './ProjectItem';

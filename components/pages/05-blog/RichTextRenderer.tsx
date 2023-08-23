@@ -1,8 +1,8 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { FC } from 'react';
+import OptimizedImage from '../../shared/OptimizedImage';
 import CodeHighlighter from './CodeHighlighter';
-import OptimizedImage from './OptimizedImage';
 
 interface RichTextRendererProps extends React.HTMLProps<HTMLDivElement> {
   json: any;

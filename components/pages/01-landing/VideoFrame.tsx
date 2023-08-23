@@ -1,4 +1,4 @@
-import OptimizedImage from '../OptimizedImage';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 
 export const VideoFrame = ({ imageUrl }: any) => {
   return (
