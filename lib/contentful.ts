@@ -85,7 +85,7 @@ export const getAboutText = async () => {
 
 export const getCodeProjects = async () => {
   let query = `{
-        projectCollection{
+        projectCollection(order: order_DESC){
             items{
                 cover{
                     url
@@ -140,7 +140,7 @@ export const getCodeProject = async (slug: string) => {
 
 export const getVideos = async () => {
   let query = `{
-        videoCollection{
+        videoCollection(order: order_DESC){
             items{
                 cover{
                     url
