@@ -38,7 +38,7 @@ const mechepro = localFont({
 export const metadata: Metadata = {
   title: 'Lukas Hoppe',
   description:
-    "Hey, it's Lukas. Nice to meet you. I like building digital products and this website is the place where I share all my creations. Have fun exploring them.",
+    'Hey, I am Lukas. Nice to meet you. I build products and software. Have fun exploring.',
 };
 
 export default function RootLayout({
