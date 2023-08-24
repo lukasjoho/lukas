@@ -1,5 +1,5 @@
 import OptimizedImage from '@/components/shared/OptimizedImage';
-import { formatRatio } from '@/lib/formatRatio';
+import { formatRatio } from '@/lib/helpers';
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 

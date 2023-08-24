@@ -1,5 +1,5 @@
 'use client';
-import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getCloudinaryImage } from '@/lib/clients/cloudinary';
 import { AdvancedImage, responsive } from '@cloudinary/react';
 import { FC } from 'react';
 

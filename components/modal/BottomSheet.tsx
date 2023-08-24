@@ -1,5 +1,5 @@
 'use client';
-import { easeInOutCubic } from '@/lib/easing';
+import { easeInOutCubic } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import CloseModalButton from './CloseModalButton';

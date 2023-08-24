@@ -7,3 +7,14 @@ export const formatDate = (inputDate: string) => {
   const year = date.getFullYear().toString().slice(2);
   return `${month}/${year}`;
 };
+
+export const formatRatio = (fractionString: string | undefined) => {
+  if (!fractionString) {
+    return 16 / 9;
+  }
+  const [numerator, denominator] = fractionString.split('/');
+
+  const decimalValue = parseInt(numerator) / parseInt(denominator);
+
+  return decimalValue;
+};

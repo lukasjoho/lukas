@@ -1,4 +1,4 @@
-import { formatDate } from '@/lib/helper';
+import { formatDate } from '@/lib/helpers';
 import { BlogPost } from '@/lib/types';
 import Link from 'next/link';
 import { FC } from 'react';

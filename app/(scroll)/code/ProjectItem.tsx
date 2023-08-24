@@ -1,11 +1,11 @@
 import OptimizedImage from '@/components/shared/OptimizedImage';
-import { Project } from '@/lib/types';
+import { CodeProject } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { FC } from 'react';
 
 interface ProjectItemProps {
-  project: Project;
+  project: CodeProject;
 }
 
 const ProjectItem: FC<ProjectItemProps> = ({ project }) => {

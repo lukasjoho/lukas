@@ -1,9 +1,9 @@
 import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
-import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getCloudinaryImage } from '@/lib/clients/cloudinary';
 import { getVideo, getVideos } from '@/lib/contentful';
-import { formatRatio } from '@/lib/formatRatio';
+import { formatRatio } from '@/lib/helpers';
 
 export async function generateStaticParams() {
   const res = await getVideos();

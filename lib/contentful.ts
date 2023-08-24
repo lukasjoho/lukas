@@ -5,6 +5,22 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
 });
 
+const fetchContentfulData = async (query: string): Promise<any> => {
+  const res: any = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query }),
+    }
+  );
+  const data = res.json();
+  return data;
+};
+
 export const getAlbums = async () => {
   let query = `{
         galleryCollection(order: order_DESC){
@@ -31,27 +47,15 @@ export const getAlbum = async (slug: string) => {
         }
         title
         slug
-        imagesCollection{items{url}}
+        imagesCollection{
+          items{
+            url
+          }
+        }
       }
     }
   }`;
   return fetchContentfulData(query);
-};
-
-const fetchContentfulData = async (query: string): Promise<any> => {
-  const res: any = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query }),
-    }
-  );
-  const data = res.json();
-  return data;
 };
 
 export const getAboutText = async () => {

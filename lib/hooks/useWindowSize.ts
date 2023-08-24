@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from 'react';
-import { isServer } from './utils';
+import { isServer } from '../utils';
 
 interface WindowSize {
   width: number | undefined;

@@ -1,8 +1,8 @@
 import InterceptionModal from '@/components/modal/InterceptionModal';
 import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
-import { getCloudinaryImage } from '@/lib/cloudinary';
+import { getCloudinaryImage } from '@/lib/clients/cloudinary';
 import { getVideo } from '@/lib/contentful';
-import { formatRatio } from '@/lib/formatRatio';
+import { formatRatio } from '@/lib/helpers';
 
 const VideoModal = async ({ params }: { params: { slug: string } }) => {
   const res = await getVideo(params.slug);
