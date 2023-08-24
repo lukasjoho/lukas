@@ -1,3 +1,4 @@
+import { RichTextContent } from '@/lib/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { FC } from 'react';
@@ -5,18 +6,19 @@ import OptimizedImage from '../../shared/OptimizedImage';
 import CodeHighlighter from './CodeHighlighter';
 
 interface RichTextRendererProps extends React.HTMLProps<HTMLDivElement> {
-  json: any;
-  links?: string;
+  richTextContent: RichTextContent;
 }
 
 const RichTextRenderer: FC<RichTextRendererProps> = ({
-  json,
-  links,
+  richTextContent,
   ...props
 }) => {
   return (
     <div className={props.className}>
-      {documentToReactComponents(json, renderOptions(links))}
+      {documentToReactComponents(
+        richTextContent.json,
+        renderOptions(richTextContent.links)
+      )}
     </div>
   );
 };

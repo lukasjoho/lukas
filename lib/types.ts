@@ -4,11 +4,51 @@ export interface CodeProject {
   cover: Cover;
   slug: string;
   hasDarkBackground: boolean;
+}
+
+export interface CodeProjectDetailed extends CodeProject {
   url?: string;
   content?: any;
 }
 
-interface Cover {
+export interface VideoProject {
+  title: string;
+  slug: string;
+  cover: Cover;
+}
+
+export interface VideoProjectDetailed extends VideoProject {
+  file?: File;
+  youtubeId?: string;
+  aspectRatio: string;
+}
+
+export interface PhotoProject {
+  slug: string;
+  title: string;
+  cover: Cover;
+}
+
+export interface PhotoProjectDetailed extends PhotoProject {
+  imagesCollection: {
+    items: {
+      url: string;
+    }[];
+  };
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+}
+
+export interface BlogPostDetailed extends BlogPost {
+  tagline: string;
+  content: RichTextContent;
+}
+
+export interface Cover {
   url: string;
 }
 
@@ -16,15 +56,7 @@ type File = {
   url: string;
 };
 
-export type Video = {
-  title: string;
-  cover: Cover;
-  file: File;
-  slug: string;
-};
-
-export type BlogPost = {
-  title: string;
-  slug: string;
-  date: string;
-};
+export interface RichTextContent {
+  json: any;
+  links: any;
+}

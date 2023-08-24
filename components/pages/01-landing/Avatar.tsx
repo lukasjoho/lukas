@@ -31,7 +31,7 @@ const Avatar = () => {
       transition={{
         type: 'spring',
       }}
-      className="bg-lightgrey w-[120px] md:w-[200px] xl:w-[240px] rounded-full border-[8px] md:border-[16px] border-white aspect-square overflow-hidden group"
+      className="bg-lightgrey w-[120px] md:w-[200px] xl:w-[240px] rounded-full border-[12px] md:border-[16px] border-white aspect-square overflow-hidden group"
     >
       <div className="transition duration-300 hover:scale-110 relative w-full h-full">
         <div className="absolute left-0 top-0 w-full h-full opacity-100">

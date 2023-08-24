@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from './lib/breakpoints';
+import { BREAKPOINTS } from './lib/constants';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

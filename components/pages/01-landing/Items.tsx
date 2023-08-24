@@ -1,5 +1,5 @@
 import OptimizedImage from '@/components/shared/OptimizedImage';
-import { getBlogposts } from '@/lib/contentful';
+import { getBlogposts } from '@/lib/clients/contentful';
 import { BlogNote } from './BlogNote';
 import { PanelItem } from './PanelItem';
 import { Polaroid } from './Polaroid';
@@ -56,28 +56,36 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
 };
 
 export const BlogItems = async ({ idx }: PanelItemsProps) => {
-  const res = await getBlogposts();
-  let blogPosts = [];
-  blogPosts = res.data?.blogPostCollection.items;
+  const blogPosts = await getBlogposts();
+
   return (
     <>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] translate-x-[45%] -rotate-[5deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:translate-x-[55%] group-hover:rotate-[-10deg]"
       >
-        <BlogNote title={blogPosts[0].title || 'Product Analytics 101'} />
+        <BlogNote
+          title={blogPosts[0].title || 'Product Analytics 101'}
+          date={blogPosts[0].date}
+        />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] translate-x-[0%] -rotate-[3deg] -translate-y-[30%] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg]"
       >
-        <BlogNote title={blogPosts[1].title || 'The Experimentation Pyramid'} />
+        <BlogNote
+          title={blogPosts[1].title || 'The Experimentation Pyramid'}
+          date={blogPosts[1].date}
+        />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] md:w-[40%] -translate-x-[45%] rotate-[10deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:-translate-x-[55%] group-hover:rotate-[20deg]"
       >
-        <BlogNote title={blogPosts[2].title || 'Product Engineering'} />
+        <BlogNote
+          title={blogPosts[2].title || 'Product Engineering'}
+          date={blogPosts[2].date}
+        />
       </PanelItem>
     </>
   );

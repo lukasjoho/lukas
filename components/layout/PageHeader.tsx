@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Title from '../shared/Title';
 import BackLink from './BackLink';
 import Container from './Container';
 
@@ -17,7 +18,6 @@ export interface PageHeaderProps {
     | 'normal'
     | 'large'
     | 'fluid'
-    | 'static'
     | undefined;
 }
 
@@ -31,9 +31,9 @@ const PageHeader: FC<PageHeaderProps> = ({
     <Container className="space-y-2 md:space-y-4" variant={containerVariant}>
       <BackLink href={backlink.href} label={backlink.label} />
       <div className="md:space-y-1">
-        <h1 className="text-dark text-3xl md:text-4xl xl:max-w-[70%] font-meche">
+        <Title as="h1" className="text-3xl md:text-4xl">
           {title}
-        </h1>
+        </Title>
         {subtitle && <h2 className="text-muted text-base">{subtitle}</h2>}
       </div>
     </Container>

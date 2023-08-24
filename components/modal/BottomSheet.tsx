@@ -1,7 +1,8 @@
 'use client';
-import { easeInOutCubic } from '@/lib/constants';
+import { EASE_IN_OUT_CUBIC } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
+import Title from '../shared/Title';
 import CloseModalButton from './CloseModalButton';
 
 interface BottomSheetProps {
@@ -34,10 +35,12 @@ export const BottomSheet: FC<BottomSheetProps> = ({
       animate="visible"
       exit="hidden"
       key="sheet"
-      transition={{ duration: 0.3, ease: easeInOutCubic }}
+      transition={{ duration: 0.3, ease: EASE_IN_OUT_CUBIC }}
     >
       <div className="flex justify-between relative bg-white px-3 py-4 border-b border-muted/10 shrink-0 rounded-t-lg items-center">
-        <h1 className="font-meche text-2xl">{title}</h1>
+        <Title as="h1" className="text-2xl">
+          {title}
+        </Title>
         <CloseModalButton
           customRef={xMob}
           handleClick={handleClick}

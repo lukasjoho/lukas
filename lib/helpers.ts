@@ -1,3 +1,6 @@
+import { getCloudinaryImage } from './clients/cloudinary';
+import { Cover } from './types';
+
 export const formatDate = (inputDate: string) => {
   if (!inputDate) {
     return '';
@@ -17,4 +20,10 @@ export const formatRatio = (fractionString: string | undefined) => {
   const decimalValue = parseInt(numerator) / parseInt(denominator);
 
   return decimalValue;
+};
+
+export const getPosterFromCover = (cover: Cover, aspectRatio: string) => {
+  return getCloudinaryImage(cover.url)
+    .addTransformation(`ar_${formatRatio(aspectRatio)},c_crop`)
+    .toURL();
 };

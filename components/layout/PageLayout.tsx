@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Footer from './Footer';
 import PageHeader, { PageHeaderProps } from './PageHeader';
 
 interface PageLayoutProps extends PageHeaderProps {
@@ -13,14 +14,15 @@ const PageLayout: FC<PageLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="space-y-8 md:space-y-16">
+    <div className="space-y-8 md:space-y-16 grow flex flex-col">
       <PageHeader
         title={title}
         subtitle={subtitle}
         backlink={backlink}
         containerVariant={containerVariant}
       />
-      {children}
+      <div className="grow">{children}</div>
+      <Footer />
     </div>
   );
 };

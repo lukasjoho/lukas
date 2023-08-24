@@ -76,6 +76,15 @@ const Menu = () => {
     },
   };
 
+  const overlayVariants: Variants = {
+    collapsed: {
+      height: 0,
+    },
+    expanded: {
+      height: 400,
+    },
+  };
+
   return (
     <div onKeyDown={handleKeyDown}>
       <div

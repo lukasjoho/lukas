@@ -1,6 +1,6 @@
 'use client';
 
-import { BREAKPOINTS } from '@/lib/breakpoints';
+import { BREAKPOINTS } from '@/lib/constants';
 import Masonry from 'react-masonry-css';
 
 const breakpointColumnsObj = {
