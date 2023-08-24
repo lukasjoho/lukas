@@ -60,3 +60,7 @@ export interface RichTextContent {
   json: any;
   links: any;
 }
+
+export interface AboutText {
+  content: RichTextContent;
+}

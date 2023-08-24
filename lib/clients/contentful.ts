@@ -1,5 +1,6 @@
 import { createClient } from 'contentful';
 import {
+  AboutText,
   BlogPost,
   BlogPostDetailed,
   CodeProject,
@@ -73,7 +74,7 @@ export const getPhotoProject = async (
   return photoProject;
 };
 
-export const getAboutText = async () => {
+export const getAboutText = async (): Promise<AboutText | null> => {
   let query = `{
         aboutTextCollection(limit: 1){
             items{
@@ -99,7 +100,8 @@ export const getAboutText = async () => {
         }
     }`;
   const res = await fetchContentfulData(query);
-  const aboutText = res.data.aboutTextCollection.items[0] || null;
+  const aboutText: AboutText | null =
+    res.data.aboutTextCollection.items[0] || null;
   return aboutText;
 };
 

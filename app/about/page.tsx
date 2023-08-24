@@ -1,11 +1,7 @@
-import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
-import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
-import { getAboutText } from '@/lib/clients/contentful';
+import AboutTextGrid from '@/components/pages/06-about/AboutTextGrid';
 
-const AboutPage = async () => {
-  const aboutText = await getAboutText();
-
+const AboutPage = () => {
   return (
     <div>
       <PageLayout
@@ -13,9 +9,7 @@ const AboutPage = async () => {
         backlink={{ href: '/', label: 'Back to home' }}
         containerVariant="small"
       >
-        <Container variant="small">
-          <RichTextRenderer richTextContent={aboutText.content} />
-        </Container>
+        <AboutTextGrid />
       </PageLayout>
     </div>
   );
