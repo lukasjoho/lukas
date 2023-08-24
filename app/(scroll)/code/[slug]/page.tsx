@@ -7,8 +7,7 @@ import OptimizedImage from '@/components/shared/OptimizedImage';
 import { ArrowUpRight } from 'lucide-react';
 
 export async function generateStaticParams() {
-  const res = await getCodeProjects();
-  const codeProjects = res.data.projectCollection.items;
+  const codeProjects = await getCodeProjects();
   return codeProjects.map((codeProject: any) => ({
     slug: codeProject.slug,
   }));

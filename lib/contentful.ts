@@ -38,12 +38,11 @@ export const getAlbum = async (slug: string) => {
   return fetchContentfulData(query);
 };
 
-const fetchContentfulData = async (query: string) => {
+const fetchContentfulData = async (query: string): Promise<any> => {
   const res: any = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
-      cache: 'no-store',
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
         'Content-Type': 'application/json',
@@ -97,7 +96,9 @@ export const getCodeProjects = async () => {
             }
         }
     }`;
-  return fetchContentfulData(query);
+  const res = await fetchContentfulData(query);
+  const projects = res?.data?.projectCollection?.items || [];
+  return projects;
 };
 
 export const getCodeProject = async (slug: string) => {

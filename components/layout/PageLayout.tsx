@@ -13,7 +13,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="space-y-6 md:space-y-12">
+    <div className="space-y-8 md:space-y-16">
       <PageHeader
         title={title}
         subtitle={subtitle}

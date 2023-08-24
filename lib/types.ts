@@ -1,14 +1,16 @@
-export type Project = {
+export interface CodeProject {
   title: string;
   tagline: string;
   cover: Cover;
   slug: string;
   hasDarkBackground: boolean;
-};
+  url?: string;
+  content?: any;
+}
 
-type Cover = {
+interface Cover {
   url: string;
-};
+}
 
 type File = {
   url: string;
