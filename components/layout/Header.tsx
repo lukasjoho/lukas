@@ -15,19 +15,24 @@ export const MenuContext = createContext({
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <MenuContext.Provider value={{ isOpen, setIsOpen }}>
-      <Container variant="fluid">
-        <div className="w-full h-14 flex items-center justify-between relative">
-          <Link href="/">
-            <Icons.logo color={isOpen ? 'white' : 'dark'} className="h-8 w-8" />
-          </Link>
-          <div className="flex gap-8">
-            <SocialIcons />
-            <Menu />
+    <div className="relative z-40">
+      <MenuContext.Provider value={{ isOpen, setIsOpen }}>
+        <Container variant="fluid">
+          <div className="w-full h-14 flex items-center justify-between relative">
+            <Link href="/">
+              <Icons.logo
+                color={isOpen ? 'white' : 'dark'}
+                className="h-8 w-8"
+              />
+            </Link>
+            <div className="flex gap-8">
+              <SocialIcons />
+              <Menu />
+            </div>
           </div>
-        </div>
-      </Container>
-    </MenuContext.Provider>
+        </Container>
+      </MenuContext.Provider>
+    </div>
   );
 };
 

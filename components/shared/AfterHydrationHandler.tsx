@@ -5,6 +5,7 @@ const AfterHydrationHandler = () => {
   useEffect(() => {
     sessionStorage.setItem('isLoaded', 'true');
   }, []);
+
   return <></>;
 };
 
