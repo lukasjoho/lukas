@@ -18,7 +18,7 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   const res = await getAlbum(params.slug);
   const album = res.data.galleryCollection.items[0];
 
-  const breakpoints = {
+  const masonryBreakpoints = {
     default: 2,
     [BREAKPOINTS.MD]: 1,
   };
@@ -30,7 +30,7 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
           <h1 className="font-meche text-3xl md:text-5xl">{album.title}</h1>
         </div>
         <div className="bg-white overflow-hidden w-full md:rounded-xl pointer-events-auto">
-          <MasonryLayout breakpoints={breakpoints}>
+          <MasonryLayout breakpoints={masonryBreakpoints}>
             <div>
               <OptimizedImage
                 src={album.cover.url}
