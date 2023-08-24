@@ -4,7 +4,41 @@ import MasonryLayout from '@/components/pages/03-photo/Masonry';
 import { default as OptimizedImage } from '@/components/shared/OptimizedImage';
 import { getPhotoProject, getPhotoProjects } from '@/lib/clients/contentful';
 import { BREAKPOINTS } from '@/lib/constants';
+import { Params } from '@/lib/types';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata | undefined> {
+  const photoProject = await getPhotoProject(params.slug);
+  if (!photoProject) {
+    return;
+  }
+
+  const { title, slug, cover } = photoProject;
+
+  return {
+    title,
+    openGraph: {
+      title,
+      type: 'article',
+      url: `https://lukashoppe.com/photo/${slug}`,
+      images: [
+        {
+          url: cover.url,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      images: [cover.url],
+    },
+  };
+}
 
 const breakpoints = {
   default: 2,

@@ -64,3 +64,7 @@ export interface RichTextContent {
 export interface AboutText {
   content: RichTextContent;
 }
+
+export interface Params {
+  slug: string;
+}
