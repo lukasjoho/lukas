@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 const SESSION_STORAGE_KEY = 'applicationHasLoaded';
 
-interface useSessionStorage {
+interface UseSessionStorage {
   hasSession: boolean;
   setSession: () => void;
 }
 
-export const useSessionStorage = () => {
+export const useSessionStorage = (): UseSessionStorage => {
   const [hasSession, setHasSessionState] = useState<boolean>(
     sessionStorage.getItem(SESSION_STORAGE_KEY) === 'true'
   );
