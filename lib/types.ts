@@ -19,9 +19,9 @@ export interface VideoProject {
 }
 
 export interface VideoProjectDetailed extends VideoProject {
+  aspectRatio: string;
   file?: File;
   youtubeId?: string;
-  aspectRatio: string;
 }
 
 export interface PhotoProject {
@@ -50,21 +50,21 @@ export interface BlogPostDetailed extends BlogPost {
   content: RichTextContent;
 }
 
+export interface AboutText {
+  content: RichTextContent;
+}
+
 export interface Cover {
   url: string;
 }
 
-type File = {
+interface File {
   url: string;
-};
+}
 
 export interface RichTextContent {
   json: any;
   links: any;
-}
-
-export interface AboutText {
-  content: RichTextContent;
 }
 
 export interface Params {
