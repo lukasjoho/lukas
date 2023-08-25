@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center" >
+    <h1 align="center">My personal website</h1>
+    <p>Hey, I am Lukas and this is my personal website built with NextJS 13, Tailwind, Contentful and Cloudinary. Have fun exploring.</p>
+    🌐 <a href="https://lukashoppe.com/">lukashoppe.com</a>
+    <br/>
+    <br/>
+</div>
 
-## Getting Started
+![Alt text](https://res.cloudinary.com/dum2lqmke/image/upload/v1692968220/my-website_ytu9au.jpg)
 
-First, run the development server:
+# Tools
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+This personal website is statically generated and uses as little dependencies as possible:
+
+- [NextJS 13](https://nextjs.org/docs): Frontend UI
+- [TailwindCSS](https://tailwindcss.com): CSS Styling
+- [Contentful](https://contentful.com): Content Management System
+- [Cloudinary](https://cloudinary.com): Image Optimization
+- [Framer Motion](https://www.framer.com/motion): UI Animations
+- [Lottie](https://lottiefiles.com): Special Animations
+
+# Setup
+
+## Installation
+
+Run the following command to install all dependencies:
+
+```sh-session
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Set up a Contentful space on https://contentful.com and copy Space ID and Access Token. The URL is just needed for generating the correct `<meta>` tags.
+2. Create `.env` file and paste the variables.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```sh-session
+NEXT_PUBLIC_CONTENTFUL_SPACE_ID='xxx'
+NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN='xxx'
+NEXT_PUBLIC_URL='https://xxx.com'
+```
 
-## Learn More
+## Run
 
-To learn more about Next.js, take a look at the following resources:
+To run the project locally, use the following command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh-session
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+1. Create project in Vercel importing the repo from GitHub.
+2. Set environment variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Alt text](https://res.cloudinary.com/dum2lqmke/image/upload/v1692968740/Screenshot_2023-08-25_at_15.04.23_hgdreq.png)
