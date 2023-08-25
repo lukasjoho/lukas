@@ -4,8 +4,44 @@ import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
 import OptimizedImage from '@/components/shared/OptimizedImage';
+import { Params } from '@/lib/types';
 import { ArrowUpRight } from 'lucide-react';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata | undefined> {
+  const codeProject = await getCodeProject(params.slug);
+  if (!codeProject) {
+    return;
+  }
+
+  const { title, slug, cover } = codeProject;
+
+  return {
+    title,
+    openGraph: {
+      title,
+      type: 'article',
+      url: `${process.env.NEXT_PUBLIC_URL}/code/${slug}`,
+      images: [
+        {
+          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_south,c_fill,w_1200,h_627/${cover.url}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      images: [
+        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_south,c_fill,w_1200,h_627/${cover.url}`,
+      ],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const codeProjects = await getCodeProjects();

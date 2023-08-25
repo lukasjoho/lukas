@@ -38,6 +38,7 @@ export const getPhotoProjects = async (): Promise<PhotoProject[]> => {
             items{
                 slug
                 title
+                caption
                 cover{
                     url
                 }
@@ -57,6 +58,7 @@ export const getPhotoProject = async (
       items {
         slug
         title
+        caption
         cover {
           url
         }
@@ -168,8 +170,9 @@ export const getVideoProjects = async (): Promise<VideoProject[]> => {
   let query = `{
         videoCollection(order: order_DESC){
             items{
-                title
                 slug
+                title
+                caption
                 cover{
                     url
                 }
@@ -188,6 +191,7 @@ export const getVideoProject = async (
         videoCollection(where: { slug: "${slug}" }, limit: 1){
             items{
                 title
+                caption
                 slug
                 cover{
                     url

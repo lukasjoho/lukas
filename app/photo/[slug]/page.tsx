@@ -18,24 +18,27 @@ export async function generateMetadata({
     return;
   }
 
-  const { title, slug, cover } = photoProject;
+  const { title, caption, slug, cover } = photoProject;
 
   return {
     title,
     openGraph: {
       title,
+      description: caption,
       type: 'article',
-      url: `https://lukashoppe.com/photo/${slug}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/photo/${slug}`,
       images: [
         {
-          url: cover.url,
+          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_face,c_fill,w_1200,h_627/${cover.url}`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      images: [cover.url],
+      images: [
+        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_face,c_fill,w_1200,h_627/${cover.url}`,
+      ],
     },
   };
 }

@@ -15,6 +15,7 @@ export interface VideoProject {
   title: string;
   slug: string;
   cover: Cover;
+  caption: string;
 }
 
 export interface VideoProjectDetailed extends VideoProject {
@@ -27,6 +28,7 @@ export interface PhotoProject {
   slug: string;
   title: string;
   cover: Cover;
+  caption: string;
 }
 
 export interface PhotoProjectDetailed extends PhotoProject {
