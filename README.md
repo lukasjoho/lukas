@@ -1,6 +1,6 @@
 <div align="center" >
     <h1 align="center">My personal website</h1>
-    <p>Hey, I am Lukas and this is my personal website built with NextJS 13, Tailwind, Contentful and Cloudinary. Have fun exploring.</p>
+    <p>Hey, I am Lukas. This is my personal website built with NextJS 13, Tailwind, Contentful and Cloudinary. <br/>Have fun exploring.</p>
     🌐 <a href="https://lukashoppe.com/">lukashoppe.com</a>
     <br/>
     <br/>
