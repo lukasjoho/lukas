@@ -18,10 +18,12 @@ export async function generateMetadata({
     return;
   }
 
-  const { title, caption, slug, cover } = photoProject;
+  let { title, caption, slug, cover } = photoProject;
+  title = `${title} - Lukas Hoppe`;
 
   return {
     title,
+    description: caption,
     openGraph: {
       title,
       description: caption,
@@ -36,6 +38,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title,
+      description: caption,
       images: [
         `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_face,c_fill,w_1200,h_627/${cover.url}`,
       ],

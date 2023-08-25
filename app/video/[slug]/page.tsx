@@ -16,25 +16,29 @@ export async function generateMetadata({
     return;
   }
 
-  const { title, slug, cover } = videoProject;
+  let { title, slug, cover, caption } = videoProject;
+  title = `${title} - Lukas Hoppe`;
 
   return {
     title,
+    description: caption,
     openGraph: {
       title,
+      description: caption,
       type: 'article',
       url: `${process.env.NEXT_PUBLIC_URL}/video/${slug}`,
       images: [
         {
-          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_face,c_fill,w_1200,h_627/${cover.url}`,
+          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/c_fill,w_1200,h_627/${cover.url}`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
+      description: caption,
       images: [
-        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_face,c_fill,w_1200,h_627/${cover.url}`,
+        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/c_fill,w_1200,h_627/${cover.url}`,
       ],
     },
   };

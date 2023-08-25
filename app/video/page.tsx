@@ -1,5 +1,12 @@
 import PageLayout from '@/components/layout/PageLayout';
 import VideoProjectsGrid from '@/components/pages/04-video/VideoProjectsGrid';
+import content from '@/lib/content';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: `${content.video.title} - Lukas Hoppe`,
+  description: content.video.description,
+};
 
 const VideoPage = () => {
   return (

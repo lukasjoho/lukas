@@ -1,12 +1,17 @@
 import PageLayout from '@/components/layout/PageLayout';
 import CodeProjectsGrid from '@/components/pages/02-code/CodeProjectsGrid';
+import content from '@/lib/content';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: `${content.code.title} - Lukas Hoppe`,
+  description: content.code.description,
+};
 
 const CodePage = () => {
   return (
     <PageLayout
-      title="As an engineer I act as my own product manager. I dont need and I dont
-        want perfect requirements. Give me vision and business objectives, and
-        together we will figure out exciting puzzles."
+      title={content.code.description}
       backlink={{ href: '/', label: 'Back to home' }}
     >
       <CodeProjectsGrid />

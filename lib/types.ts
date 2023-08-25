@@ -1,6 +1,6 @@
 export interface CodeProject {
   title: string;
-  tagline: string;
+  caption: string;
   cover: Cover;
   slug: string;
   hasDarkBackground: boolean;
@@ -46,7 +46,7 @@ export interface BlogPost {
 }
 
 export interface BlogPostDetailed extends BlogPost {
-  tagline: string;
+  caption: string;
   content: RichTextContent;
 }
 

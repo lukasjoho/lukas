@@ -19,12 +19,15 @@ export async function generateMetadata({
     return;
   }
 
-  const { title, slug, cover } = codeProject;
+  let { title, slug, cover, caption } = codeProject;
+  title = `${title} - Lukas Hoppe`;
 
   return {
     title,
+    description: caption,
     openGraph: {
       title,
+      description: caption,
       type: 'article',
       url: `${process.env.NEXT_PUBLIC_URL}/code/${slug}`,
       images: [
@@ -36,6 +39,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title,
+      description: caption,
       images: [
         `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_south,c_fill,w_1200,h_627/${cover.url}`,
       ],
@@ -55,11 +59,11 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
   if (!codeProject) {
     notFound();
   }
-  const { title, tagline, cover, content, url } = codeProject;
+  const { title, caption, cover, content, url } = codeProject;
   return (
     <PageLayout
       title={title}
-      subtitle={tagline}
+      subtitle={caption}
       backlink={{ href: '/code', label: 'Back to all' }}
       containerVariant="small"
     >

@@ -115,7 +115,7 @@ export const getCodeProjects = async (): Promise<CodeProject[]> => {
                     url
                 }
                 title
-                tagline
+                caption
                 slug
                 hasDarkBackground
             }
@@ -134,7 +134,7 @@ export const getCodeProject = async (
             items{
                 slug
                 title
-                tagline
+                caption
                 cover{
                     url
                 }
@@ -233,7 +233,7 @@ export const getBlogpost = async (
             items{
                 slug  
                 title
-                tagline
+                caption
                 date
                 content{
                   json

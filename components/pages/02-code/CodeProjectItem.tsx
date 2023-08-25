@@ -10,7 +10,7 @@ interface CodeProjectItemProps {
 }
 
 const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
-  const { title, tagline, cover, hasDarkBackground, slug } = codeProject;
+  const { title, caption, cover, hasDarkBackground, slug } = codeProject;
   return (
     <Link href={`/code/${slug}`}>
       <div className="relative aspect-[9/8] w-full pt-6 md:pt-8 pl-5 md:pl-6 rounded-xl overflow-hidden">
@@ -34,7 +34,7 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
               hasDarkBackground && 'text-white/80'
             )}
           >
-            {tagline}
+            {caption}
           </h2>
         </div>
       </div>

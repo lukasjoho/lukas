@@ -18,12 +18,12 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   if (!blogPost) {
     notFound();
   }
-  const { title, tagline, content } = blogPost;
+  const { title, caption, content } = blogPost;
   return (
     <PageLayout
       title={title}
       backlink={{ href: '/blog', label: 'Back to all' }}
-      subtitle={tagline}
+      subtitle={caption}
       containerVariant="small"
     >
       <Container variant="small">
