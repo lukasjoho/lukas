@@ -4,6 +4,7 @@ import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
 import OptimizedImage from '@/components/shared/OptimizedImage';
+import { createMetaDataObject } from '@/lib/helpers';
 import { Params } from '@/lib/types';
 import { ArrowUpRight } from 'lucide-react';
 import { Metadata } from 'next';
@@ -20,31 +21,11 @@ export async function generateMetadata({
   }
 
   let { title, slug, cover, caption } = codeProject;
-  title = `${title} - Lukas Hoppe`;
 
-  return {
-    title,
-    description: caption,
-    openGraph: {
-      title,
-      description: caption,
-      type: 'article',
-      url: `${process.env.NEXT_PUBLIC_URL}/code/${slug}`,
-      images: [
-        {
-          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_south,c_fill,w_1200,h_627/${cover.url}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: caption,
-      images: [
-        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/g_south,c_fill,w_1200,h_627/${cover.url}`,
-      ],
-    },
-  };
+  return createMetaDataObject(
+    { title, slug, imageUrl: cover.url, description: caption },
+    { path: '/code', type: 'article', gravity: 'g_south' }
+  );
 }
 
 export async function generateStaticParams() {

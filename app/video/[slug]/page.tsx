@@ -2,6 +2,7 @@ import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
 import { getVideoProject, getVideoProjects } from '@/lib/clients/contentful';
+import { createMetaDataObject } from '@/lib/helpers';
 import { Params, VideoProject } from '@/lib/types';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -15,33 +16,12 @@ export async function generateMetadata({
   if (!videoProject) {
     return;
   }
+  const { title, slug, cover, caption } = videoProject;
 
-  let { title, slug, cover, caption } = videoProject;
-  title = `${title} - Lukas Hoppe`;
-
-  return {
-    title,
-    description: caption,
-    openGraph: {
-      title,
-      description: caption,
-      type: 'article',
-      url: `${process.env.NEXT_PUBLIC_URL}/video/${slug}`,
-      images: [
-        {
-          url: `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/c_fill,w_1200,h_627/${cover.url}`,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: caption,
-      images: [
-        `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/c_fill,w_1200,h_627/${cover.url}`,
-      ],
-    },
-  };
+  return createMetaDataObject(
+    { title, slug, imageUrl: cover.url, description: caption },
+    { path: '/video', type: 'article' }
+  );
 }
 
 export async function generateStaticParams() {

@@ -70,3 +70,16 @@ export interface RichTextContent {
 export interface Params {
   slug: string;
 }
+
+export interface MetaDataData {
+  title: string;
+  description: string;
+  slug: string;
+  imageUrl?: string;
+}
+
+export interface MetaDataOptions {
+  type?: string;
+  path: string;
+  gravity?: 'g_south' | 'g_face';
+}
