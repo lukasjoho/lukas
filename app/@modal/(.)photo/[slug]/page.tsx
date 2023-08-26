@@ -4,16 +4,15 @@ import OptimizedImage from '@/components/shared/OptimizedImage';
 import Title from '@/components/shared/Title';
 import { getPhotoProject, getPhotoProjects } from '@/lib/clients/contentful';
 import { BREAKPOINTS } from '@/lib/constants';
+import { PhotoProject } from '@/lib/types';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const photoProjects = await getPhotoProjects();
-  return photoProjects.map((gallery: any) => ({
-    slug: gallery.slug,
+  return photoProjects.map((photoProject: PhotoProject) => ({
+    slug: photoProject.slug,
   }));
 }
-
-export const revalidate = 3600;
 
 const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   const photoProject = await getPhotoProject(params.slug);
@@ -23,11 +22,6 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
 
   const { title, cover, imagesCollection } = photoProject;
 
-  const masonryBreakpoints = {
-    default: 2,
-    [BREAKPOINTS.MD]: 1,
-  };
-
   return (
     <InterceptionModal isCenter={false} title={title}>
       <div>
@@ -35,7 +29,7 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
           <Title className="text-3xl md:text-5xl">{title}</Title>
         </div>
         <div className="bg-white overflow-hidden w-full md:rounded-xl pointer-events-auto">
-          <MasonryLayout breakpoints={masonryBreakpoints}>
+          <MasonryLayout breakpoints={photoModalMasonryBreakpoints}>
             <div>
               <OptimizedImage
                 src={cover.url}
@@ -56,3 +50,8 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default GalleryModal;
+
+const photoModalMasonryBreakpoints = {
+  default: 2,
+  [BREAKPOINTS.MD]: 1,
+};
