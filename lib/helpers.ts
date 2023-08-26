@@ -32,7 +32,12 @@ export const createMetaDataObject = (
   data: MetaDataData,
   options: MetaDataOptions
 ) => {
-  const { title, description, imageUrl, slug } = data;
+  const {
+    title,
+    description,
+    imageUrl = 'https://res.cloudinary.com/dum2lqmke/image/upload/v1692958978/og-image_tssqjm.jpg',
+    slug,
+  } = data;
   const { type, path = '', gravity = '' } = options || {};
   const cloudinaryImageUrl = `https://res.cloudinary.com/dum2lqmke/image/fetch/q_75/f_auto/dpr_1/${gravity}${
     gravity && ','
@@ -45,19 +50,18 @@ export const createMetaDataObject = (
       description,
       type,
       url: `${process.env.NEXT_PUBLIC_URL}${path}${slug && '/'}${slug}`,
-      images: imageUrl
-        ? [
-            {
-              url: cloudinaryImageUrl,
-            },
-          ]
-        : undefined,
+      images: [
+        {
+          url: cloudinaryImageUrl,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: imageUrl ? [cloudinaryImageUrl] : undefined,
+      url: `${process.env.NEXT_PUBLIC_URL}${path}${slug && '/'}${slug}`,
+      images: [cloudinaryImageUrl],
     },
   };
 };
