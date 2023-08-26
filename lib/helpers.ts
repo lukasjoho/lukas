@@ -45,17 +45,19 @@ export const createMetaDataObject = (
       description,
       type,
       url: `${process.env.NEXT_PUBLIC_URL}${path}${slug && '/'}${slug}`,
-      images: imageUrl && [
-        {
-          url: cloudinaryImageUrl,
-        },
-      ],
+      images: imageUrl
+        ? [
+            {
+              url: cloudinaryImageUrl,
+            },
+          ]
+        : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: imageUrl && [cloudinaryImageUrl],
+      images: imageUrl ? [cloudinaryImageUrl] : undefined,
     },
   };
 };
