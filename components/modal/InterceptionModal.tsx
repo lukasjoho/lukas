@@ -12,6 +12,7 @@ import React, {
 } from 'react';
 import { BottomSheet } from './BottomSheet';
 import CenterModal from './CenterModal';
+import CloseModalButton from './CloseModalButton';
 
 interface InterceptionModalProps {
   children: React.ReactNode;
@@ -94,7 +95,14 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               onClick={handleClick}
-            />
+            >
+              <CloseModalButton
+                customRef={x}
+                handleClick={handleClick}
+                fill="white"
+                className="hidden md:block group cursor-pointer fixed top-4 right-4"
+              />
+            </motion.div>
             <div className="md:hidden">
               <BottomSheet title={title} xMob={xMob} handleClick={handleClick}>
                 {children}

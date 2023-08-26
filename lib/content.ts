@@ -1,4 +1,9 @@
 const content = {
+  general: {
+    title: 'Lukas Hoppe',
+    description:
+      'Hey, I am Lukas. Nice to meet you. I build products and software. Have fun exploring my projects.',
+  },
   code: {
     title: 'Code',
     description:

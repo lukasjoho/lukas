@@ -83,3 +83,7 @@ export interface MetaDataOptions {
   path: string;
   gravity?: 'g_south' | 'g_face';
 }
+
+export interface ContentfulImage {
+  url: string;
+}

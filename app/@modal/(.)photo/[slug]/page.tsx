@@ -4,7 +4,7 @@ import OptimizedImage from '@/components/shared/OptimizedImage';
 import Title from '@/components/shared/Title';
 import { getPhotoProject, getPhotoProjects } from '@/lib/clients/contentful';
 import { BREAKPOINTS } from '@/lib/constants';
-import { PhotoProject } from '@/lib/types';
+import { ContentfulImage, PhotoProject } from '@/lib/types';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
@@ -37,11 +37,13 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
               />
             </div>
 
-            {imagesCollection.items.map((image: any, idx: number) => (
-              <div key={idx}>
-                <OptimizedImage src={image.url} steps={[400, 500, 600]} />
-              </div>
-            ))}
+            {imagesCollection.items.map(
+              (image: ContentfulImage, idx: number) => (
+                <div key={idx}>
+                  <OptimizedImage src={image.url} steps={[400, 500, 600]} />
+                </div>
+              )
+            )}
           </MasonryLayout>
         </div>
       </div>

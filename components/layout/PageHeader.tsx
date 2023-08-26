@@ -10,8 +10,8 @@ interface BackLinkProps {
 
 export interface PageHeaderProps {
   title: string;
-  subtitle?: string;
   backlink: BackLinkProps;
+  subtitle?: string;
   containerVariant?:
     | 'small'
     | 'medium'

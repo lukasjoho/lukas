@@ -1,13 +1,13 @@
 import Header from '@/components/layout/Header';
 import AfterHydrationHandler from '@/components/shared/AfterHydrationHandler';
+import content from '@/lib/content';
 import { fingerpaint, inter, mechepro } from '@/lib/fonts';
 import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Lukas Hoppe',
-  description:
-    'Hey, I am Lukas. Nice to meet you. I build products and software. Have fun exploring my projects.',
+  title: content.general.title,
+  description: content.general.description,
 };
 
 export default function RootLayout({
