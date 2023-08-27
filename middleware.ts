@@ -1,10 +1,6 @@
 import { Kafka } from '@upstash/kafka';
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
-export const config = {
-  matcher: '/',
-};
-
 export async function middleware(req: NextRequest, event: NextFetchEvent) {
   const kafka = new Kafka({
     url: process.env.UPSTASH_KAFKA_URL,
