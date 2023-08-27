@@ -8,7 +8,7 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     password: process.env.UPSTASH_KAFKA_PASSWORD,
   });
 
-  console.log('HEADERS', req.headers);
+  console.log('Lukas', JSON.stringify(req.));
 
   const message = {
     referrer: req.referrer,
@@ -19,6 +19,9 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     ip: req.headers.get('x-real-ip'),
     mobile: req.headers.get('sec-ch-ua-mobile'),
     prefetch: req.headers.get('next-router-prefetch'),
+    purpose: req.headers.get("purpose"),
+    middlewarePrefetch: req.headers.get("x-middleware-prefetch"),
+    nextData: req.headers.get("x-nextjs-data"),
     platform: req.headers.get('sec-ch-ua-platform'),
     useragent: req.headers.get('user-agent'),
     timestamp: new Date(),
