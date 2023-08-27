@@ -22,6 +22,10 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     cookies: req.cookies,
   };
 
+  if (message.useragent?.includes('Vercelbot')) {
+    return NextResponse.next();
+  }
+
   const p = kafka.producer();
   const topic = 'analytics';
   console.log('MESSAGE: ', message);
