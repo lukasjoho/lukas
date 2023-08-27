@@ -18,7 +18,7 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     path: req.nextUrl.pathname,
     ip: req.headers.get('x-real-ip'),
     mobile: req.headers.get('sec-ch-ua-mobile'),
-    headers: req.headers,
+    prefetch: req.headers.get('next-router-prefetch'),
     platform: req.headers.get('sec-ch-ua-platform'),
     useragent: req.headers.get('user-agent'),
     timestamp: new Date(),
