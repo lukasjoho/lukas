@@ -13,6 +13,7 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
   });
 
   const message = {
+    referrer: req.referrer,
     country: req.geo?.country,
     city: req.geo?.region,
     url: req.url,
@@ -21,6 +22,8 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     mobile: req.headers.get('sec-ch-ua-mobile'),
     platform: req.headers.get('sec-ch-ua-platform'),
     useragent: req.headers.get('user-agent'),
+    timestamp: new Date(),
+    cookies: req.cookies,
   };
 
   const p = kafka.producer();
