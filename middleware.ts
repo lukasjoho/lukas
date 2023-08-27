@@ -8,6 +8,8 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     password: process.env.UPSTASH_KAFKA_PASSWORD,
   });
 
+  console.log('HEADERS', req.headers);
+
   const message = {
     referrer: req.referrer,
     country: req.geo?.country,
@@ -16,6 +18,7 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
     path: req.nextUrl.pathname,
     ip: req.headers.get('x-real-ip'),
     mobile: req.headers.get('sec-ch-ua-mobile'),
+    headers: req.headers,
     platform: req.headers.get('sec-ch-ua-platform'),
     useragent: req.headers.get('user-agent'),
     timestamp: new Date(),
