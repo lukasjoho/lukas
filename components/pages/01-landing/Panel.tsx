@@ -11,7 +11,7 @@ interface PanelProps {
 const Panel: FC<PanelProps> = ({ children, title, href }) => {
   return (
     <Link href={href} className="cursor">
-      <div className="group cursor bg-lightgrey transition duration-150 hover:bg-lightgreydark rounded-2xl min-h-[240px] md:min-h-[260px] lg:min-h-[300px] xl:min-h-[480px] pt-12 md:pt-14 3xl:pt-20 relative h-full overflow-hidden flex flex-col justify-between items-center">
+      <div className="group cursor bg-lightgrey transition duration-150 hover:bg-lightgreydark rounded-2xl min-h-[240px] md:min-h-[260px] lg:min-h-[320px] xl:min-h-[480px] pt-12 md:pt-14 xl:pt-20 relative h-full overflow-hidden flex flex-col justify-between items-center">
         <Title as="h1" className="text-2xl md:text-4xl xl:text-5xl">
           {title}
         </Title>
