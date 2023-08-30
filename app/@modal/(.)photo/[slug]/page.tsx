@@ -1,7 +1,7 @@
-import InterceptionModal from '@/components/modal/InterceptionModal';
 import MasonryLayout from '@/components/pages/03-photo/Masonry';
 import OptimizedImage from '@/components/shared/OptimizedImage';
 import Title from '@/components/shared/Title';
+import InterceptionModal from '@/components/shared/modal/InterceptionModal';
 import { getPhotoProject, getPhotoProjects } from '@/lib/clients/contentful';
 import { BREAKPOINTS } from '@/lib/constants';
 import { ContentfulImage, PhotoProject } from '@/lib/types';

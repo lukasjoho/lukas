@@ -2,7 +2,7 @@
 import { EASE_IN_OUT_CUBIC } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import Title from '../shared/Title';
+import Title from '../Title';
 import CloseModalButton from './CloseModalButton';
 
 interface BottomSheetProps {

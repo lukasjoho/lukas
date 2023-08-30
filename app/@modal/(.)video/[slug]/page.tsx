@@ -1,5 +1,5 @@
-import InterceptionModal from '@/components/modal/InterceptionModal';
 import VideoPlayer from '@/components/pages/04-video/VideoPlayer';
+import InterceptionModal from '@/components/shared/modal/InterceptionModal';
 import { getVideoProject } from '@/lib/clients/contentful';
 import { notFound } from 'next/navigation';
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
-import Container from '../layout/Container';
+import Container from '../../layout/Container';
 
 interface CenterModalProps {
   title: string | undefined;
