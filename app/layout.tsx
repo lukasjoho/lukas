@@ -1,5 +1,5 @@
 import Header from '@/components/layout/Header';
-import AfterHydrationHandler from '@/components/shared/AfterHydrationHandler';
+import OnMount from '@/components/shared/OnMount';
 import content from '@/lib/content';
 import { fingerpaint, inter, mechepro } from '@/lib/fonts';
 import type { Metadata } from 'next';
@@ -23,11 +23,11 @@ export default function RootLayout({
         className={`${inter.className} ${mechepro.variable} ${fingerpaint.variable} text-dark`}
       >
         <main className="flex flex-col" style={{ height: '100dvh' }}>
-          <AfterHydrationHandler />
           <Header />
           {children}
           {modal}
         </main>
+        <OnMount />
       </body>
     </html>
   );

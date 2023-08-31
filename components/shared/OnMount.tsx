@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
-const AfterHydrationHandler = () => {
+const OnMount = () => {
   useEffect(() => {
     sessionStorage.setItem('isLoaded', 'true');
   }, []);
@@ -9,4 +9,4 @@ const AfterHydrationHandler = () => {
   return <></>;
 };
 
-export default AfterHydrationHandler;
+export default OnMount;
