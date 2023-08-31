@@ -23,7 +23,7 @@ export async function generateMetadata({
   let { title, slug, cover, caption } = codeProject;
 
   return createMetaDataObject(
-    { title, slug, imageUrl: cover.url, description: caption },
+    { title, slug, description: caption, imageUrl: cover.url },
     { path: '/code', type: 'article', gravity: 'g_south' }
   );
 }
