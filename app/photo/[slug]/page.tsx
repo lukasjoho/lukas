@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { title, caption, slug, cover } = photoProject;
 
   return createMetaDataObject(
-    { title, slug, imageUrl: cover.url, description: caption },
+    { title, description: caption, imageUrl: cover.url, slug },
     { path: '/photo', type: 'article', gravity: 'g_face' }
   );
 }
