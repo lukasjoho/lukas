@@ -1,5 +1,6 @@
 'use client';
 import { EASE_IN_OUT_CUBIC } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import Title from '../Title';
@@ -10,6 +11,7 @@ interface BottomSheetProps {
   handleClick: any;
   title: string | undefined;
   children: React.ReactNode;
+  contentType?: 'photo' | 'video';
 }
 
 export const BottomSheet: FC<BottomSheetProps> = ({
@@ -17,6 +19,7 @@ export const BottomSheet: FC<BottomSheetProps> = ({
   xMob,
   handleClick,
   children,
+  contentType,
 }) => {
   const sheetVariants = {
     hidden: (h: any) => ({
@@ -48,7 +51,12 @@ export const BottomSheet: FC<BottomSheetProps> = ({
           className="group cursor-pointer z-10"
         />
       </div>
-      <div className="overflow-scroll grow flex flex-col items-center py-16">
+      <div
+        className={cn(
+          'overflow-scroll grow flex flex-col items-center py-16',
+          contentType == 'photo' && 'py-0'
+        )}
+      >
         {children}
       </div>
     </motion.div>

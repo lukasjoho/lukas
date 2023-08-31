@@ -16,12 +16,14 @@ import CloseModalButton from './CloseModalButton';
 
 interface InterceptionModalProps {
   children: React.ReactNode;
+  contentType?: 'photo' | 'video';
   title?: string;
   isCenter?: boolean;
 }
 
 const InterceptionModal: FC<InterceptionModalProps> = ({
   children,
+  contentType,
   title,
   isCenter = false,
 }) => {
@@ -104,7 +106,12 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
               />
             </motion.div>
             <div className="md:hidden">
-              <BottomSheet title={title} xMob={xMob} handleClick={handleClick}>
+              <BottomSheet
+                title={title}
+                xMob={xMob}
+                handleClick={handleClick}
+                contentType={contentType}
+              >
                 {children}
               </BottomSheet>
             </div>

@@ -23,7 +23,7 @@ const GalleryModal = async ({ params }: { params: { slug: string } }) => {
   const { title, cover, imagesCollection } = photoProject;
 
   return (
-    <InterceptionModal isCenter={false} title={title}>
+    <InterceptionModal isCenter={false} title={title} contentType="photo">
       <div>
         <div className="hidden md:block pb-4 md:pb-8 text-white w-full pointer-events-none">
           <Title className="text-3xl md:text-5xl">{title}</Title>
