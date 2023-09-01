@@ -10,6 +10,8 @@ import { ArrowUpRight } from 'lucide-react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+export const revalidate = 0;
+
 export async function generateMetadata({
   params,
 }: {
@@ -51,15 +53,15 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
       <Container variant="small">
         <div className="space-y-6 md:space-y-12">
           <div className="flex flex-col gap-4">
-            <div className="aspect-[3/2] relative overflow-hidden w-full">
+            <div className="relative aspect-[3/2] w-full overflow-hidden">
               <div className="absolute bottom-0">
                 <OptimizedImage src={cover.url} steps={[400, 650]} />
               </div>
             </div>
 
             {url && (
-              <a href={url} target="_blank" className="cursor-pointer w-full">
-                <button className="flex gap-1.5 w-full bg-dark text-white justify-center py-4">
+              <a href={url} target="_blank" className="w-full cursor-pointer">
+                <button className="flex w-full justify-center gap-1.5 bg-dark py-4 text-white">
                   <ArrowUpRight />
                   Visit
                 </button>
