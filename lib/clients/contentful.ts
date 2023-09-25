@@ -138,7 +138,8 @@ export const getCodeProject = async (
                 cover{
                     url
                 }
-                url
+                ctaLabel
+                ctaUrl
                 hasDarkBackground
                 content{
                   json

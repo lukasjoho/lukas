@@ -42,7 +42,7 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
   if (!codeProject) {
     notFound();
   }
-  const { title, caption, cover, content, url } = codeProject;
+  const { title, caption, cover, content, ctaLabel, ctaUrl } = codeProject;
   return (
     <PageLayout
       title={title}
@@ -59,11 +59,15 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
               </div>
             </div>
 
-            {url && (
-              <a href={url} target="_blank" className="w-full cursor-pointer">
+            {ctaLabel && ctaUrl && (
+              <a
+                href={ctaUrl}
+                target="_blank"
+                className="w-full cursor-pointer"
+              >
                 <button className="flex w-full justify-center gap-1.5 bg-dark py-4 text-white">
                   <ArrowUpRight />
-                  Visit
+                  {ctaLabel}
                 </button>
               </a>
             )}

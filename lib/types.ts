@@ -7,7 +7,8 @@ export interface CodeProject {
 }
 
 export interface CodeProjectDetailed extends CodeProject {
-  url?: string;
+  ctaLabel?: string;
+  ctaUrl?: string;
   content?: any;
 }
 
