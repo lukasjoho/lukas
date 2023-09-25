@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import OnMount from '@/components/shared/OnMount';
 import content from '@/lib/content';
 import { fingerpaint, inter, mechepro } from '@/lib/fonts';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Header />
           {children}
           {modal}
+          <Analytics />
         </main>
         <OnMount />
       </body>
