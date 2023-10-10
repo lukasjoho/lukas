@@ -72,7 +72,13 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
               </a>
             )}
           </div>
-          {content && <RichTextRenderer richTextContent={content} />}
+
+          {content && (
+            <RichTextRenderer
+              richTextContent={content}
+              className="text-center"
+            />
+          )}
         </div>
       </Container>
     </PageLayout>

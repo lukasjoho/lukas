@@ -13,6 +13,7 @@ const VideoPage = () => {
     <PageLayout
       title="When I make videos, I go with the flow. I seek to capture moments, compose them into atmospheres and then portray them in short and snappy ways."
       backlink={{ href: '/', label: 'Back to home' }}
+      titleVariant="thin"
     >
       <VideoProjectsGrid />
     </PageLayout>

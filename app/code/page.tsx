@@ -13,6 +13,7 @@ const CodePage = () => {
     <PageLayout
       title={content.code.description}
       backlink={{ href: '/', label: 'Back to home' }}
+      titleVariant="thin"
     >
       <CodeProjectsGrid />
     </PageLayout>

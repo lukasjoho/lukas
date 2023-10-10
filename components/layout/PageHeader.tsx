@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import Title from '../shared/Title';
 import BackLink from './BackLink';
@@ -19,6 +20,7 @@ export interface PageHeaderProps {
     | 'large'
     | 'fluid'
     | undefined;
+  titleVariant?: 'bold' | 'thin';
 }
 
 const PageHeader: FC<PageHeaderProps> = ({
@@ -26,15 +28,22 @@ const PageHeader: FC<PageHeaderProps> = ({
   subtitle,
   backlink,
   containerVariant,
+  titleVariant = 'bold',
 }) => {
   return (
     <Container className="space-y-2 md:space-y-4" variant={containerVariant}>
       <BackLink href={backlink.href} label={backlink.label} />
       <div className="md:space-y-1">
-        <Title as="h1" className="text-3xl md:text-4xl">
+        <Title
+          as="h1"
+          className={cn(
+            'text-3xl md:text-4xl',
+            titleVariant == 'thin' && 'font-normal'
+          )}
+        >
           {title}
         </Title>
-        {subtitle && <h2 className="text-muted text-base">{subtitle}</h2>}
+        {subtitle && <h2 className="text-base text-muted">{subtitle}</h2>}
       </div>
     </Container>
   );

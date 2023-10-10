@@ -15,6 +15,7 @@ const AboutPage = () => {
         title={content.about.description}
         backlink={{ href: '/', label: 'Back to home' }}
         containerVariant="small"
+        titleVariant="thin"
       >
         <AboutTextGrid />
       </PageLayout>

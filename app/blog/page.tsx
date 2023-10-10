@@ -13,6 +13,7 @@ const BlogPage = () => {
     <PageLayout
       title={content.blog.description}
       backlink={{ href: '/', label: 'Back to home' }}
+      titleVariant="thin"
     >
       <BlogPostsGrid />
     </PageLayout>

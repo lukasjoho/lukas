@@ -12,14 +12,16 @@ const PageLayout: FC<PageLayoutProps> = ({
   backlink,
   containerVariant,
   children,
+  titleVariant,
 }) => {
   return (
-    <div className="space-y-8 md:space-y-16 grow flex flex-col">
+    <div className="flex grow flex-col space-y-6 md:space-y-12">
       <PageHeader
         title={title}
         subtitle={subtitle}
         backlink={backlink}
         containerVariant={containerVariant}
+        titleVariant={titleVariant}
       />
       <div className="grow">{children}</div>
       <Footer />

@@ -13,6 +13,7 @@ const PhotosPage = () => {
     <PageLayout
       title={content.photo.description}
       backlink={{ href: '/', label: 'Back to home' }}
+      titleVariant="thin"
     >
       <PhotoProjectsGrid />
     </PageLayout>

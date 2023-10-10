@@ -94,7 +94,7 @@ function renderOptions(links: any) {
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         const asset = assetMap.get(node.data.target.sys.id);
         return (
-          <div className="mb-2 md:mb-4">
+          <div className="mb-4 mt-4 md:mb-8 md:mt-8">
             <OptimizedImage
               src={asset.url}
               steps={[400, 600, 700, 800, 900, 1000]}
