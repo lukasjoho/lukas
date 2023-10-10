@@ -42,7 +42,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   return (
     <PageLayout
       title={title}
-      backlink={{ href: '/blog', label: 'Back to all' }}
+      backlink={{ href: '/blog/articles', label: 'Back to all' }}
       subtitle={caption}
       containerVariant="small"
     >

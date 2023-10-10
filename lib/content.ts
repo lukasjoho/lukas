@@ -21,8 +21,7 @@ const content = {
   },
   blog: {
     title: 'Blog',
-    description:
-      'I prefer building over writing. The rare occurences of writing however are to be found here.',
+    description: 'Sometimes, I document my build and thought processes.',
   },
   about: {
     title: 'About',

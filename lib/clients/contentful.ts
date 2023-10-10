@@ -9,6 +9,7 @@ import {
   PhotoProjectDetailed,
   VideoProject,
   VideoProjectDetailed,
+  YoutubeVideo,
 } from '../types';
 
 const client = createClient({
@@ -105,6 +106,45 @@ export const getAboutText = async (): Promise<AboutText | null> => {
   const aboutText: AboutText | null =
     res.data.aboutTextCollection.items[0] || null;
   return aboutText;
+};
+
+export const getYoutubeVideos = async (): Promise<YoutubeVideo[]> => {
+  let query = `{
+        youtubeVideoCollection(order: order_DESC){
+            items{
+                title
+                videoId
+                cover {
+                  url
+                }
+                order
+            }
+        }
+    }`;
+  const res = await fetchContentfulData(query);
+  const youtubeVideos: YoutubeVideo[] =
+    res.data.youtubeVideoCollection.items || [];
+  return youtubeVideos;
+};
+
+export const getYoutubeVideo = async (
+  id: string
+): Promise<YoutubeVideo | null> => {
+  let query = `{
+        youtubeVideoCollection(where: { videoId: "${id}" }, limit: 1){
+            items{
+                videoId
+                title
+                cover{
+                  url
+                }
+            }
+        }
+    }`;
+  const res = await fetchContentfulData(query);
+  const video: YoutubeVideo | null =
+    res.data.youtubeVideoCollection.items[0] || null;
+  return video;
 };
 
 export const getCodeProjects = async (): Promise<CodeProject[]> => {

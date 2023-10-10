@@ -1,3 +1,4 @@
+import { Icons } from '@/components/shared/Icons';
 import OptimizedImage from '@/components/shared/OptimizedImage';
 import { getBlogposts } from '@/lib/clients/contentful';
 import { BlogNote } from './BlogNote';
@@ -10,19 +11,19 @@ export const VideoItems = ({ idx }: PanelItemsProps) => {
     <>
       <PanelItem
         idx={idx}
-        className="w-[40%] translate-x-[45%] -rotate-[7deg] translate-y-[25%] group-hover:translate-y-[10%] group-hover:translate-x-[55%] group-hover:rotate-[-14deg]"
+        className="w-[40%] translate-x-[45%] translate-y-[25%] -rotate-[7deg] group-hover:translate-x-[55%] group-hover:translate-y-[10%] group-hover:rotate-[-14deg]"
       >
         <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-basketball_r8glow.jpg" />
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[40%] translate-x-[0%] -rotate-[3deg] -translate-y-[50%] group-hover:-translate-y-[70%] group-hover:-rotate-[6deg]"
+        className="w-[40%] -translate-y-[50%] translate-x-[0%] -rotate-[3deg] group-hover:-translate-y-[70%] group-hover:-rotate-[6deg]"
       >
         <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-wakeboard_plgkq4.jpg" />
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[40%] -translate-x-[45%] rotate-[7deg] translate-y-[15%] group-hover:translate-y-[-5%] group-hover:translate-x-[-55%] group-hover:rotate-[14deg]"
+        className="w-[40%] -translate-x-[45%] translate-y-[15%] rotate-[7deg] group-hover:translate-x-[-55%] group-hover:translate-y-[-5%] group-hover:rotate-[14deg]"
       >
         <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-lemarais_u4ta0p.jpg" />
       </PanelItem>
@@ -35,19 +36,19 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
     <>
       <PanelItem
         idx={idx}
-        className="w-[30%] translate-x-[70%] rotate-[10deg] translate-y-[30%] group-hover:translate-y-[10%] group-hover:translate-x-[85%] group-hover:rotate-[20deg]"
+        className="w-[30%] translate-x-[70%] translate-y-[30%] rotate-[10deg] group-hover:translate-x-[85%] group-hover:translate-y-[10%] group-hover:rotate-[20deg]"
       >
         <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1692224376/landing-photo-kimmich_muikpv.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[30%] translate-x-[0%] rotate-[5deg] translate-y-[5%] group-hover:translate-y-[-15%]  group-hover:rotate-[10deg]"
+        className="w-[30%] translate-x-[0%] translate-y-[5%] rotate-[5deg] group-hover:translate-y-[-15%]  group-hover:rotate-[10deg]"
       >
         <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791930/landing-photo-matip_f20xw4.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[30%] -translate-x-[70%] -rotate-[10deg] translate-y-[20%] group-hover:translate-y-[0%] group-hover:-translate-x-[85%] group-hover:-rotate-[20deg]"
+        className="w-[30%] -translate-x-[70%] translate-y-[20%] -rotate-[10deg] group-hover:-translate-x-[85%] group-hover:translate-y-[0%] group-hover:-rotate-[20deg]"
       >
         <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791926/landing-photo-snow_h1fxis.png" />
       </PanelItem>
@@ -62,7 +63,7 @@ export const BlogItems = async ({ idx }: PanelItemsProps) => {
     <>
       <PanelItem
         idx={idx}
-        className="w-[40%] md:w-[40%] translate-x-[45%] -rotate-[5deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:translate-x-[55%] group-hover:rotate-[-10deg]"
+        className="w-[40%] translate-x-[45%] translate-y-[30%] -rotate-[5deg] group-hover:translate-x-[55%] group-hover:translate-y-[0%] group-hover:rotate-[-10deg] md:w-[40%]"
       >
         <BlogNote
           title={blogPosts[0].title || 'Product Analytics 101'}
@@ -71,7 +72,7 @@ export const BlogItems = async ({ idx }: PanelItemsProps) => {
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[40%] md:w-[40%] translate-x-[0%] -rotate-[3deg] -translate-y-[30%] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg]"
+        className="w-[40%] -translate-y-[30%] translate-x-[0%] -rotate-[3deg] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg] md:w-[40%]"
       >
         <BlogNote
           title={blogPosts[1].title || 'The Experimentation Pyramid'}
@@ -80,7 +81,19 @@ export const BlogItems = async ({ idx }: PanelItemsProps) => {
       </PanelItem>
       <PanelItem
         idx={idx}
-        className="w-[40%] md:w-[40%] -translate-x-[45%] rotate-[10deg] translate-y-[30%] group-hover:translate-y-[0%] group-hover:-translate-x-[55%] group-hover:rotate-[20deg]"
+        className="w-[7%] translate-x-[300%] translate-y-[-300%] rotate-[5deg] group-hover:translate-x-[350%] group-hover:translate-y-[-500%] group-hover:rotate-[10deg] md:w-[7%]"
+      >
+        <Icons.youtube3d />
+      </PanelItem>
+      <PanelItem
+        idx={idx}
+        className="w-[12%] translate-x-[-200%] translate-y-[-200%] rotate-[-8deg] group-hover:translate-x-[-220%] group-hover:translate-y-[-280%] group-hover:rotate-[-15deg] md:w-[12%]"
+      >
+        <Icons.youtube3d />
+      </PanelItem>
+      <PanelItem
+        idx={idx}
+        className="w-[40%] -translate-x-[45%] translate-y-[30%] rotate-[10deg] group-hover:-translate-x-[55%] group-hover:translate-y-[0%] group-hover:rotate-[20deg] md:w-[40%]"
       >
         <BlogNote
           title={blogPosts[2].title || 'Product Engineering'}
@@ -99,7 +112,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
   return (
     <>
       <PanelItem
-        className="w-1/2 translate-x-1/3 rotate-[10deg] translate-y-[15%] group-hover:translate-y-[0%] group-hover:translate-x-[45%] group-hover:rotate-[20deg]"
+        className="w-1/2 translate-x-1/3 translate-y-[15%] rotate-[10deg] group-hover:translate-x-[45%] group-hover:translate-y-[0%] group-hover:rotate-[20deg]"
         idx={idx}
       >
         <OptimizedImage
@@ -108,7 +121,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
         />
       </PanelItem>
       <PanelItem
-        className="w-1/2 -translate-x-1/3 -rotate-[7deg] translate-y-[20%] group-hover:translate-y-[0%] group-hover:rotate-[-14deg] group-hover:translate-x-[-45%]"
+        className="w-1/2 -translate-x-1/3 translate-y-[20%] -rotate-[7deg] group-hover:translate-x-[-45%] group-hover:translate-y-[0%] group-hover:rotate-[-14deg]"
         idx={idx}
       >
         <OptimizedImage
@@ -117,7 +130,7 @@ export const CodeItems = ({ idx }: PanelItemsProps) => {
         />
       </PanelItem>
       <PanelItem
-        className="w-1/6 -rotate-[4deg] translate-y-[10%] group-hover:translate-y-[-10%] group-hover:rotate-[-8deg]"
+        className="w-1/6 translate-y-[10%] -rotate-[4deg] group-hover:translate-y-[-10%] group-hover:rotate-[-8deg]"
         idx={idx}
       >
         <OptimizedImage

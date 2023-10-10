@@ -8,11 +8,11 @@ interface BlogNoteProps extends React.HTMLProps<HTMLDivElement> {
 
 export const BlogNote: FC<BlogNoteProps> = ({ title, date }) => {
   return (
-    <div className=" bg-[#F3F3F3] px-4 3xl:px-8 text-center py-6 md:py-8 lg:py-14 xl:py-20 relative overflow-hidden grid items-center shadow-md">
-      <div className="space-y-4 md:space-y-7 absolute left-0 top-0 w-full">
+    <div className=" 3xl:px-8 xl:py-18 relative grid items-center overflow-hidden bg-[#F3F3F3] px-4 py-8 text-center shadow-md md:py-6 lg:py-12">
+      <div className="absolute left-0 top-0 w-full space-y-4 md:space-y-7">
         <div>
-          <div className="w-full flex justify-end px-2 py-1">
-            <span className="text-[#999999] text-xxs md:text-xs xl:text-base mr-1">
+          <div className="flex w-full justify-end px-2 py-1">
+            <span className="mr-1 text-xxs text-[#999999] md:text-xs xl:text-base">
               Date
             </span>
             <span className="font-fingerpaint text-xxs md:text-xs xl:text-base">
@@ -27,7 +27,7 @@ export const BlogNote: FC<BlogNoteProps> = ({ title, date }) => {
         <Line />
         <Line />
       </div>
-      <h2 className="relative z-10 font-fingerpaint text-xxs md:text-sm xl:text-lg">
+      <h2 className="relative z-10 font-fingerpaint text-xxs md:text-xs lg:text-sm xl:text-lg">
         {title}
       </h2>
     </div>

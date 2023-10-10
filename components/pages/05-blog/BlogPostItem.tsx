@@ -11,15 +11,15 @@ interface BlogPostItemProps {
 const BlogPostItem: FC<BlogPostItemProps> = ({ blogPost, rotation }) => {
   const { title, slug, date } = blogPost;
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/articles/${slug}`}>
       <div
-        className=" bg-[#F3F3F3] px-12 text-center py-12 relative overflow-hidden grid items-center"
+        className=" relative grid items-center overflow-hidden bg-[#F3F3F3] px-12 py-12 text-center"
         style={{ transform: `rotate(${rotation}deg)` }}
       >
-        <div className="space-y-7 absolute left-0 top-0 w-full">
+        <div className="absolute left-0 top-0 w-full space-y-7">
           <div>
-            <div className="w-full flex justify-end px-2 py-1">
-              <span className="text-[#999999] text-xs mr-1">Date</span>
+            <div className="flex w-full justify-end px-2 py-1">
+              <span className="mr-1 text-xs text-[#999999]">Date</span>
               <span className="font-fingerpaint text-xs">
                 {formatDate(date)}
               </span>

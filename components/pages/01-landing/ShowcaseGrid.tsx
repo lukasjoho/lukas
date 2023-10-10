@@ -5,7 +5,7 @@ import Panel from './Panel';
 
 const ShowcaseGrid = () => {
   return (
-    <div className="grid grid-cols-2 gap-3 md:gap-4 w-full grow relative pb-3 md:pb-4 max-h-[1800px]">
+    <div className="relative grid max-h-[1800px] w-full grow grid-cols-2 gap-3 pb-3 md:gap-4 md:pb-4">
       <Panel title="code" href="/code">
         <CodeItems idx={1} />
       </Panel>
@@ -15,7 +15,7 @@ const ShowcaseGrid = () => {
       <Panel title="video" href="/video">
         <VideoItems idx={3} />
       </Panel>
-      <Panel title="blog" href="/blog">
+      <Panel title="blog" href="/blog/youtube">
         <BlogItems idx={4} />
       </Panel>
       <Link

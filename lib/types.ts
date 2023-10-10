@@ -88,3 +88,9 @@ export interface MetaDataOptions {
 export interface ContentfulImage {
   url: string;
 }
+
+export interface YoutubeVideo {
+  title: string;
+  videoId: string;
+  cover: Cover;
+}

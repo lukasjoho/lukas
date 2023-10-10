@@ -65,7 +65,7 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
                 target="_blank"
                 className="w-full cursor-pointer"
               >
-                <button className="flex w-full justify-center gap-1.5 bg-dark py-4 text-white">
+                <button className="flex w-full justify-center gap-1.5 bg-dark py-4 font-medium text-white">
                   <ArrowUpRight />
                   {ctaLabel}
                 </button>
