@@ -1,4 +1,5 @@
 import Title from '@/components/shared/Title';
+import slugify from '@/lib/helpers';
 import { RichTextContent } from '@/lib/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
@@ -37,7 +38,7 @@ function renderOptions(links: any) {
       [MARKS.CODE]: (text: any) => <CodeHighlighter>{text}</CodeHighlighter>,
       [MARKS.ITALIC]: (text: any) => <span className="italic">{text}</span>,
       [MARKS.SUBSCRIPT]: (text: any) => (
-        <span className="text-xs text-muted -mb-2">{text}</span>
+        <span className="-mb-2 text-xs text-muted">{text}</span>
       ),
     },
     renderNode: {
@@ -45,29 +46,33 @@ function renderOptions(links: any) {
         <p className="mb-2 md:mb-4 [&>pre]:mt-0">{children}</p>
       ),
       [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <Title as="h2" className="mt-8 md:mt-8 mb-2 md:mb-4 text-3xl">
+        <Title
+          as="h2"
+          className="mb-2 mt-8 text-3xl md:mb-4 md:mt-8"
+          id={slugify(children[0])}
+        >
           {children}
         </Title>
       ),
       [BLOCKS.HEADING_3]: (node: any, children: any) => (
-        <Title as="h3" className="mt-1.5 md:mt-3 mb-1.5 md:mb-3 text-xl">
+        <Title as="h3" className="mb-1.5 mt-1.5 text-xl md:mb-3 md:mt-3">
           {children}
         </Title>
       ),
       [BLOCKS.HEADING_4]: (node: any, children: any) => (
-        <Title as="h4" className="mt-1 md:mt-2 mb-1 md:mb-2 text-base">
+        <Title as="h4" className="mb-1 mt-1 text-base md:mb-2 md:mt-2">
           {children}
         </Title>
       ),
       [BLOCKS.QUOTE]: (node: any, children: any) => (
-        <p className="border-l-4 border-dark pl-2 text-lg font-medium mb-2 md:mb-4 [&>p]:mb-0">
+        <p className="mb-2 border-l-4 border-dark pl-2 text-lg font-medium md:mb-4 [&>p]:mb-0">
           {children}
         </p>
       ),
       [INLINES.HYPERLINK]: (node: any, children: any) => (
         <a
           href={node.data.uri}
-          className="text-blue-500 font-medium hover:underline"
+          className="font-medium text-blue-500 hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -75,11 +80,11 @@ function renderOptions(links: any) {
         </a>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
-        <ul className="list-disc ml-4 mb-2 md:mb-4">{children}</ul>
+        <ul className="mb-2 ml-4 list-disc md:mb-4">{children}</ul>
       ),
       [BLOCKS.OL_LIST]: (node: any, children: any) => (
         <ol
-          className="list-decimal mb-2 md:mb-4 ml-6 md:ml-5
+          className="mb-2 ml-6 list-decimal md:mb-4 md:ml-5
         "
         >
           {children}

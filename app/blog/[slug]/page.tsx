@@ -2,6 +2,7 @@ import { getBlogpost, getBlogposts } from '@/lib/clients/contentful';
 
 import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
+import Headlines from '@/components/pages/05-blog/Headlines';
 import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
 import { createMetaDataObject } from '@/lib/helpers';
 import { BlogPost, Params } from '@/lib/types';
@@ -46,6 +47,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       containerVariant="small"
     >
       <Container variant="small">
+        <Headlines content={content} />
         {content && (
           <div className="relative w-full overflow-hidden">
             <RichTextRenderer richTextContent={content} />
