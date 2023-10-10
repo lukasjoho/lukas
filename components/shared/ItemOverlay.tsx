@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Title from './Title';
 
 interface ItemOverlayProps {
   title: string;
@@ -7,12 +8,10 @@ interface ItemOverlayProps {
 
 const ItemOverlay: FC<ItemOverlayProps> = ({ title, caption }) => {
   return (
-    <div className="hidden md:grid absolute left-0 top-0 w-full h-full bg-dark/70 place-items-center opacity-0 hover:opacity-100 transition duration-300 px-4 text-white">
+    <div className="absolute left-0 top-0 hidden h-full w-full place-items-center bg-dark/70 px-4 text-white opacity-0 transition duration-300 hover:opacity-100 md:grid">
       <div>
-        <h2 className="relative font-meche text-xl md:text-3xl text-center">
-          {title}
-        </h2>
-        <h3 className="font-meche absolute w-full left-0 text-base font-light text-center text-white">
+        <Title className="text-center text-xl md:text-3xl">{title}</Title>
+        <h3 className="absolute left-0 w-full text-center font-meche text-base text-white">
           {caption}
         </h3>
       </div>
