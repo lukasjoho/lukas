@@ -88,7 +88,7 @@ const Menu = () => {
   return (
     <div onKeyDown={handleKeyDown}>
       <div
-        className="h-6 w-6 relative cursor-pointer grid items-center"
+        className="relative grid h-6 w-6 cursor-pointer items-center"
         onClick={handleMenuClick}
       >
         <Lottie
@@ -124,7 +124,7 @@ const Menu = () => {
               duration: 0.3,
               ease: [0.74, 0, 0.19, 1.02],
             }}
-            className="-z-10 w-screen h-screen fixed left-0 top-0 bg-dark text-white font-meche font-medium text-3xl text-center grid items-center"
+            className="fixed left-0 top-0 -z-10 grid h-screen w-screen items-center bg-dark text-center font-meche text-3xl font-medium text-white"
           >
             <nav>
               <motion.ul
@@ -155,9 +155,17 @@ interface NavItemProps {
   href: string;
 }
 
-const NavItem: FC<NavItemProps> = ({ children, href }) => {
+function useIsActive(href: string) {
   const pathname = usePathname();
-  const isActive = pathname == href;
+  if (href === '/') {
+    return pathname === '/';
+  }
+  const isActive = pathname.startsWith(href);
+  return isActive;
+}
+
+const NavItem: FC<NavItemProps> = ({ children, href }) => {
+  const isActive = useIsActive(href);
   const { setIsOpen }: any = useContext(MenuContext);
 
   const handleClose = () => {
@@ -174,11 +182,11 @@ const NavItem: FC<NavItemProps> = ({ children, href }) => {
       <Link
         href={href}
         className={cn(
-          'text-4xl grow grid items-center text-muted transition duration-150 hover:text-white cursor-pointer',
+          'grid grow cursor-pointer items-center text-4xl text-muted transition duration-150 hover:text-white',
           isActive && 'text-white'
         )}
       >
-        {children}
+        <div className="font-fingerpaint">{children}</div>
       </Link>
     </motion.li>
   );
