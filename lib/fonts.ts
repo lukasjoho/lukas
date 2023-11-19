@@ -9,6 +9,18 @@ export const fingerpaint = Finger_Paint({
   subsets: ['latin'],
 });
 
+export const mackinac = localFont({
+  variable: '--font-mackinac',
+  display: 'swap',
+  src: [
+    {
+      path: '../public/fonts/mackinac-bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+});
+
 export const mechepro = localFont({
   variable: '--font-mechepro',
   display: 'swap',

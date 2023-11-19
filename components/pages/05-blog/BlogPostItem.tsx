@@ -13,16 +13,14 @@ const BlogPostItem: FC<BlogPostItemProps> = ({ blogPost, rotation }) => {
   return (
     <Link href={`/blog/articles/${slug}`}>
       <div
-        className=" relative grid items-center overflow-hidden bg-[#F3F3F3] px-12 py-12 text-center"
+        className=" relative grid items-center overflow-hidden bg-[#F3F3F3] px-12 py-12 text-center font-fingerpaint"
         style={{ transform: `rotate(${rotation}deg)` }}
       >
         <div className="absolute left-0 top-0 w-full space-y-7">
           <div>
             <div className="flex w-full justify-end px-2 py-1">
               <span className="mr-1 text-xs text-[#999999]">Date</span>
-              <span className="font-fingerpaint text-xs">
-                {formatDate(date)}
-              </span>
+              <span className="text-xs">{formatDate(date)}</span>
             </div>
             <Line />
           </div>
@@ -32,7 +30,7 @@ const BlogPostItem: FC<BlogPostItemProps> = ({ blogPost, rotation }) => {
           <Line />
           <Line />
         </div>
-        <h2 className="relative z-10 font-fingerpaint">{title}</h2>
+        <h2 className="relative z-10">{title}</h2>
       </div>
     </Link>
   );

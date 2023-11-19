@@ -124,11 +124,11 @@ const Menu = () => {
               duration: 0.3,
               ease: [0.74, 0, 0.19, 1.02],
             }}
-            className="fixed left-0 top-0 -z-10 grid h-screen w-screen items-center bg-dark text-center font-meche text-3xl font-medium text-white"
+            className="fixed left-0 top-0 -z-10 grid h-screen w-screen items-center bg-dark text-center text-3xl font-medium text-white"
           >
             <nav>
               <motion.ul
-                className="space-y-4"
+                className="font-mackinac space-y-4"
                 variants={menucontainer}
                 initial="hidden"
                 animate="show"
@@ -186,7 +186,7 @@ const NavItem: FC<NavItemProps> = ({ children, href }) => {
           isActive && 'text-white'
         )}
       >
-        <div className="font-fingerpaint">{children}</div>
+        <div>{children}</div>
       </Link>
     </motion.li>
   );

@@ -1,7 +1,7 @@
 import Header from '@/components/layout/Header';
 import OnMount from '@/components/shared/OnMount';
 import content from '@/lib/content';
-import { fingerpaint, inter, mechepro } from '@/lib/fonts';
+import { fingerpaint, inter, mackinac, mechepro } from '@/lib/fonts';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import './globals.css';
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${mechepro.variable} ${fingerpaint.variable} text-dark`}
+        className={`${inter.className} ${mechepro.variable} ${fingerpaint.variable} ${mackinac.variable} text-dark`}
       >
         <main className="flex flex-col" style={{ height: '100dvh' }}>
           <Header />

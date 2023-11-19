@@ -21,7 +21,7 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
             <OptimizedImage src={cover.url} steps={[400, 500, 600, 700, 800]} />
           </div>
 
-          <div className="relative z-10 font-meche">
+          <div className="relative z-10">
             <Title
               as="h2"
               className={cn(

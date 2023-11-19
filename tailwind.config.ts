@@ -26,6 +26,7 @@ module.exports = {
       },
       fontFamily: {
         meche: ['var(--font-mechepro)'],
+        mackinac: ['var(--font-mackinac)'],
         fingerpaint: ['var(--font-fingerpaint)'],
       },
       height: {

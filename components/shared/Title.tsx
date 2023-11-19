@@ -12,7 +12,7 @@ const HeadingTag: FC<{
 }> = ({ as: Component, props }) => (
   <Component
     {...props}
-    className={cn('font-meche text-2xl font-medium', props.className)}
+    className={cn('font-mackinac text-2xl font-bold', props.className)}
   />
 );
 
