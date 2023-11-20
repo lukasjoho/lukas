@@ -12,7 +12,7 @@ const Intro = () => {
           </Title>
           <p className="text-base md:text-lg">
             Ever since building my first website I fell in love with building
-            software. I first 'managed' building software as a product manager
+            software. I first managed building software as a product manager
             before deciding to become a software engineer myself. I value
             iteration and working in teams that follow a clear mission with good
             strategy. I am committed to build user experiences to the highest

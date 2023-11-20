@@ -10,7 +10,7 @@ import { Keyboard } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import quotes from './quotes.json';
 
-type Quote = {
+type TQuote = {
   text: string;
   author: string;
   url?: string;
@@ -46,9 +46,12 @@ const QuoteSlider = () => {
           }}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {quotes.map((quote: Quote) => {
+          {quotes.map((quote: TQuote) => {
             return (
-              <SwiperSlide className="self-center py-16 md:py-24">
+              <SwiperSlide
+                className="self-center py-16 md:py-24"
+                key={quote.text}
+              >
                 <Quote quote={quote} />
               </SwiperSlide>
             );
@@ -108,7 +111,7 @@ const NavigationButton = ({ onClick, children, ...props }: any) => {
 };
 
 interface QuoteProps {
-  quote: Quote;
+  quote: TQuote;
 }
 
 const Quote = ({ quote }: QuoteProps) => {
