@@ -16,7 +16,7 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
   return (
     <motion.div whileTap={{ scale: 0.97 }}>
       <Link href={`/code/${slug}`}>
-        <div className="relative aspect-[9/8] w-full overflow-hidden rounded-xl pl-5 pt-6 md:pl-6 md:pt-8">
+        <div className="relative aspect-[9/8] w-full overflow-hidden rounded-xl pl-5 pt-6 md:rounded-2xl md:pl-6 md:pt-8">
           <div className="absolute left-0 top-0 h-full w-full">
             <OptimizedImage src={cover.url} steps={[400, 500, 600, 700, 800]} />
           </div>

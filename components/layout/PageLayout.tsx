@@ -15,7 +15,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   titleVariant,
 }) => {
   return (
-    <div className="flex grow flex-col space-y-6 md:space-y-12">
+    <div className="flex grow flex-col space-y-8 pt-3 md:space-y-16 md:pt-6">
       <PageHeader
         title={title}
         subtitle={subtitle}

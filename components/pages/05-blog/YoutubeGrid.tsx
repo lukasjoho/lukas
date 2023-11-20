@@ -13,7 +13,7 @@ const YoutubeGrid = async () => {
           return (
             <Link href={`/blog/youtube/${v.videoId}`} key={v.videoId}>
               <div className="space-y-3">
-                <div className="relative aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-lg">
+                <div className="relative aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-xl md:rounded-2xl">
                   <OptimizedImage src={v.cover.url} steps={[400, 500, 600]} />
                   <YoutubeOverlay />
                 </div>

@@ -1,5 +1,7 @@
 import PageLayout from '@/components/layout/PageLayout';
-import AboutTextGrid from '@/components/pages/06-about/AboutTextGrid';
+import Glacier from '@/components/pages/06-about/Glacier';
+import Intro from '@/components/pages/06-about/Intro';
+import QuoteSlider from '@/components/pages/06-about/QuoteSlider';
 import content from '@/lib/content';
 import { Metadata } from 'next';
 
@@ -14,10 +16,14 @@ const AboutPage = () => {
       <PageLayout
         title={content.about.description}
         backlink={{ href: '/', label: 'Back to home' }}
-        containerVariant="small"
+        containerVariant="normal"
         titleVariant="thin"
       >
-        <AboutTextGrid />
+        <div className="space-y-6 md:space-y-12">
+          <Intro />
+          <QuoteSlider />
+          <Glacier />
+        </div>
       </PageLayout>
     </div>
   );

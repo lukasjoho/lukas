@@ -37,7 +37,7 @@ const PageHeader: FC<PageHeaderProps> = ({
         <Title
           as="h1"
           className={cn(
-            'text-3xl md:text-4xl',
+            'text-2xl md:text-4xl',
             titleVariant == 'thin' && 'font-normal'
           )}
         >
