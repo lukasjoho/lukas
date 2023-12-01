@@ -28,3 +28,14 @@ export const pageEvent = (url: string) => {
   // @ts-ignore
   window?.analytics?.page(url);
 };
+
+export const identifyEvent = (id: string, properties?: Object) => {
+  // @ts-ignore
+  window?.analytics?.identify(id, { ...properties });
+  // if (process.env.NODE_ENV == 'development') {
+  //   toast.success('Identify', {
+  //     position: 'bottom-right',
+  //     style: { borderRadius: '4px' },
+  //   });
+  // }
+};
