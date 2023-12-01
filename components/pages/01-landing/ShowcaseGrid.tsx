@@ -5,7 +5,7 @@ import Panel from './Panel';
 
 const ShowcaseGrid = () => {
   return (
-    <div className="relative grid max-h-[1800px] w-full grow grid-cols-2 gap-3 pb-3 md:gap-4 md:pb-4">
+    <div className="relative grid max-h-[1800px] w-full grow grid-cols-2 gap-4 pb-4 md:gap-4 md:pb-4">
       <Panel title="code" href="/code">
         <CodeItems idx={1} />
       </Panel>

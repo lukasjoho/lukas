@@ -19,7 +19,7 @@ const AboutPage = () => {
         containerVariant="normal"
         titleVariant="thin"
       >
-        <div className="space-y-6 md:space-y-12">
+        <div className="space-y-4 md:space-y-12">
           <Intro />
           <QuoteSlider />
           <Glacier />

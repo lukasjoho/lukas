@@ -31,10 +31,10 @@ const Avatar = () => {
       transition={{
         type: 'spring',
       }}
-      className="bg-lightgrey w-[120px] md:w-[200px] xl:w-[240px] rounded-full border-[12px] md:border-[16px] border-white aspect-square overflow-hidden group"
+      className="group aspect-square w-[140px] overflow-hidden rounded-full border-[16px] border-white bg-lightgrey md:w-[200px] md:border-[16px] xl:w-[240px]"
     >
-      <div className="transition duration-300 hover:scale-110 relative w-full h-full">
-        <div className="absolute left-0 top-0 w-full h-full opacity-100">
+      <div className="relative h-full w-full transition duration-300 hover:scale-110">
+        <div className="absolute left-0 top-0 h-full w-full opacity-100">
           <OptimizedImage
             src={
               'https://res.cloudinary.com/dum2lqmke/image/upload/v1692881004/lukas_nwme8k.jpg'

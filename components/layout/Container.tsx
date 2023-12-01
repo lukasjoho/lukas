@@ -16,7 +16,7 @@ const Container: FC<ContainerProps> = ({
   return (
     <div
       className={cn(
-        'mx-auto flex w-full max-w-[2200px] flex-col px-3 md:px-4',
+        'mx-auto flex w-full max-w-[2200px] flex-col px-4 md:px-4',
 
         variant === 'small' && 'max-w-[720px]',
         variant === 'medium' && 'max-w-[900px]',

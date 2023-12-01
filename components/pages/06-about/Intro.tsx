@@ -1,15 +1,14 @@
 import Container from '@/components/layout/Container';
 import OptimizedImage from '@/components/shared/OptimizedImage';
-import Title from '@/components/shared/Title';
 
 const Intro = () => {
   return (
     <Container>
       <div className="grid grid-cols-1 overflow-hidden rounded-xl  bg-lightgrey md:grid-cols-2 md:gap-16 md:rounded-2xl">
-        <div className="space-y-2 p-6 md:space-y-4 md:p-8">
-          <Title className="text-2xl md:text-2xl">
-            Happy to see you here 👋
-          </Title>
+        <div className="p-4 md:p-8">
+          <h2 className="text-base font-medium md:text-lg">
+            Happy to see you here 👋.
+          </h2>
           <p className="text-base md:text-lg">
             Ever since building my first website I fell in love with building
             software. I first managed building software as a product manager

@@ -44,7 +44,6 @@ const QuoteSlider = () => {
             swiper.isBeginning ? setIsStart(true) : setIsStart(false);
             swiper.isEnd ? setIsEnd(true) : setIsEnd(false);
           }}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {quotes.map((quote: TQuote) => {
             return (
@@ -135,7 +134,7 @@ const Quote = ({ quote }: QuoteProps) => {
           <ExternalLink className="h-5 w-5" />
         </Link>
       )}
-      <p className="font-mackinac relative text-lg leading-9 md:text-2xl">
+      <p className="relative font-mackinac text-lg leading-9 md:text-2xl">
         <span className="mr-1 text-xl md:text-3xl">&ldquo;</span>
         {textJSX}
         <span className="ml-1 text-xl md:text-3xl">&rdquo;</span>

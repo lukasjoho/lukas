@@ -43,7 +43,6 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
 
   const handleClick: MouseEventHandler = useCallback(
     (e) => {
-      console.log('CLICKED', e.target, xMob.current);
       e.stopPropagation();
       if (
         e.target === overlay.current ||
@@ -84,13 +83,13 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
         {show && (
           <div
             className={cn(
-              'fixed top-0 left-0 w-screen h-screen z-50 overflow-scroll flex items-start py-16',
-              isCenter && 'py-0 items-center'
+              'no-scrollbar fixed left-0 top-0 z-50 flex h-screen w-screen items-start overflow-scroll py-16',
+              isCenter && 'items-center py-0'
             )}
           >
             <motion.div
               ref={overlay}
-              className="fixed w-full h-full top-0 left-0 bg-dark/95 backdrop-blur-sm"
+              className="fixed left-0 top-0 h-full w-full bg-dark/95 backdrop-blur-sm"
               key="overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -102,7 +101,7 @@ const InterceptionModal: FC<InterceptionModalProps> = ({
                 customRef={x}
                 handleClick={handleClick}
                 fill="white"
-                className="hidden md:block group cursor-pointer fixed top-4 right-4"
+                className="group fixed right-4 top-4 hidden cursor-pointer md:block"
               />
             </motion.div>
             <div className="md:hidden">

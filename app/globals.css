@@ -10,19 +10,29 @@
 
 @layer utilities {
   .my-masonry-grid {
-    @apply -ml-3 md:-ml-4 -mb-3 md:-mb-4 flex -mr-3 md:-mr-4 w-[calc(100%+12px)] md:w-[calc(100%+16px)];
+    @apply -mb-4 -ml-4 -mr-4 flex w-[calc(100%+16px)] md:-mb-4 md:-ml-4 md:-mr-4 md:w-[calc(100%+16px)];
   }
   .my-masonry-grid_column {
     background-clip: padding-box;
-    @apply pl-3 md:pl-4;
+    @apply pl-4 md:pl-4;
   }
 
   /* Style your items */
   .my-masonry-grid_column > div {
     /* change div to reference your elements you put in <Masonry> */
     background: grey;
-    @apply mb-3 md:mb-4;
+    @apply mb-4 md:mb-4;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 pre {
