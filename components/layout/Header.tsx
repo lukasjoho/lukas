@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useState } from 'react';
 
+import { trackEvent } from '@/lib/clients/segment';
 import Link from 'next/link';
 import { Icons } from '../shared/Icons';
 import { SocialIcons } from '../shared/SocialIcons';
@@ -15,10 +16,10 @@ export const MenuContext = createContext({
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="relative z-40">
+    <div className="relative z-40" onClick={() => trackEvent('Header Clicked')}>
       <MenuContext.Provider value={{ isOpen, setIsOpen }}>
         <Container variant="fluid">
-          <div className="w-full h-14 flex items-center justify-between relative">
+          <div className="relative flex h-14 w-full items-center justify-between">
             <Link href="/">
               <Icons.logo
                 color={isOpen ? 'white' : 'dark'}
