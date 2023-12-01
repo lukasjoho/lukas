@@ -57,28 +57,33 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
 };
 
 export const BlogItems = async ({ idx }: PanelItemsProps) => {
-  const blogPosts = await getBlogposts();
+  const blogPosts = await getBlogposts({ limit: 3 });
 
   return (
     <>
-      <PanelItem
-        idx={idx}
-        className="w-[40%] translate-x-[45%] translate-y-[30%] -rotate-[5deg] group-hover:translate-x-[55%] group-hover:translate-y-[0%] group-hover:rotate-[-10deg] md:w-[40%]"
-      >
-        <BlogNote
-          title={blogPosts[0].title || 'Product Analytics 101'}
-          date={blogPosts[0].date}
-        />
-      </PanelItem>
-      <PanelItem
-        idx={idx}
-        className="w-[40%] -translate-y-[30%] translate-x-[0%] -rotate-[3deg] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg] md:w-[40%]"
-      >
-        <BlogNote
-          title={blogPosts[1].title || 'The Experimentation Pyramid'}
-          date={blogPosts[1].date}
-        />
-      </PanelItem>
+      {blogPosts.length > 0 && (
+        <PanelItem
+          idx={idx}
+          className="w-[40%] translate-x-[45%] translate-y-[30%] -rotate-[5deg] group-hover:translate-x-[55%] group-hover:translate-y-[0%] group-hover:rotate-[-10deg] md:w-[40%]"
+        >
+          <BlogNote
+            title={blogPosts[0].title || 'Product Analytics 101'}
+            date={blogPosts[0].date}
+          />
+        </PanelItem>
+      )}
+
+      {blogPosts.length > 1 && (
+        <PanelItem
+          idx={idx}
+          className="w-[40%] -translate-y-[30%] translate-x-[0%] -rotate-[3deg] group-hover:-translate-y-[60%] group-hover:rotate-[-6deg] md:w-[40%]"
+        >
+          <BlogNote
+            title={blogPosts[1].title || 'The Experimentation Pyramid'}
+            date={blogPosts[1].date}
+          />
+        </PanelItem>
+      )}
       <PanelItem
         idx={idx}
         className="w-[7%] translate-x-[300%] translate-y-[-300%] rotate-[5deg] group-hover:translate-x-[350%] group-hover:translate-y-[-500%] group-hover:rotate-[10deg] md:w-[7%]"
@@ -95,10 +100,7 @@ export const BlogItems = async ({ idx }: PanelItemsProps) => {
         idx={idx}
         className="w-[40%] -translate-x-[45%] translate-y-[30%] rotate-[10deg] group-hover:-translate-x-[55%] group-hover:translate-y-[0%] group-hover:rotate-[20deg] md:w-[40%]"
       >
-        <BlogNote
-          title={blogPosts[2].title || 'Product Engineering'}
-          date={blogPosts[2].date}
-        />
+        <BlogNote title={'Product Engineering'} date={'2022-10-10'} />
       </PanelItem>
     </>
   );

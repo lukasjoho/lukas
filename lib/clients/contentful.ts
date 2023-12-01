@@ -18,10 +18,11 @@ const client = createClient({
 });
 
 const fetchContentfulData = async (query: string): Promise<any> => {
-  const res: any = await fetch(
+  const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
+      cache: process.env.NODE_ENV === 'production' ? 'force-cache' : 'no-cache',
       headers: {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
         'Content-Type': 'application/json',
@@ -251,9 +252,15 @@ export const getVideoProject = async (
   return videoProject;
 };
 
-export const getBlogposts = async (): Promise<BlogPost[]> => {
+interface getBlogpostsArgs {
+  limit?: number;
+}
+
+export const getBlogposts = async ({
+  limit = 100,
+}: getBlogpostsArgs = {}): Promise<BlogPost[]> => {
   let query = `{
-        blogPostCollection{
+        blogPostCollection(limit: ${limit}, order: date_DESC){
             items{
                 slug
                 title
