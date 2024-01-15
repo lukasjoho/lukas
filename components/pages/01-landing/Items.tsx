@@ -38,19 +38,19 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
         idx={idx}
         className="w-[30%] translate-x-[70%] translate-y-[30%] rotate-[10deg] group-hover:translate-x-[85%] group-hover:translate-y-[10%] group-hover:rotate-[20deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1692224376/landing-photo-kimmich_muikpv.png" />
+        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791926/landing-photo-snow_h1fxis.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[30%] translate-x-[0%] translate-y-[5%] rotate-[5deg] group-hover:translate-y-[-15%]  group-hover:rotate-[10deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791930/landing-photo-matip_f20xw4.png" />
+        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1692224376/landing-photo-kimmich_muikpv.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[30%] -translate-x-[70%] translate-y-[20%] -rotate-[10deg] group-hover:-translate-x-[85%] group-hover:translate-y-[0%] group-hover:-rotate-[20deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791926/landing-photo-snow_h1fxis.png" />
+        <Polaroid imageUrl="https://res.cloudinary.com/du3mz9iny/image/upload/v1705336292/landing-photo-fishing_ykssp2.png" />
       </PanelItem>
     </>
   );

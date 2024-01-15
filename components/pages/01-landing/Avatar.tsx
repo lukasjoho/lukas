@@ -37,7 +37,7 @@ const Avatar = () => {
         <div className="absolute left-0 top-0 h-full w-full opacity-100">
           <OptimizedImage
             src={
-              'https://res.cloudinary.com/dum2lqmke/image/upload/v1692881004/lukas_nwme8k.jpg'
+              'https://res.cloudinary.com/du3mz9iny/image/upload/v1704726742/lukas_dark_new_zxhvg3.jpg'
             }
           />
         </div>
