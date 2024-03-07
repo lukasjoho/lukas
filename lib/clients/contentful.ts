@@ -43,6 +43,8 @@ export const getPhotoProjects = async (): Promise<PhotoProject[]> => {
                 caption
                 cover{
                     url
+                    height
+                    width
                 }
             }
         }
@@ -154,6 +156,8 @@ export const getCodeProjects = async (): Promise<CodeProject[]> => {
             items{
                 cover{
                     url
+                    height
+                    width
                 }
                 title
                 caption

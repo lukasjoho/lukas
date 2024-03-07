@@ -22,8 +22,6 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        {/* @ts-ignore window.analytics undefined below */}
-
         <body
           className={`${inter.className} ${mechepro.variable} ${fingerpaint.variable} ${mackinac.variable} text-dark`}
         >

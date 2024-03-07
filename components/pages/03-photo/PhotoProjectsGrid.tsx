@@ -10,7 +10,12 @@ const PhotoProjectsGrid = async () => {
     <Container variant="fluid">
       <MasonryLayout>
         {photoProjects.map((photoProject: PhotoProject, idx: number) => {
-          return <PhotoProjectItem photoProject={photoProject} key={idx} />;
+          return (
+            <PhotoProjectItem
+              photoProject={photoProject}
+              key={photoProject.slug}
+            />
+          );
         })}
       </MasonryLayout>
     </Container>

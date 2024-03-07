@@ -1,6 +1,6 @@
 import ItemOverlay from '@/components/shared/ItemOverlay';
-import OptimizedImage from '@/components/shared/OptimizedImage';
 import { PhotoProject } from '@/lib/types';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -14,7 +14,14 @@ const PhotoProjectItem: FC<PhotoProjectItemProps> = ({ photoProject }) => {
     <div>
       <Link href={`/photo/${slug}`}>
         <div className="relative">
-          <OptimizedImage src={cover.url} steps={[200, 300, 400, 500]} />
+          {/* <OptimizedImage src={cover.url} steps={[200, 300, 400, 500]} /> */}
+          <Image
+            src={cover.url}
+            alt={title}
+            width={cover.width}
+            height={cover.height}
+            sizes="500px"
+          />
           <ItemOverlay title={title} caption={caption} />
         </div>
       </Link>

@@ -57,6 +57,8 @@ export interface AboutText {
 
 export interface Cover {
   url: string;
+  height: number;
+  width: number;
 }
 
 interface File {

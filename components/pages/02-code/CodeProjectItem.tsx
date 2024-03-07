@@ -1,9 +1,9 @@
 'use client';
-import OptimizedImage from '@/components/shared/OptimizedImage';
 import Title from '@/components/shared/Title';
 import { CodeProject } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -17,9 +17,7 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
     <motion.div whileTap={{ scale: 0.97 }}>
       <Link href={`/code/${slug}`}>
         <div className="relative aspect-[9/8] w-full overflow-hidden rounded-xl pl-5 pt-6 md:rounded-2xl md:pl-6 md:pt-8">
-          <div className="absolute left-0 top-0 h-full w-full">
-            <OptimizedImage src={cover.url} steps={[400, 500, 600, 700, 800]} />
-          </div>
+          <Image src={cover.url} alt={title} fill sizes="600px" />
 
           <div className="relative z-10">
             <Title

@@ -39,6 +39,7 @@ const Avatar = () => {
             src={
               'https://res.cloudinary.com/du3mz9iny/image/upload/v1704726742/lukas_dark_new_zxhvg3.jpg'
             }
+            steps={[200]}
           />
         </div>
       </div>
