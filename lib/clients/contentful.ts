@@ -38,10 +38,16 @@ export const getPhotoProjects = async (): Promise<PhotoProject[]> => {
   let query = `{
         galleryCollection(order: order_DESC){
             items{
+                sys{
+                  id
+                }
                 slug
                 title
                 caption
                 cover{
+                    sys{
+                      id
+                    }
                     url
                     height
                     width
@@ -58,17 +64,30 @@ export const getPhotoProject = async (
   slug: string
 ): Promise<PhotoProjectDetailed | null> => {
   let query = `{
-    galleryCollection(where: { slug: "${slug}" }, limit: 1) {
+    galleryCollection(where: { slug: "${slug}" }, limit: 1) { 
       items {
+        sys{
+          id
+        }
         slug
         title
         caption
         cover {
+          sys{
+            id
+          }
           url
+          width
+          height
         }
         imagesCollection{
           items{
+            sys{
+              id
+            }
             url
+            width
+            height
           }
         }
       }

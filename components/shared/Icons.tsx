@@ -116,68 +116,41 @@ export const Icons = {
   youtube3d: ({ ...props }) => {
     return (
       <svg
-        viewBox="0 0 103 73"
+        viewBox="0 0 29 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
       >
-        <path
-          d="M100.309 11.6997C99.1371 7.30749 95.6849 3.84849 91.3019 2.67455C83.3573 0.541627 51.5 0.541626 51.5 0.541626C51.5 0.541626 19.643 0.541627 11.6981 2.67455C7.31511 3.84883 3.86291 7.30749 2.69128 11.6997C0.562499 19.6605 0.5625 36.2699 0.5625 36.2699C0.5625 36.2699 0.562499 52.8796 2.69128 60.8401C3.86291 65.2322 7.31511 68.5473 11.6981 69.7212C19.643 71.8541 51.5 71.8541 51.5 71.8541C51.5 71.8541 83.357 71.8541 91.3019 69.7212C95.6849 68.5473 99.1371 65.2322 100.309 60.8401C102.437 52.8796 102.437 36.2699 102.437 36.2699C102.437 36.2699 102.437 19.6605 100.309 11.6997ZM41.0809 51.3501V21.1897L67.7073 36.2702L41.0809 51.3501Z"
-          fill="url(#paint0_linear_1597_10)"
-        />
-        <g filter="url(#filter0_d_1597_10)">
-          <path
-            d="M41.0801 21.1895V51.3499L67.7065 36.27L41.0801 21.1895Z"
-            fill="white"
-          />
+        <g clip-path="url(#clip0_1116_1996)">
+          <g clip-path="url(#clip1_1116_1996)">
+            <path
+              d="M27.9727 3.12324C27.6435 1.89323 26.6768 0.926623 25.4468 0.597366C23.2197 1.78814e-07 14.285 0 14.285 0C14.285 0 5.35042 1.78814e-07 3.12323 0.597366C1.89323 0.926623 0.926623 1.89323 0.597366 3.12324C1.78814e-07 5.35042 0 10 0 10C0 10 1.78814e-07 14.6496 0.597366 16.8768C0.926623 18.1068 1.89323 19.0734 3.12323 19.4026C5.35042 20 14.285 20 14.285 20C14.285 20 23.2197 20 25.4468 19.4026C26.6768 19.0734 27.6435 18.1068 27.9727 16.8768C28.5701 14.6496 28.5701 10 28.5701 10C28.5701 10 28.5677 5.35042 27.9727 3.12324Z"
+              fill="url(#paint0_linear_1116_1996)"
+            />
+            <path
+              d="M11.4253 14.2854L18.8477 10.0004L11.4253 5.71533V14.2854Z"
+              fill="white"
+            />
+          </g>
         </g>
         <defs>
-          <filter
-            id="filter0_d_1597_10"
-            x="39.0801"
-            y="17.1895"
-            width="38.626"
-            height="42.1604"
-            filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
-          >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dx="4" dy="2" />
-            <feGaussianBlur stdDeviation="3" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_1597_10"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_1597_10"
-              result="shape"
-            />
-          </filter>
           <linearGradient
-            id="paint0_linear_1597_10"
-            x1="44.7083"
-            y1="0.541626"
-            x2="51.5"
-            y2="71.8541"
+            id="paint0_linear_1116_1996"
+            x1="14.2851"
+            y1="0"
+            x2="14.2851"
+            y2="20"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#F23F31" />
-            <stop offset="1" stop-color="#BF1E12" />
+            <stop stop-color="#FF1515" />
+            <stop offset="1" stop-color="#DD0000" />
           </linearGradient>
+          <clipPath id="clip0_1116_1996">
+            <rect width="28.57" height="20" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_1116_1996">
+            <rect width="28.57" height="20" fill="white" />
+          </clipPath>
         </defs>
       </svg>
     );

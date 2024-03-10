@@ -19,6 +19,7 @@ module.exports = {
         xxs: '10px',
       },
       colors: {
+        background: '#ffffff',
         lightgrey: '#f9f9f9',
         lightgreydark: '#f5f5f5',
         muted: '#666666',
@@ -34,5 +35,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 };

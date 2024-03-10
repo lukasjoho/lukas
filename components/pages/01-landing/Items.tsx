@@ -13,19 +13,19 @@ export const VideoItems = ({ idx }: PanelItemsProps) => {
         idx={idx}
         className="w-[40%] translate-x-[45%] translate-y-[25%] -rotate-[7deg] group-hover:translate-x-[55%] group-hover:translate-y-[10%] group-hover:rotate-[-14deg]"
       >
-        <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-basketball_r8glow.jpg" />
+        <VideoFrame image="/images/home/video/bachalpe.jpg" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] -translate-y-[50%] translate-x-[0%] -rotate-[3deg] group-hover:-translate-y-[70%] group-hover:-rotate-[6deg]"
       >
-        <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-wakeboard_plgkq4.jpg" />
+        <VideoFrame image="/images/home/video/streif.jpg" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[40%] -translate-x-[45%] translate-y-[15%] rotate-[7deg] group-hover:translate-x-[-55%] group-hover:translate-y-[-5%] group-hover:rotate-[14deg]"
       >
-        <VideoFrame imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791709/image-lemarais_u4ta0p.jpg" />
+        <VideoFrame image="/images/home/video/krabi.jpg" />
       </PanelItem>
     </>
   );
@@ -38,19 +38,19 @@ export const PhotoItems = ({ idx }: PanelItemsProps) => {
         idx={idx}
         className="w-[30%] translate-x-[70%] translate-y-[30%] rotate-[10deg] group-hover:translate-x-[85%] group-hover:translate-y-[10%] group-hover:rotate-[20deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1691791926/landing-photo-snow_h1fxis.png" />
+        <Polaroid image="/images/home/photo/hiking.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[30%] translate-x-[0%] translate-y-[5%] rotate-[5deg] group-hover:translate-y-[-15%]  group-hover:rotate-[10deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/dum2lqmke/image/upload/v1692224376/landing-photo-kimmich_muikpv.png" />
+        <Polaroid image="/images/home/photo/kimmich.png" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[30%] -translate-x-[70%] translate-y-[20%] -rotate-[10deg] group-hover:-translate-x-[85%] group-hover:translate-y-[0%] group-hover:-rotate-[20deg]"
       >
-        <Polaroid imageUrl="https://res.cloudinary.com/du3mz9iny/image/upload/v1705336292/landing-photo-fishing_ykssp2.png" />
+        <Polaroid image="/images/home/photo/fishing.png" />
       </PanelItem>
     </>
   );
@@ -88,13 +88,13 @@ export const BlogItems = async ({ idx }: PanelItemsProps) => {
         idx={idx}
         className="w-[7%] translate-x-[300%] translate-y-[-300%] rotate-[5deg] group-hover:translate-x-[350%] group-hover:translate-y-[-500%] group-hover:rotate-[10deg] md:w-[7%]"
       >
-        <Icons.youtube3d />
+        <Icons.youtube3d className="drop-shadow-xl" />
       </PanelItem>
       <PanelItem
         idx={idx}
         className="w-[12%] translate-x-[-200%] translate-y-[-200%] rotate-[-8deg] group-hover:translate-x-[-220%] group-hover:translate-y-[-280%] group-hover:rotate-[-15deg] md:w-[12%]"
       >
-        <Icons.youtube3d />
+        <Icons.youtube3d className="drop-shadow-xl" />
       </PanelItem>
       <PanelItem
         idx={idx}

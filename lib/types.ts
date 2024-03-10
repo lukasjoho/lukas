@@ -26,18 +26,28 @@ export interface VideoProjectDetailed extends VideoProject {
 }
 
 export interface PhotoProject {
+  sys: {
+    id: string;
+  };
   slug: string;
   title: string;
-  cover: Cover;
+  cover: ContentfulPhoto;
   caption: string;
 }
 
 export interface PhotoProjectDetailed extends PhotoProject {
   imagesCollection: {
-    items: {
-      url: string;
-    }[];
+    items: ContentfulPhoto[];
   };
+}
+
+export interface ContentfulPhoto {
+  sys: {
+    id: string;
+  };
+  url: string;
+  width: number;
+  height: number;
 }
 
 export interface BlogPost {

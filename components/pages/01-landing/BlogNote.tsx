@@ -8,7 +8,7 @@ interface BlogNoteProps extends React.HTMLProps<HTMLDivElement> {
 
 export const BlogNote: FC<BlogNoteProps> = ({ title, date }) => {
   return (
-    <div className="3xl:px-8 xl:py-18 relative grid items-center overflow-hidden bg-[#F3F3F3] px-4 py-8 text-center font-fingerpaint shadow-md md:py-6 lg:py-12">
+    <div className="3xl:px-8 xl:py-18 relative grid items-center overflow-hidden bg-[#F3F3F3] px-4 py-8 text-center font-fingerpaint shadow-2xl md:py-6 lg:py-12">
       <div className="absolute left-0 top-0 w-full space-y-4 md:space-y-7">
         <div>
           <div className="flex w-full justify-end px-2 py-1">

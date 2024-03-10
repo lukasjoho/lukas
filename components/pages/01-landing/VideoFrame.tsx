@@ -1,9 +1,19 @@
-import OptimizedImage from '@/components/shared/OptimizedImage';
+import Image from 'next/image';
 
-export const VideoFrame = ({ imageUrl }: any) => {
+interface VideoFrameProps {
+  image: string;
+}
+
+export const VideoFrame = ({ image }: VideoFrameProps) => {
   return (
-    <div className="relative border-4 md:border-[8px] rounded-lg border-dark w-full h-auto">
-      <OptimizedImage src={imageUrl} steps={[130, 200, 300]} />
+    <div className="relative h-auto w-full rounded-lg border-4 border-dark shadow-2xl md:border-[8px]">
+      <Image
+        src={image}
+        alt=""
+        width={1600}
+        height={900}
+        sizes="(max-width: 768px) 200px, 400px"
+      />
     </div>
   );
 };

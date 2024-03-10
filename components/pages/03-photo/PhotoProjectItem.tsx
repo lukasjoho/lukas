@@ -14,8 +14,8 @@ const PhotoProjectItem: FC<PhotoProjectItemProps> = ({ photoProject }) => {
     <div>
       <Link href={`/photo/${slug}`}>
         <div className="relative">
-          {/* <OptimizedImage src={cover.url} steps={[200, 300, 400, 500]} /> */}
           <Image
+            key={cover.sys.id}
             src={cover.url}
             alt={title}
             width={cover.width}

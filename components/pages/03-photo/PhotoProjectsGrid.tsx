@@ -13,7 +13,7 @@ const PhotoProjectsGrid = async () => {
           return (
             <PhotoProjectItem
               photoProject={photoProject}
-              key={photoProject.slug}
+              key={photoProject.sys.id}
             />
           );
         })}

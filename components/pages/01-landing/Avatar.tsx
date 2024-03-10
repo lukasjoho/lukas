@@ -1,7 +1,7 @@
 'use client';
-import OptimizedImage from '@/components/shared/OptimizedImage';
 import { isServer } from '@/lib/utils';
 import { Variants, motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Avatar = () => {
   let avatarVariants: Variants = {
@@ -35,11 +35,12 @@ const Avatar = () => {
     >
       <div className="relative h-full w-full transition duration-300 hover:scale-110">
         <div className="absolute left-0 top-0 h-full w-full opacity-100">
-          <OptimizedImage
-            src={
-              'https://res.cloudinary.com/du3mz9iny/image/upload/v1704726742/lukas_dark_new_zxhvg3.jpg'
-            }
-            steps={[200]}
+          <Image
+            src="/images/home/lukas-avatar.jpg"
+            alt="Lukas Hoppe"
+            width={500}
+            height={500}
+            sizes="200px"
           />
         </div>
       </div>

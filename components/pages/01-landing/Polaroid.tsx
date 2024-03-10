@@ -1,10 +1,21 @@
-import OptimizedImage from '@/components/shared/OptimizedImage';
+import Image from 'next/image';
 
-export const Polaroid = ({ imageUrl }: any) => {
+interface PolaroidProps {
+  image: string;
+}
+
+export const Polaroid = ({ image }: PolaroidProps) => {
   return (
-    <div className="relative aspect-square w-full bg-gradient-to-tl from-[#f7f7f7] to-white flex flex-col items-center shadow-xl">
+    <div className="relative flex aspect-square w-full flex-col items-center bg-gradient-to-tl from-[#f7f7f7] to-white shadow-2xl">
       <div className="absolute bottom-[8%] w-[84%]">
-        <OptimizedImage src={imageUrl} steps={[100, 150, 220]} />
+        <Image
+          src={image}
+          alt=""
+          className="w-full"
+          width={378}
+          height={500}
+          sizes="(max-width: 768px) 100px, 300px"
+        />
       </div>
     </div>
   );
