@@ -12,7 +12,7 @@ const PhotoProjectItem: FC<PhotoProjectItemProps> = ({ photoProject }) => {
   const { slug, title, caption, cover } = photoProject;
   return (
     <div>
-      <Link href={`/photo/${slug}`}>
+      <Link href={`/photo/${slug}`} scroll={false}>
         <div className="relative">
           <Image
             key={cover.sys.id}

@@ -1,5 +1,5 @@
 import Container from '@/components/layout/Container';
-import OptimizedImage from '@/components/shared/OptimizedImage';
+import Image from 'next/image';
 
 const Intro = () => {
   return (
@@ -20,10 +20,11 @@ const Intro = () => {
           </p>
         </div>
         <div className="relative order-first aspect-[3/2] overflow-hidden md:order-last">
-          <OptimizedImage
-            src={
-              'https://res.cloudinary.com/du3mz9iny/image/upload/v1700433432/lukas-new-york_r9qyzd.jpg'
-            }
+          <Image
+            src="/images/about/lukas-new-york.jpg"
+            alt=""
+            fill
+            sizes="550px"
           />
         </div>
       </div>
