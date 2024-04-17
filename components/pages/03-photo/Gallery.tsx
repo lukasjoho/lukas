@@ -29,15 +29,6 @@ const Gallery = ({ id, title, cover, photos }: GalleryDrawerProps) => {
 
   const isMobile = useIsMobile();
 
-  const show = true;
-  if (show) {
-    return (
-      <Drawer open={open} onOpenChange={setOpen} onClose={onClose}>
-        <DrawerContent>Content</DrawerContent>
-      </Drawer>
-    );
-  }
-
   return (
     <>
       {!isMobile && (

@@ -9,6 +9,7 @@ const Drawer = ({
   return (
     <DrawerPrimitive.Root
       shouldScaleBackground={shouldScaleBackground}
+      preventScrollRestoration={false}
       {...props}
     />
   );
