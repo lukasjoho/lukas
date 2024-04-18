@@ -9,7 +9,7 @@ export interface CodeProject {
 export interface CodeProjectDetailed extends CodeProject {
   ctaLabel?: string;
   ctaUrl?: string;
-  content?: any;
+  description: string;
 }
 
 export interface VideoProject {

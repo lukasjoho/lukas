@@ -1,10 +1,7 @@
-'use client';
 import Gallery from '@/components/pages/03-photo/Gallery';
 import { getPhotoProject, getPhotoProjects } from '@/lib/clients/contentful';
 import { PhotoProject } from '@/lib/types';
 import { notFound } from 'next/navigation';
-
-export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
   const photoProjects = await getPhotoProjects();

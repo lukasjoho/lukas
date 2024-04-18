@@ -2,13 +2,13 @@ import { getCodeProject, getCodeProjects } from '@/lib/clients/contentful';
 
 import Container from '@/components/layout/Container';
 import PageLayout from '@/components/layout/PageLayout';
-import RichTextRenderer from '@/components/pages/05-blog/RichTextRenderer';
-import OptimizedImage from '@/components/shared/OptimizedImage';
+import PrimaryLinkButton from '@/components/shared/PrimaryLinkButton';
 import { createMetaDataObject } from '@/lib/helpers';
 import { Params } from '@/lib/types';
-import { ArrowUpRight } from 'lucide-react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Balancer from 'react-wrap-balancer';
 
 export const revalidate = 0;
 
@@ -42,43 +42,36 @@ const CodeProjectPage = async ({ params }: { params: { slug: string } }) => {
   if (!codeProject) {
     notFound();
   }
-  const { title, caption, cover, content, ctaLabel, ctaUrl } = codeProject;
+  const { title, caption, cover, description, ctaLabel, ctaUrl } = codeProject;
   return (
     <PageLayout
       title={title}
       subtitle={caption}
       backlink={{ href: '/code', label: 'Back to all' }}
-      containerVariant="small"
+      containerVariant="large"
     >
-      <Container variant="small">
-        <div className="space-y-6 md:space-y-12">
-          <div className="flex flex-col gap-4">
-            <div className="relative aspect-[3/2] w-full overflow-hidden">
-              <div className="absolute bottom-0">
-                <OptimizedImage src={cover.url} steps={[400, 650]} />
-              </div>
-            </div>
-
-            {ctaLabel && ctaUrl && (
-              <a
-                href={ctaUrl}
-                target="_blank"
-                className="w-full cursor-pointer"
-              >
-                <button className="flex w-full justify-center gap-1.5 bg-dark py-4 font-medium text-white">
-                  <ArrowUpRight />
-                  {ctaLabel}
-                </button>
-              </a>
-            )}
+      <Container variant="large">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
+          <div>
+            <p className="mt-2 lg:text-lg">
+              <Balancer>{description}</Balancer>
+            </p>
+            <PrimaryLinkButton
+              className="mt-3"
+              href={ctaUrl as string}
+              icon="ArrowUpRight"
+              target="_blank"
+            >
+              {ctaLabel}
+            </PrimaryLinkButton>
           </div>
-
-          {content && (
-            <RichTextRenderer
-              richTextContent={content}
-              className="text-center"
-            />
-          )}
+          <Image
+            className="order-first rounded-lg md:order-last"
+            src={cover.url}
+            height={cover.height}
+            width={cover.width}
+            alt="projectimage"
+          />
         </div>
       </Container>
     </PageLayout>

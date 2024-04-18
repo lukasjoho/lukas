@@ -42,7 +42,7 @@ const DrawerContent = forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        'bg-background fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-2xl outline-none md:rounded-t-3xl',
+        'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-2xl bg-background outline-none md:rounded-t-3xl',
 
         className
       )}
@@ -51,7 +51,7 @@ const DrawerContent = forwardRef<
       }}
       {...props}
     >
-      <div className="mx-auto mt-4 h-2 w-[100px] shrink-0 cursor-grab rounded-full bg-zinc-300" />
+      <div className="mx-auto mb-4 mt-4 h-2 w-[100px] shrink-0 cursor-grab rounded-full bg-zinc-300" />
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>

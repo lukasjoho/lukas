@@ -7,7 +7,7 @@ const content = {
   code: {
     title: 'Code',
     description:
-      'As an engineer I act as my own product manager. I dont need and I dont want perfect requirements. Give me vision and business objectives, and together we iteratively build software that delights users.',
+      'I am a self-starter product engineer who loves building new products. I like to interface directly with customers to develop products they actually desire.',
   },
   photo: {
     title: 'Photo',

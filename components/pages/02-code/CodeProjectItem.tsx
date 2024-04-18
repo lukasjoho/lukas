@@ -3,7 +3,7 @@ import Title from '@/components/shared/Title';
 import { CodeProject } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -45,3 +45,34 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
 };
 
 export default CodeProjectItem;
+
+interface CodeProjectImageProps extends ImageProps {
+  title: string;
+  cover: CodeProject['cover'];
+  slug: string;
+}
+
+const CodeProjectImage = ({
+  cover,
+  title,
+  slug,
+  className,
+  alt,
+  key,
+  src,
+  ...props
+}: CodeProjectImageProps) => {
+  const { url, height, width } = cover;
+  return (
+    <Image
+      className={className}
+      key={`project-image-${slug}`}
+      src={url}
+      height={height}
+      width={width}
+      sizes="600px"
+      alt={`project-image-${title}`}
+      {...props}
+    />
+  );
+};

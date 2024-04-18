@@ -200,28 +200,17 @@ export const getCodeProject = async (
                 title
                 caption
                 cover{
-                    url
+                  sys{
+                    id
+                  }
+                  url
+                  height
+                  width
                 }
                 ctaLabel
                 ctaUrl
                 hasDarkBackground
-                content{
-                  json
-                  links{
-                    assets {
-                      block {
-                        sys {
-                          id
-                        }
-                        url
-                        title
-                        width
-                        height
-                        description
-                      }
-                    }
-                  }
-                }
+                description
             }
         }
     }`;
