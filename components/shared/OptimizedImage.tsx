@@ -5,15 +5,13 @@ import { CSSProperties, FC } from 'react';
 
 interface OptimizedImageProps {
   src: string;
-  steps?: number[];
+  steps?: number | number[];
   style?: CSSProperties;
 }
 
 const OptimizedImage: FC<OptimizedImageProps> = ({ src, steps, style }) => {
   return (
     <AdvancedImage
-      width="100%"
-      height="100%"
       style={{
         objectFit: 'cover',
         ...style,

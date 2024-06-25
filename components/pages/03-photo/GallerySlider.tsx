@@ -1,7 +1,7 @@
 'use client';
+import OptimizedImage from '@/components/shared/OptimizedImage';
 import Title from '@/components/shared/Title';
 import { ContentfulPhoto } from '@/lib/types';
-import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/keyboard';
 import 'swiper/css/mousewheel';
@@ -42,13 +42,21 @@ const GallerySlider = ({ id, title, cover, photos }: GallerySliderProps) => {
           }}
           key={0}
         >
-          <Image
+          {/* <Image
             key={cover.sys.id}
             src={cover.url}
             alt=""
             width={cover.width}
             height={cover.height}
             className="h-full w-auto"
+          /> */}
+          <OptimizedImage
+            key={cover.sys.id}
+            src={cover.url}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
           />
         </SwiperSlide>
         {photos.map((photo, index) => {
@@ -66,13 +74,21 @@ const GallerySlider = ({ id, title, cover, photos }: GallerySliderProps) => {
               }}
               key={index + 1}
             >
-              <Image
+              {/* <Image
                 key={photo.sys.id}
                 src={photo.url}
                 alt=""
                 width={width}
                 height={height}
                 className="h-full w-auto"
+              /> */}
+              <OptimizedImage
+                key={photo.sys.id}
+                src={photo.url}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
               />
             </SwiperSlide>
           );

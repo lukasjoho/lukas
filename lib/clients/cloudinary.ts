@@ -2,7 +2,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 
 export const cld = new Cloudinary({
   cloud: {
-    cloudName: 'dum2lqmke',
+    cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_ID,
   },
 });
 
