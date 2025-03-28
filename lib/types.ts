@@ -4,6 +4,7 @@ export interface CodeProject {
   cover: Cover;
   slug: string;
   hasDarkBackground: boolean;
+  visible?: boolean;
 }
 
 export interface CodeProjectDetailed extends CodeProject {

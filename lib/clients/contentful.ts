@@ -182,6 +182,7 @@ export const getCodeProjects = async (): Promise<CodeProject[]> => {
                 caption
                 slug
                 hasDarkBackground
+                visible
             }
         }
     }`;

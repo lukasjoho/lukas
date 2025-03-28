@@ -9,6 +9,7 @@ const CodeProjectsGrid = async () => {
     <Container variant="large">
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
         {codeProjects.map((codeProject: CodeProject, idx: number) => {
+          if (codeProject.visible === false) return null;
           return (
             <CodeProjectItem codeProject={codeProject} key={codeProject.slug} />
           );

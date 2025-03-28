@@ -12,7 +12,8 @@ interface CodeProjectItemProps {
 }
 
 const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
-  const { title, caption, cover, hasDarkBackground, slug } = codeProject;
+  const { title, caption, cover, hasDarkBackground, slug, visible } =
+    codeProject;
   return (
     <motion.div whileTap={{ scale: 0.97 }}>
       <Link href={`/code/${slug}`}>
@@ -20,6 +21,7 @@ const CodeProjectItem: FC<CodeProjectItemProps> = ({ codeProject }) => {
           <Image src={cover.url} alt={title} fill sizes="600px" />
 
           <div className="relative z-10">
+            <pre>{JSON.stringify(visible, null, 2)}</pre>
             <Title
               as="h2"
               className={cn(
